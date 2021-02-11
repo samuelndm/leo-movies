@@ -1,16 +1,17 @@
 import styled from "styled-components";
 
 export const Form = styled.form`
-  flex-grow: ${({ isVisible }) => (isVisible ? "1" : "0")};
-  width: ${({ isVisible }) => (isVisible ? "auto" : "0")};
-  margin: 0 0 0 auto;
+  flex-grow: 1;
+  width: auto;
+  max-width: ${({ isVisible }) => (isVisible ? "1000px" : "0")};
   padding: 20px;
+  margin: 0 0 0 auto;
   height: 100%;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 500ms ease;
+  transition: max-width 500ms ease;
 
   @media screen and (max-width: 975px) {
     width: 100%;
@@ -20,11 +21,12 @@ export const Form = styled.form`
 `;
 
 export const Input = styled.input`
+  width: 100%;
   padding: ${({ isVisible }) => (isVisible ? "10px" : "0")};
-  width: ${({ isVisible }) => (isVisible ? "100%" : "0")};
+  max-width: ${({ isVisible }) => (isVisible ? "1000px" : "0")};
   border-radius: 18px;
   box-shadow: inset 1px 1px 3px 0 rgba(79, 82, 88, 0.34);
-  transition: max-width 500ms ease;
+  transition: all 500ms ease;
 
   @media screen and (max-width: 975px) {
     padding: 10px;
