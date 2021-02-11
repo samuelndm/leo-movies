@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import PagesDefault from "./PagesDefault";
-import PagesDots from "./PagesDots";
+import PagesDefault from "./PagesDefault/PagesDefault";
+import PagesDots from "./PagesDots/PagesDots";
 
 const Pages = ({ page, setPage, pages }) => {
   const [limit, setLimit] = useState(4);

@@ -15,6 +15,7 @@ export const Container = styled(ResponsiveContainer)`
 export const Title = styled.h1`
   margin: 10px;
   text-align: center;
+  line-height: 32px;
 `;
 
 export const Icon = styled.i`

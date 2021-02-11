@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
-import { createArrayOfGivenNumber, ScrollToTop } from "../../../utils";
+import { createArrayOfGivenNumber, ScrollToTop } from "../../../utils/utils";
 import * as UTIL from "../../../utils/paginationUtil";
 import * as S from "./styles";
-import FirstPage from "./FirstPage";
-import PrevPage from "./PrevPage";
-import Pages from "./Pages";
-import NextPage from "./NextPage";
-import LastPage from "./LastPage";
+import FirstPage from "./FirstPage/FirstPage";
+import PrevPage from "./PrevPage/PrevPage";
+import Pages from "./Pages/Pages";
+import NextPage from "./NextPage/NextPage";
+import LastPage from "./LastPage/LastPage";
 
 const Pagination = ({
   itemsPerPage,

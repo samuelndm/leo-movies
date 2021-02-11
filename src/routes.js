@@ -6,6 +6,8 @@ import * as C from "./components";
 const Routes = () => {
   return (
     <HashRouter basename='/'>
+      <C.Navbar />
+
       <Switch>
         <Route exact path='*' component={P.NotFoundPage} />
       </Switch>

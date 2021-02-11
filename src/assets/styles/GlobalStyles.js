@@ -20,11 +20,9 @@ export default createGlobalStyle`
 
     #root {
       --primary-color: #31217C;
-      --secondary-color: #0050A7;
-      --third-color: #0097c487;
-      --yellow-color: #FFE031;
-      --blue-color: #3866B3;
-      --background-color: #EAEAEA;
+      --secondary-color: #381f1f;
+      --orange-gradient-color: linear-gradient(90deg, #f18825, #fd5c3c);
+      --background-color: #fff;
       --navbar-height: 127px;
     }
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { isExternalUrl } from "../../../utils";
+import { isExternalUrl } from "../../../utils/utils";
 import * as S from "./styles";
 
 const LinkHandler = ({

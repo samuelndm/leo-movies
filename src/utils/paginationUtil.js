@@ -1,5 +1,9 @@
-import { updateUrlParamByKey } from "..";
-import { URL_PARAMS } from "../constants";
+import { updateUrlParamByKey } from "./utils";
+
+const URL_PARAMS = {
+  PER_PAGE_KEY: "per_page",
+  PAGE_KEY: "page",
+};
 
 export const handleCurrentPerPage = (search, itemsPerPage, totalItems) => {
   const perPageParam = getPerPageParam(search);

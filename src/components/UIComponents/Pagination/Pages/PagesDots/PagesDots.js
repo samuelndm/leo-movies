@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { createArrayOfGivenNumber } from "../../../../../utils";
-import BeginningPages from "./BeginningPages";
-import EndPages from "./EndPages";
+import { createArrayOfGivenNumber } from "../../../../../utils/utils";
+import BeginningPages from "./BeginningPages/BeginningPages";
+import EndPages from "./EndPages/EndPages";
 
 const PagesDots = ({ page, setPage, pages, limit }) => {
   const [prevPage, setPrevPage] = useState(null);
