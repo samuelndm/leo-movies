@@ -11,7 +11,7 @@ export const Form = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: max-width 500ms ease;
+  transition: all 800ms ease;
 
   @media screen and (max-width: 975px) {
     width: 100%;
@@ -26,7 +26,7 @@ export const Input = styled.input`
   max-width: ${({ isVisible }) => (isVisible ? "1000px" : "0")};
   border-radius: 18px;
   box-shadow: inset 1px 1px 3px 0 rgba(79, 82, 88, 0.34);
-  transition: all 500ms ease;
+  transition: all 800ms ease;
 
   @media screen and (max-width: 975px) {
     padding: 10px;
