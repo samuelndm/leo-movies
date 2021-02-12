@@ -4,7 +4,6 @@ import Providers from "./contexts/Providers";
 import Routes from "./routes";
 import GlobalStyles from "./assets/styles/GlobalStyles";
 import "./assets/styles/sass/base.scss";
-import "react-notifications-component/dist/theme.css";
 
 const App = () => {
   return (
