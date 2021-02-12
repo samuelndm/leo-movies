@@ -7,7 +7,7 @@ const HomePage = () => {
   const [popularMovies, setPopularMovies] = useState([]);
   const [popularTvShows, setTopularTvShows] = useState([]);
   const [params] = useState({
-    page: 3,
+    page: 1,
   });
 
   const loadData = useCallback(async () => {
