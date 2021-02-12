@@ -11,18 +11,16 @@ export const Container = styled.div`
 export const Icon = styled.i`
   padding: 20px;
   font-size: 20px;
-  color: ${({ isVisible }) => (isVisible ? "var(--blue-color)" : "#fff")};
-  background: ${({ isVisible }) =>
-    isVisible ? "var(--primary-gradient-color);" : "transparent"};
-  cursor: pointer;
-  border: ${({ isVisible }) =>
-    isVisible ? "2px solid var(--blue-color)" : "none"};
+  color: #fff;
+  background: transparent;
+  border: none;
   border-radius: 50%;
+  cursor: pointer;
 `;
 
 export const Menu = styled.div`
   z-index: 200;
-  padding: 10px 20px;
+  padding: 20px;
   width: 100%;
   height: 100vh;
   position: fixed;
