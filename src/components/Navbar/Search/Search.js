@@ -29,7 +29,8 @@ const Search = () => {
     }
   };
 
-  const toggleVisibility = () => {
+  const toggleVisibility = (event) => {
+    event.preventDefault();
     setIsVisible((isVisible) => !isVisible);
   };
 
