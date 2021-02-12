@@ -13,7 +13,7 @@ const Preview = ({ preview }) => {
           ? `${process.env.REACT_APP_API_IMAGES}${preview.poster_path}`
           : placeholder
       );
-    }, 1500);
+    });
   }, [preview]);
 
   return (
