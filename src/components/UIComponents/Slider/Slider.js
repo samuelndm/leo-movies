@@ -54,7 +54,7 @@ const Slider = ({
 };
 
 Slider.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.array.isRequired,
   settings: PropTypes.object,
   slidesToShow: PropTypes.number,
   hasDots: PropTypes.bool,

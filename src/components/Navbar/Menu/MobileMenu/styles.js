@@ -13,7 +13,7 @@ export const Icon = styled.i`
   font-size: 20px;
   color: ${({ isVisible }) => (isVisible ? "var(--blue-color)" : "#fff")};
   background: ${({ isVisible }) =>
-    isVisible ? "var(--orange-gradient-color);" : "transparent"};
+    isVisible ? "var(--primary-gradient-color);" : "transparent"};
   cursor: pointer;
   border: ${({ isVisible }) =>
     isVisible ? "2px solid var(--blue-color)" : "none"};
@@ -31,5 +31,5 @@ export const Menu = styled.div`
   transform: ${({ isVisible }) =>
     isVisible ? "translateX(0%)" : "translateX(200%)"};
   transition: transform 0.5s ease-in-out;
-  background: var(--orange-gradient-color);
+  background: var(--primary-gradient-color);
 `;

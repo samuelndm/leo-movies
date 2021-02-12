@@ -11,11 +11,28 @@ export const getRandomInteger = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-export const createEmptyArray = (size) => {
+export const createEmptyArray = (size, type) => {
+  let children;
+
+  switch (type) {
+    case "object":
+      children = {};
+      break;
+    case "undefined":
+      children = undefined;
+      break;
+    case "string":
+      children = "";
+      break;
+    default:
+      children = null;
+      break;
+  }
+
   const array = [];
   if (size && Number.isInteger(size)) {
     for (let i = 0; i < size; i++) {
-      array.push(null);
+      array.push(children);
     }
   }
 

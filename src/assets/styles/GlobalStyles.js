@@ -19,9 +19,10 @@ export default createGlobalStyle`
     }
 
     #root {
-      --primary-color: #31217C;
-      --secondary-color: #381f1f;
-      --orange-gradient-color: linear-gradient(90deg, #f18825, #fd5c3c);
+      --primary-color: #032541;
+      --secondary-color: #00506E;
+      --primary-gradient-color: linear-gradient(90deg, #032541, #00506E );
+      --secondary-gradient-color: linear-gradient(90deg, #00506E, #032541);
       --background-color: #fff;
       --navbar-height: 127px;
     }
@@ -57,4 +58,9 @@ export const ResponsiveContainer = styled.div`
   @media (min-width: 1200px) {
     max-width: 1140px;
   }
+`;
+
+export const ContainerTitle = styled.h2`
+  margin: 0 0 35px;
+  color: #333;
 `;

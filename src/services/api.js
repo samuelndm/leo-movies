@@ -1,6 +1,8 @@
 import axios from "axios";
 
 const apiUrl = process.env.REACT_APP_API_URL;
+const apiKey = process.env.REACT_APP_API_KEY;
+const apiToken = process.env.REACT_APP_API_TOKEN;
 
 const params = {
   baseURL: apiUrl,
@@ -9,7 +11,16 @@ const params = {
 const api = axios.create(params);
 
 api.interceptors.request.use(
-  (config) => config,
+  (config) => {
+    return {
+      ...config,
+      headers: {
+        ...config.headers,
+        Authorization: apiToken,
+      },
+      params: { ...config.params, api_key: apiKey },
+    };
+  },
   (error) => Promise.reject(error)
 );
 

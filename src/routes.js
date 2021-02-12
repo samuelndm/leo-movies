@@ -9,6 +9,7 @@ const Routes = () => {
       <C.Navbar />
 
       <Switch>
+        <Route exact path='/' component={P.HomePage} />
         <Route exact path='*' component={P.NotFoundPage} />
       </Switch>
     </HashRouter>

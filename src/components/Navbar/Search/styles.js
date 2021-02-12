@@ -14,9 +14,9 @@ export const Form = styled.form`
   transition: all 800ms ease;
 
   @media screen and (max-width: 975px) {
-    width: 100%;
     flex-grow: 1;
     width: 100%;
+    max-width: 100%;
   }
 `;
 
@@ -30,7 +30,7 @@ export const Input = styled.input`
 
   @media screen and (max-width: 975px) {
     padding: 10px;
-    width: 100%;
+    max-width: 100%;
   }
 
   &::-webkit-search-cancel-button {
