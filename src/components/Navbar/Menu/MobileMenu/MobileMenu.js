@@ -19,7 +19,6 @@ const MobileMenu = ({ menu }) => {
     <S.Container>
       <S.Icon
         className='fas fa-bars'
-        isVisible={isVisible}
         onClick={(e) => setIsVisible((prev) => !prev)}
       />
 
