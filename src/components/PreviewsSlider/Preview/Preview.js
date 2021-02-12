@@ -7,15 +7,13 @@ const Preview = ({ preview }) => {
   const [imageUrl, setImageUrl] = useState("");
 
   useEffect(() => {
-    if (preview) {
-      setTimeout(() => {
-        setImageUrl(
-          preview.poster_path
-            ? `${process.env.REACT_APP_API_IMAGES}${preview.poster_path}`
-            : placeholder
-        );
-      }, 1500);
-    }
+    setTimeout(() => {
+      setImageUrl(
+        preview?.poster_path
+          ? `${process.env.REACT_APP_API_IMAGES}${preview.poster_path}`
+          : placeholder
+      );
+    }, 1500);
   }, [preview]);
 
   return (
