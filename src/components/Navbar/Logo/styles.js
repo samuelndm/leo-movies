@@ -15,9 +15,10 @@ export const Image = styled.img`
 
   @media screen and (max-width: 768px) {
     max-width: 130px;
+    max-height: calc(var(--navbar-height));
   }
 
   @media screen and (max-width: 360px) {
-    max-width: 70px;
+    max-width: 100px;
   }
 `;

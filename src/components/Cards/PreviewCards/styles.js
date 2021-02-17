@@ -7,16 +7,20 @@ export const Container = styled.div`
   border-radius: 6px;
   cursor: pointer;
 
-  & > .body {
+  & > .skeleton-body {
     width: 100%;
     height: 100%;
     border-radius: inherit;
+  }
+
+  @media screen and (max-width: 575px) {
+    width: 225px;
+    height: 337.5px;
   }
 `;
 
 export const Image = styled.img`
   width: 100%;
   height: 100%;
-
   border-radius: inherit;
 `;

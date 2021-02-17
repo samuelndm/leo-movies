@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
-import { createArrayOfGivenNumber, ScrollToTop } from "../../../utils/utils";
-import * as UTIL from "../../../utils/paginationUtil";
+import { createArrayOfGivenNumber, ScrollToTop } from "utils/utils";
+import * as UTIL from "utils/paginationUtil";
 import * as S from "./styles";
 import FirstPage from "./FirstPage/FirstPage";
 import PrevPage from "./PrevPage/PrevPage";

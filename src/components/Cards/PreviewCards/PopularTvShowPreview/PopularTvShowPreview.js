@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import Skeleton from "@material-ui/lab/Skeleton";
-import placeholder from "../../../assets/images/placeholder.jpg";
+import placeholder from "assets/images/placeholder.jpg";
 import * as S from "./styles";
 
-const Preview = ({ preview }) => {
+const PopularTvShowPreview = ({ preview }) => {
   const [imageUrl, setImageUrl] = useState("");
 
   useEffect(() => {
@@ -21,12 +22,15 @@ const Preview = ({ preview }) => {
   return (
     <S.Container>
       {imageUrl ? (
-        <S.Image src={imageUrl} alt='content poster' />
+        <S.Image src={imageUrl} alt='popular tv show preview poster' />
       ) : (
-        <Skeleton className='body' variant='rect' animation='wave' />
+        <Skeleton className='skeleton-body' variant='rect' animation='wave' />
       )}
     </S.Container>
   );
 };
+PopularTvShowPreview.propTypes = {
+  tvShow: PropTypes.object,
+};
 
-export default Preview;
+export default PopularTvShowPreview;

@@ -7,8 +7,8 @@ const DefaultMenu = ({ menu }) => {
   if (!menu || !menu.length) return null;
   return (
     <S.Container>
-      {menu.map((link) => (
-        <Link link={link} key={`link-${link.id}`} />
+      {menu.map((link, index) => (
+        <Link link={link} key={`defaultMenu-${index}`} />
       ))}
     </S.Container>
   );

@@ -1,4 +1,4 @@
-import api from "../../api";
+import api from "services/api";
 
 export const getPopularTvShows = (params = {}) => {
   return api.get("3/tv/popular", {

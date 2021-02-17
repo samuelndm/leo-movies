@@ -63,4 +63,8 @@ export const ResponsiveContainer = styled.div`
 export const ContainerTitle = styled.h2`
   margin: 0 0 35px;
   color: #333;
+
+  @media screen and (max-width: 575px) {
+    text-align: center;
+  }
 `;

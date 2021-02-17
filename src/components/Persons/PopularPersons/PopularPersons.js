@@ -8,21 +8,21 @@ import * as Card from "components/Cards";
 
 const MAX_AMOUNT = 9;
 
-const PopularTvShows = ({ tvShows }) => {
+const PopularPersons = ({ persons }) => {
   return (
     <S.Container>
-      <GS.ContainerTitle>Most Popular TvShows</GS.ContainerTitle>
+      <GS.ContainerTitle>Most Popular Persons</GS.ContainerTitle>
 
       <C.PreviewsSlider
-        previews={resizeArray(tvShows, MAX_AMOUNT)}
-        PreviewCard={Card.PopularTvShowPreview}
+        previews={resizeArray(persons, MAX_AMOUNT)}
+        PreviewCard={Card.PopularPersonPreview}
       />
     </S.Container>
   );
 };
 
-PopularTvShows.propTypes = {
-  tvShows: PropTypes.array,
+PopularPersons.propTypes = {
+  persons: PropTypes.array,
 };
 
-export default PopularTvShows;
+export default PopularPersons;

@@ -1,33 +1,12 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import * as UTIL from "../../utils/utils";
+import { SLIDES_TO_SHOW, sliderSettings } from "./previewsSliderSettings";
+import * as UTIL from "utils/utils";
 import * as S from "./styles";
-import * as UI from "../UIComponents";
-import Preview from "./Preview/Preview";
+import * as UI from "components/UIComponents";
 
-const sliderResponsiveSettings = [
-  {
-    breakpoint: 1200,
-    settings: {
-      slidesToShow: 5,
-    },
-  },
-  {
-    breakpoint: 1000,
-    settings: {
-      slidesToShow: 4,
-    },
-  },
-  {
-    breakpoint: 768,
-    settings: {
-      slidesToShow: 3,
-    },
-  },
-];
-
-const PreviewsSlider = ({ previews }) => {
-  const [content, setContent] = useState(UTIL.createEmptyArray(6));
+const PreviewsSlider = ({ previews, PreviewCard }) => {
+  const [content, setContent] = useState(UTIL.createEmptyArray(SLIDES_TO_SHOW));
 
   useEffect(() => {
     if (previews && previews.length) {
@@ -37,13 +16,12 @@ const PreviewsSlider = ({ previews }) => {
 
   return (
     <S.Container>
-      <UI.Slider
-        slidesToShow={6}
-        hasDots={true}
-        responsive={sliderResponsiveSettings}
-      >
+      <UI.Slider settings={sliderSettings}>
         {content.map((preview, index) => (
-          <Preview preview={preview} key={`preview-${preview?.id || index}`} />
+          <PreviewCard
+            preview={preview}
+            key={`preview-${preview?.id || index}`}
+          />
         ))}
       </UI.Slider>
     </S.Container>
@@ -51,7 +29,8 @@ const PreviewsSlider = ({ previews }) => {
 };
 
 PreviewsSlider.propTypes = {
-  movies: PropTypes.array,
+  previews: PropTypes.array,
+  PreviewCard: PropTypes.element,
 };
 
 export default PreviewsSlider;

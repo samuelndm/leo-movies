@@ -23,12 +23,12 @@ const MobileMenu = ({ menu }) => {
       />
 
       <S.Menu isVisible={isVisible}>
-        {menu.map((link) => (
+        {menu.map((link, index) => (
           <Link
             link={link}
             setIsVisible={setIsVisible}
             setHasClicked={setHasClicked}
-            key={`mobilemenu-${link.id}`}
+            key={`mobilemenu-${index}`}
           />
         ))}
       </S.Menu>

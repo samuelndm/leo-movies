@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { updateUrlParamByKey } from "../../../utils/utils";
-import { URL_PARAMS } from "../../../utils/constants";
-import { resetPaginationUrl } from "../../../utils/paginationUtil";
+import { updateUrlParamByKey } from "utils/utils";
+import { URL_PARAMS } from "utils/constants";
+import { resetPaginationUrl } from "utils/paginationUtil";
 import * as S from "./styles";
 
 const Search = () => {

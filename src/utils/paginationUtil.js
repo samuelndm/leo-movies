@@ -1,4 +1,4 @@
-import { updateUrlParamByKey } from "./utils";
+import { updateUrlParamByKey } from "utils/utils";
 
 const URL_PARAMS = {
   PER_PAGE_KEY: "per_page",

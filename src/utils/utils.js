@@ -57,6 +57,20 @@ export const createArrayOfGivenNumber = (number, reverse) => {
   return [];
 };
 
+export const resizeArray = (array, maxAmount) => {
+  const newArray = [];
+
+  if (array && array.length && Number.isInteger(maxAmount)) {
+    array.forEach((item, index) => {
+      if (index <= maxAmount) {
+        newArray.push(item);
+      }
+    });
+  }
+
+  return newArray;
+};
+
 export const normalizeString = (string) => {
   let newString = "";
   if (string) {

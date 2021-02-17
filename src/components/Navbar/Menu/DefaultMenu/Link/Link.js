@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./styles";
-import * as UI from "../../../../UIComponents";
+import * as UI from "components/UIComponents";
 
 const Link = ({ link }) => {
   if (!link) return null;

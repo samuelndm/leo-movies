@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { isExternalUrl } from "../../../utils/utils";
+import { isExternalUrl } from "utils/utils";
 import * as S from "./styles";
 
 const LinkHandler = ({
@@ -18,10 +18,6 @@ const LinkHandler = ({
   height,
   setHasClicked,
 }) => {
-  const [urlLink] = useState(url || "#");
-  const [targetLink] = useState(target || "_self");
-  const [titleLink] = useState(title || "");
-
   return (
     <S.Container
       childrenPosition={childrenPosition}
@@ -33,19 +29,19 @@ const LinkHandler = ({
       height={height}
     >
       {isExternalUrl(url) ? (
-        <S.LinkAnchor href={urlLink} target={targetLink}>
-          {titleLink && <S.Title>{titleLink}</S.Title>}
+        <S.LinkAnchor href={url || "#"} target={target || "_self"}>
+          {title && <S.Title>{title || ""}</S.Title>}
           {children}
         </S.LinkAnchor>
       ) : (
         <Link
-          to={urlLink}
-          target={targetLink}
+          to={url || "#"}
+          target={target || "_self"}
           onClick={(e) => {
             setHasClicked && setHasClicked(true);
           }}
         >
-          {titleLink && <S.Title>{titleLink}</S.Title>}
+          {title && <S.Title>{title || ""}</S.Title>}
           {children}
         </Link>
       )}

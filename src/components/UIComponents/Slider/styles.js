@@ -2,85 +2,82 @@ import styled from "styled-components";
 
 export const SliderStyle = { width: "100%", maxWidth: "100%" };
 
-export const DefaultPrevArrow = styled.div`
+const DefaultArrowStyle = styled.div`
   z-index: 2;
-  padding: 10px;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
+  background-color: #e5e3e3;
+  border-radius: 50%;
   position: absolute;
   top: 50%;
-  left: -5%;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  &:before {
-    color: var(--primary-color);
-    font-size: 30px;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 600;
-    content: "\f104";
-    opacity: 1;
+  &:hover {
+    background-color: #cdcbcb;
   }
 
-  @media screen and (max-width: 1050px) {
+  &:before {
+    content: "";
+    color: var(--primary-color, #333);
+    font-size: 30px;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    text-align: center;
+  }
+`;
+
+export const DefaultPrevArrow = styled(DefaultArrowStyle)`
+  left: -5%;
+
+  &:before {
+    content: "\f104";
+  }
+
+  @media screen and (max-width: 768px) {
     left: -1%;
   }
 
   @media screen and (max-width: 575px) {
-    left: -5%;
+    left: -2%;
   }
 `;
 
-export const DefaultNextArrow = styled.div`
-  z-index: 2;
-  padding: 10px;
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  top: 50%;
+export const DefaultNextArrow = styled(DefaultArrowStyle)`
   right: -5%;
-  text-align: center;
 
   &:before {
-    color: var(--primary-color);
-    font-size: 30px;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 700;
     content: "\f105";
-    opacity: 1;
   }
 
-  @media screen and (max-width: 1050px) {
+  @media screen and (max-width: 768px) {
     right: -1%;
   }
 
   @media screen and (max-width: 575px) {
-    right: -5%;
+    right: -2%;
   }
 `;
 
 export const Dots = styled.ul`
   z-index: 2;
-  top: 100%;
+  top: 105%;
   list-style-type: none;
 
   & li {
-    margin: 0 1px;
+    margin: 0 2px;
   }
 
   & li button:before {
-    color: #ffffff;
-    color: var(--blue-color);
-    color: var(--current-type-color);
+    color: var(--primary-color, #000);
     font-size: 13px;
   }
 
   & li.slick-active button:before {
     opacity: 1;
-    color: var(--current-type-color);
-    font-size: 13px;
-  }
+    color: var(--secondary-color, #00368a);
 
-  @media screen and (max-width: 768px) {
-    top: 98%;
+    font-size: 13px;
   }
 `;

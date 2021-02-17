@@ -1,6 +1,6 @@
 import React from "react";
 import * as S from "./styles";
-import * as GS from "../../assets/styles/GlobalStyles";
+import * as GS from "assets/styles/GlobalStyles";
 
 const NotFoundPage = () => {
   return (
