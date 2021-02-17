@@ -2,7 +2,7 @@ export const SLIDES_TO_SHOW = 6;
 
 export const sliderSettings = {
   slidesToShow: SLIDES_TO_SHOW,
-  dots: true,
+  infinite: false,
   responsive: [
     {
       breakpoint: 1200,
@@ -30,6 +30,7 @@ export const sliderSettings = {
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
+        dots: true,
       },
     },
   ],
