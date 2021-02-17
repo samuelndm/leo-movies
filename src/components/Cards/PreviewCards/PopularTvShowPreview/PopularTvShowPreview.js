@@ -28,7 +28,6 @@ const PopularTvShowPreview = ({ preview }) => {
           <S.Image
             src={imageUrl}
             alt="popular tv show preview poster"
-            aria-hidden="false"
             loading="lazy"
           />
         </UI.LinkHandler>

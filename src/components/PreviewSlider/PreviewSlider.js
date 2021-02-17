@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { SLIDES_TO_SHOW, sliderSettings } from "./previewSliderSettings";
+import { SLIDES_TO_SHOW, sliderSettings } from "./PreviewSliderSettings";
 import * as UTIL from "utils/utils";
 import * as S from "./styles";
 import * as UI from "components/UIComponents";
@@ -20,7 +20,6 @@ const PreviewSlider = ({ previews, PreviewCard }) => {
         {content.map((preview, index) => (
           <PreviewCard
             preview={preview}
-            aria-hidden="false"
             aria-modal="true"
             key={`preview-${preview?.id || index}`}
           />

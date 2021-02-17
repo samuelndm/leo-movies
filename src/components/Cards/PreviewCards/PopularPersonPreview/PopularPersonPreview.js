@@ -28,7 +28,6 @@ const PopularPersonPreview = ({ preview }) => {
           <S.Image
             src={imageUrl}
             alt="popular person preview poster"
-            aria-hidden="false"
             loading="lazy"
           />
         </UI.LinkHandler>
