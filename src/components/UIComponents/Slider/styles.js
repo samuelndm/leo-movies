@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const SliderStyle = { width: "100%", maxWidth: "100%" };
 
-const DefaultArrowStyle = styled.div`
+const DefaultArrowStyle = styled.button`
   z-index: 2;
   width: 40px;
   height: 40px;

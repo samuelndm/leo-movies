@@ -8,18 +8,34 @@ import * as S from "./styles";
 const PrevArrow = (props) => {
   const { className, onClick, CustomPrevArrow } = props;
   return CustomPrevArrow ? (
-    <CustomPrevArrow className={className} onClick={onClick} />
+    <CustomPrevArrow
+      className={className}
+      aria-label='previous slide'
+      onClick={onClick}
+    />
   ) : (
-    <S.DefaultPrevArrow className={className} onClick={onClick} />
+    <S.DefaultPrevArrow
+      className={className}
+      aria-label='previous slide'
+      onClick={onClick}
+    />
   );
 };
 
 const NextArrow = (props) => {
   const { className, onClick, CustomNextArrow } = props;
   return CustomNextArrow ? (
-    <CustomNextArrow className={className} onClick={onClick} />
+    <CustomNextArrow
+      className={className}
+      aria-label='next slide'
+      onClick={onClick}
+    />
   ) : (
-    <S.DefaultNextArrow className={className} onClick={onClick} />
+    <S.DefaultNextArrow
+      className={className}
+      aria-label='next slide'
+      onClick={onClick}
+    />
   );
 };
 

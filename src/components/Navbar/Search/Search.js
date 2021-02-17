@@ -38,7 +38,7 @@ const Search = () => {
     <S.Form isVisible={isVisible} onSubmit={handleSubmit}>
       <S.Input
         type='search'
-        aria-labelledby='search input'
+        aria-label='search input'
         placeholder='Search'
         isVisible={isVisible}
         onChange={(e) => setKeyword(e.target.value)}
@@ -46,7 +46,7 @@ const Search = () => {
 
       <S.Button
         type='submit'
-        aria-label='search'
+        aria-label='search button'
         isVisible={isVisible}
         onClick={toggleVisibility}
       >
