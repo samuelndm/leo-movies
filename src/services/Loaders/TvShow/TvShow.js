@@ -13,15 +13,27 @@ export const loadTvShowDetailsById = async (id, params) => {
   }
 };
 
-export const loadPopularTvShows = async (params) => {
+export const loadTvShowsList = async (params) => {
   try {
-    const { data } = await API_ENDPOINTS.getPopularTvShows(params);
-    return data?.results || [];
+    const { data } = await API_ENDPOINTS.getTvShowsList(params);
+    return data || {};
   } catch (err) {
     console.error(err);
     createDangerNotification({ message: err?.response?.data?.status_message });
 
-    return [];
+    return {};
+  }
+};
+
+export const loadPopularTvShows = async (params) => {
+  try {
+    const { data } = await API_ENDPOINTS.getPopularTvShows(params);
+    return data || {};
+  } catch (err) {
+    console.error(err);
+    createDangerNotification({ message: err?.response?.data?.status_message });
+
+    return {};
   }
 };
 

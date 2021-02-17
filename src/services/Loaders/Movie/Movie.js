@@ -13,15 +13,27 @@ export const loadMovieDetailsById = async (id, params) => {
   }
 };
 
-export const loadPopularMovies = async (params) => {
+export const loadMoviesList = async (params) => {
   try {
-    const { data } = await API_ENDPOINTS.getPopularMovies(params);
-    return data?.results || [];
+    const { data } = await API_ENDPOINTS.getMoviesList(params);
+    return data || {};
   } catch (err) {
     console.error(err);
     createDangerNotification({ message: err?.response?.data?.status_message });
 
-    return [];
+    return {};
+  }
+};
+
+export const loadPopularMovies = async (params) => {
+  try {
+    const { data } = await API_ENDPOINTS.getPopularMovies(params);
+    return data || {};
+  } catch (err) {
+    console.error(err);
+    createDangerNotification({ message: err?.response?.data?.status_message });
+
+    return {};
   }
 };
 

@@ -18,9 +18,9 @@ const HomePage = () => {
       API.loadPopularPersons(params),
     ]);
 
-    const movies = allResponses[0];
-    const tvShows = allResponses[1];
-    const persons = allResponses[2];
+    const movies = allResponses[0]?.results || [];
+    const tvShows = allResponses[1].results || [];
+    const persons = allResponses[2].results || [];
 
     setPopularMovies(movies);
     setTopularTvShows(tvShows);

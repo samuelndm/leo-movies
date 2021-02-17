@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import Skeleton from "@material-ui/lab/Skeleton";
 import placeholder from "assets/images/placeholder.jpg";
+import { IMAGE_SIZES } from "utils/constants";
 import * as S from "./styles";
 import * as UI from "components/UIComponents";
 
@@ -13,7 +14,7 @@ const PopularPersonPreview = ({ preview }) => {
       if (preview) {
         setImageUrl(
           preview.profile_path
-            ? `${process.env.REACT_APP_API_IMAGES}${preview.profile_path}`
+            ? `${process.env.REACT_APP_API_IMAGES}/${IMAGE_SIZES.WIDTH_300}/${preview.profile_path}`
             : placeholder
         );
       }

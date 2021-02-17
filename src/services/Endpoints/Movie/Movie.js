@@ -6,6 +6,12 @@ export const getMovieDetailsById = (id, params = {}) => {
   });
 };
 
+export const getMoviesList = (params = {}) => {
+  return api.get(`movie/items`, {
+    params: { ...params },
+  });
+};
+
 export const getPopularMovies = (params = {}) => {
   return api.get("movie/popular", {
     params: { ...params },

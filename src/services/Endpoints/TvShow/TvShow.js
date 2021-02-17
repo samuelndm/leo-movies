@@ -6,6 +6,12 @@ export const getTvShowDetailsById = (id, params = {}) => {
   });
 };
 
+export const getTvShowsList = (params = {}) => {
+  return api.get(`tv/items`, {
+    params: { ...params },
+  });
+};
+
 export const getPopularTvShows = (params = {}) => {
   return api.get("tv/popular", {
     params: { ...params },

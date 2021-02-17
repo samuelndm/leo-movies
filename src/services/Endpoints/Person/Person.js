@@ -6,6 +6,12 @@ export const getPersonDetailsById = (id, params = {}) => {
   });
 };
 
+export const getPersonsList = (params = {}) => {
+  return api.get(`person/items`, {
+    params: { ...params },
+  });
+};
+
 export const getPopularPersons = (params = {}) => {
   return api.get("person/popular", {
     params: { ...params },
