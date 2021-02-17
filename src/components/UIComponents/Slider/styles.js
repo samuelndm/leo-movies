@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const SliderStyle = { width: "100%", maxWidth: "100%" };
 
-const DefaultArrowStyle = styled.button`
+export const DefaultArrowStyle = styled.button`
   z-index: 2;
   width: 40px;
   height: 40px;
@@ -14,7 +14,9 @@ const DefaultArrowStyle = styled.button`
   align-items: center;
   justify-content: center;
 
-  &:hover {
+  &:hover,
+  &:active,
+  &:focus {
     background-color: #cdcbcb;
   }
 
@@ -25,38 +27,6 @@ const DefaultArrowStyle = styled.button`
     font-family: "Font Awesome 5 Free";
     font-weight: 700;
     text-align: center;
-  }
-`;
-
-export const DefaultPrevArrow = styled(DefaultArrowStyle)`
-  left: -3%;
-
-  &:before {
-    content: "\f104";
-  }
-
-  @media screen and (max-width: 768px) {
-    left: -1%;
-  }
-
-  @media screen and (max-width: 575px) {
-    left: -2%;
-  }
-`;
-
-export const DefaultNextArrow = styled(DefaultArrowStyle)`
-  right: -3%;
-
-  &:before {
-    content: "\f105";
-  }
-
-  @media screen and (max-width: 768px) {
-    right: -1%;
-  }
-
-  @media screen and (max-width: 575px) {
-    right: -2%;
   }
 `;
 
