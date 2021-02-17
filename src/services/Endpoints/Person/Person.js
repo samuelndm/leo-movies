@@ -1,13 +1,19 @@
 import api from "services/api";
 
-export const getPopularPersons = (params = {}) => {
-  return api.get("3/person/popular", {
+export const getPersonDetailsById = (id, params = {}) => {
+  return api.get(`person/${id}`, {
     params: { ...params },
   });
 };
 
-export const getPersonById = (id, params = {}) => {
-  return api.get(`3/person/${id}/images`, {
+export const getPopularPersons = (params = {}) => {
+  return api.get("person/popular", {
+    params: { ...params },
+  });
+};
+
+export const getPersonImagesById = (id, params = {}) => {
+  return api.get(`person/${id}/images`, {
     params: { ...params },
   });
 };

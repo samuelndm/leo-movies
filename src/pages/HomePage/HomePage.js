@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import * as Service from "services/Loaders";
+import * as API from "services/Loaders";
 import * as GS from "assets/styles/GlobalStyles";
 import * as C from "components";
 
@@ -12,9 +12,15 @@ const HomePage = () => {
   });
 
   const loadData = async (params) => {
-    const movies = await Service.loadPopularMovies(params);
-    const tvShows = await Service.loadPopularTvShows(params);
-    const persons = await Service.loadPopularPersons(params);
+    const allResponses = await Promise.all([
+      API.loadPopularMovies(params),
+      API.loadPopularTvShows(params),
+      API.loadPopularPersons(params),
+    ]);
+
+    const movies = allResponses[0];
+    const tvShows = allResponses[1];
+    const persons = allResponses[2];
 
     setPopularMovies(movies);
     setTopularTvShows(tvShows);

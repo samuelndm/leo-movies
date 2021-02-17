@@ -1,13 +1,19 @@
 import api from "services/api";
 
+export const getTvShowDetailsById = (id, params = {}) => {
+  return api.get(`tv/${id}`, {
+    params: { ...params },
+  });
+};
+
 export const getPopularTvShows = (params = {}) => {
-  return api.get("3/tv/popular", {
+  return api.get("tv/popular", {
     params: { ...params },
   });
 };
 
 export const getTvShowImagesById = (id, params = {}) => {
-  return api.get(`3/tv/${id}/images`, {
+  return api.get(`tv/${id}/images`, {
     params: { ...params },
   });
 };
