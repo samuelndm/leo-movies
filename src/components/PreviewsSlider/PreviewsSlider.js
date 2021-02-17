@@ -30,7 +30,7 @@ const PreviewsSlider = ({ previews, PreviewCard }) => {
 
 PreviewsSlider.propTypes = {
   previews: PropTypes.array,
-  PreviewCard: PropTypes.element,
+  PreviewCard: PropTypes.func,
 };
 
 export default PreviewsSlider;
