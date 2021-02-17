@@ -13,7 +13,7 @@ const PopularPersons = ({ persons }) => {
     <S.Container>
       <GS.ContainerTitle>Most Popular Persons</GS.ContainerTitle>
 
-      <C.PreviewsSlider
+      <C.PreviewSlider
         previews={resizeArray(persons, MAX_AMOUNT)}
         PreviewCard={Card.PopularPersonPreview}
       />

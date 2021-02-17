@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { SLIDES_TO_SHOW, sliderSettings } from "./previewsSliderSettings";
+import { SLIDES_TO_SHOW, sliderSettings } from "./previewSliderSettings";
 import * as UTIL from "utils/utils";
 import * as S from "./styles";
 import * as UI from "components/UIComponents";
 
-const PreviewsSlider = ({ previews, PreviewCard }) => {
+const PreviewSlider = ({ previews, PreviewCard }) => {
   const [content, setContent] = useState(UTIL.createEmptyArray(SLIDES_TO_SHOW));
 
   useEffect(() => {
@@ -28,9 +28,9 @@ const PreviewsSlider = ({ previews, PreviewCard }) => {
   );
 };
 
-PreviewsSlider.propTypes = {
+PreviewSlider.propTypes = {
   previews: PropTypes.array,
   PreviewCard: PropTypes.func,
 };
 
-export default PreviewsSlider;
+export default PreviewSlider;
