@@ -23,7 +23,7 @@ const Modal = ({ openModal, closeModal, children, size }) => {
   return (
     <S.Container>
       <S.Content size={size} isOpen={isOpen}>
-        <S.CloseButton onClick={(e) => handleCloseModal(e)}>
+        <S.CloseButton aria-label='close' onClick={(e) => handleCloseModal(e)}>
           <S.CloseIcon className='fas fa-times' />
         </S.CloseButton>
 
