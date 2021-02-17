@@ -1,35 +1,33 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import Skeleton from "@material-ui/lab/Skeleton";
-import placeholder from "assets/images/placeholder.jpg";
+import placeholder from "assets/images/vertical-placeholder.png";
 import { IMAGE_SIZES } from "utils/constants";
 import * as S from "./styles";
 import * as UI from "components/UIComponents";
 
-const PopularTvShowPreview = ({ preview }) => {
+const PreviewPopularTvShow = ({ preview }) => {
+  const [baseUrl] = useState(`${process.env.REACT_APP_API_IMAGES}`);
+  const [imageSize] = useState(`/${IMAGE_SIZES.POSTER_SIZES.WIDTH_780}`);
   const [imageUrl, setImageUrl] = useState("");
 
   useEffect(() => {
     setTimeout(() => {
       if (preview) {
-        setImageUrl(
-          preview.poster_path
-            ? `${process.env.REACT_APP_API_IMAGES}/${IMAGE_SIZES.POSTER_SIZES.WIDTH_780}${preview.poster_path}`
-            : placeholder
-        );
+        const url = preview.poster_path
+          ? `${baseUrl}${imageSize}${preview.poster_path}`
+          : placeholder;
+
+        setImageUrl(url);
       }
     }, [1000]);
-  }, [preview]);
+  }, [preview, baseUrl, imageSize]);
 
   return (
     <S.Container>
       {imageUrl ? (
         <UI.LinkHandler url={`/tv/${preview.id}`}>
-          <S.Image
-            src={imageUrl}
-            alt="popular tv show preview poster"
-            loading="lazy"
-          />
+          <S.Image src={imageUrl} alt="popular tv show preview poster" />
         </UI.LinkHandler>
       ) : (
         <Skeleton className="skeleton-body" variant="rect" animation="wave" />
@@ -37,8 +35,9 @@ const PopularTvShowPreview = ({ preview }) => {
     </S.Container>
   );
 };
-PopularTvShowPreview.propTypes = {
-  tvShow: PropTypes.object,
+
+PreviewPopularTvShow.propTypes = {
+  preview: PropTypes.object,
 };
 
-export default PopularTvShowPreview;
+export default PreviewPopularTvShow;

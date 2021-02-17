@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin: 0 auto;
+  margin: 15px;
   width: 150px;
   height: 225px;
   border-radius: 6px;
@@ -14,6 +14,7 @@ export const Container = styled.div`
   }
 
   @media screen and (max-width: 575px) {
+    margin: 15px auto;
     width: 225px;
     height: 337.5px;
   }

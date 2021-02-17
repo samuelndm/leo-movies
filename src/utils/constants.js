@@ -43,6 +43,7 @@ export const IMAGE_SIZES = {
     WIDTH_154: "w154",
     WIDTH_185: "w185",
     WIDTH_632: "w632",
+    WIDTH_780: "w780",
   },
 
   STILL_SIZES: {

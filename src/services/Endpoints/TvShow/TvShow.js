@@ -7,7 +7,7 @@ export const getTvShowDetailsById = (id, params = {}) => {
 };
 
 export const getTvShowsList = (params = {}) => {
-  return api.get(`tv/items`, {
+  return api.get(`discover/tv`, {
     params: { ...params },
   });
 };

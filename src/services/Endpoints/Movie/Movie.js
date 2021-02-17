@@ -7,7 +7,7 @@ export const getMovieDetailsById = (id, params = {}) => {
 };
 
 export const getMoviesList = (params = {}) => {
-  return api.get(`movie/items`, {
+  return api.get(`discover/movie`, {
     params: { ...params },
   });
 };

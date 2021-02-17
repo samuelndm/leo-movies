@@ -19,8 +19,8 @@ const HomePage = () => {
     ]);
 
     const movies = allResponses[0]?.results || [];
-    const tvShows = allResponses[1].results || [];
-    const persons = allResponses[2].results || [];
+    const tvShows = allResponses[1]?.results || [];
+    const persons = allResponses[2]?.results || [];
 
     setPopularMovies(movies);
     setTopularTvShows(tvShows);

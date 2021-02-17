@@ -13,18 +13,6 @@ export const loadPersonDetailsById = async (id, params) => {
   }
 };
 
-export const loadPersonsList = async (params) => {
-  try {
-    const { data } = await API_ENDPOINTS.getPersonsList(params);
-    return data || {};
-  } catch (err) {
-    console.error(err);
-    createDangerNotification({ message: err?.response?.data?.status_message });
-
-    return {};
-  }
-};
-
 export const loadPopularPersons = async (params) => {
   try {
     const { data } = await API_ENDPOINTS.getPopularPersons(params);

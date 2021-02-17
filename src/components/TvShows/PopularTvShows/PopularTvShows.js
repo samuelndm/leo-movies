@@ -1,12 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { resizeArray } from "utils/utils";
 import * as S from "./styles";
 import * as GS from "assets/styles/GlobalStyles";
 import * as C from "components";
 import * as Card from "components/Cards";
-
-const MAX_AMOUNT = 9;
 
 const PopularTvShows = ({ tvShows }) => {
   return (
@@ -14,8 +11,8 @@ const PopularTvShows = ({ tvShows }) => {
       <GS.ContainerTitle>Most Popular TvShows</GS.ContainerTitle>
 
       <C.PreviewSlider
-        previews={resizeArray(tvShows, MAX_AMOUNT)}
-        PreviewCard={Card.PopularTvShowPreview}
+        previews={tvShows}
+        PreviewCard={Card.PreviewPopularTvShow}
       />
     </S.Container>
   );

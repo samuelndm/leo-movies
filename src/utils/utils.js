@@ -62,7 +62,7 @@ export const resizeArray = (array, maxAmount) => {
 
   if (array && array.length && Number.isInteger(maxAmount)) {
     array.forEach((item, index) => {
-      if (index <= maxAmount) {
+      if (index < maxAmount) {
         newArray.push(item);
       }
     });

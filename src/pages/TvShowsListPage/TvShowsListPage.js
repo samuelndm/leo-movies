@@ -4,9 +4,9 @@ import * as GS from "assets/styles/GlobalStyles";
 import * as C from "components";
 import * as UI from "components/UIComponents";
 
-const MoviesListPage = () => {
+const TvShowsListPage = () => {
   const itemsPerPage = 20;
-  const [movies, setMovies] = useState([]);
+  const [tvShows, setTvShows] = useState([]);
   const [page, setPage] = useState(1);
   const [params] = useState({
     page,
@@ -14,8 +14,8 @@ const MoviesListPage = () => {
   });
 
   const loadData = async (params) => {
-    const movies = await API.loadMoviesList(params);
-    setMovies(movies?.results || []);
+    const tvShows = await API.loadTvShowsList(params);
+    setTvShows(tvShows?.results || []);
   };
 
   useEffect(() => {
@@ -24,16 +24,16 @@ const MoviesListPage = () => {
 
   return (
     <GS.PageContainer>
-      <C.MoviesList movies={movies} />
+      <C.TvShowsList tvShows={tvShows} />
 
       <UI.Pagination
         itemsPerPage={itemsPerPage}
         initialPage={page}
         setCurrentPage={setPage}
-        totalItems={movies.length}
+        totalItems={tvShows.length}
       />
     </GS.PageContainer>
   );
 };
 
-export default MoviesListPage;
+export default TvShowsListPage;
