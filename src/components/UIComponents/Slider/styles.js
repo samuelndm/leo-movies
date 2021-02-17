@@ -66,18 +66,26 @@ export const Dots = styled.ul`
   list-style-type: none;
 
   & li {
-    margin: 0 2px;
+    margin: 0 2.5px;
+  }
+
+  & li > button {
+    width: 48px;
+    height: 48px;
   }
 
   & li button:before {
     color: var(--primary-color, #000);
+    width: 100%;
+    height: 100%;
     font-size: 13px;
   }
 
   & li.slick-active button:before {
     opacity: 1;
     color: var(--secondary-color, #00368a);
-
     font-size: 13px;
+    width: 100%;
+    height: 100%;
   }
 `;
