@@ -11,14 +11,12 @@ const PrevArrow = (props) => {
     <CustomPrevArrow
       className={className}
       aria-label="previous slide"
-      aria-hidden="true"
       onClick={onClick}
     />
   ) : (
     <S.DefaultPrevArrow
       className={className}
       aria-label="previous slide"
-      aria-hidden="true"
       onClick={onClick}
     />
   );
@@ -30,14 +28,12 @@ const NextArrow = (props) => {
     <CustomNextArrow
       className={className}
       aria-label="next slide"
-      aria-hidden="true"
       onClick={onClick}
     />
   ) : (
     <S.DefaultNextArrow
       className={className}
       aria-label="next slide"
-      aria-hidden="true"
       onClick={onClick}
     />
   );

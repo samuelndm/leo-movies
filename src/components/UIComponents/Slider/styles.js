@@ -14,7 +14,8 @@ const DefaultArrowStyle = styled.button`
   align-items: center;
   justify-content: center;
 
-  &:hover, &:active, &:focus {
+  &:hover,
+  &:active {
     background-color: #cdcbcb;
   }
 
