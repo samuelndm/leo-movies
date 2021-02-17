@@ -7,7 +7,7 @@ const Logo = () => {
   return (
     <S.Container>
       <UI.LinkHandler url='/'>
-        <S.Image src={logo} alt='logo do site' />
+        <S.Image src={logo} alt="website's logo" loading='lazy' />
       </UI.LinkHandler>
     </S.Container>
   );

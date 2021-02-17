@@ -22,7 +22,11 @@ const PopularPersonPreview = ({ preview }) => {
   return (
     <S.Container>
       {imageUrl ? (
-        <S.Image src={imageUrl} alt='popular person preview poster' />
+        <S.Image
+          src={imageUrl}
+          alt='popular person preview poster'
+          loading='lazy'
+        />
       ) : (
         <Skeleton className='skeleton-body' variant='rect' animation='wave' />
       )}
