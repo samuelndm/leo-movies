@@ -21,6 +21,7 @@ const PreviewSlider = ({ previews, PreviewCard }) => {
           <PreviewCard
             preview={preview}
             aria-hidden="false"
+            aria-modal="true"
             key={`preview-${preview?.id || index}`}
           />
         ))}

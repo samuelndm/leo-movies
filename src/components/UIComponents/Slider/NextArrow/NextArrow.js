@@ -6,14 +6,12 @@ const NextArrow = ({ className, onClick, CustomNextArrow }) => {
     <CustomNextArrow
       className={className}
       aria-label="next slide"
-      aria-hidden="false"
       onClick={onClick}
     />
   ) : (
     <S.DefaultNextArrow
       className={className}
       aria-label="next slide"
-      aria-hidden="false"
       onClick={onClick}
     />
   );

@@ -6,14 +6,12 @@ const PrevArrow = ({ className, onClick, CustomPrevArrow }) => {
     <CustomPrevArrow
       className={className}
       aria-label="previous slide"
-      aria-hidden="false"
       onClick={onClick}
     />
   ) : (
     <S.DefaultPrevArrow
       className={className}
       aria-label="previous slide"
-      aria-hidden="false"
       onClick={onClick}
     />
   );
