@@ -10,15 +10,10 @@ export const Container = styled.div`
 export const Image = styled.img`
   width: auto;
   height: auto;
-  max-width: 170px;
+  max-width: 190px;
   max-height: calc(var(--navbar-height) - 20px);
 
-  @media screen and (max-width: 768px) {
-    max-width: 130px;
-    max-height: calc(var(--navbar-height));
-  }
-
-  @media screen and (max-width: 360px) {
-    max-width: 100px;
+  @media screen and (max-width: 991px) {
+    padding: 0 0;
   }
 `;

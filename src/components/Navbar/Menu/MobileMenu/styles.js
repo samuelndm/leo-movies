@@ -9,13 +9,17 @@ export const Container = styled.div`
 `;
 
 export const Icon = styled.i`
-  padding: 20px;
+  padding: 15px;
   font-size: 20px;
   color: #fff;
   background: transparent;
   border: none;
   border-radius: 50%;
   cursor: pointer;
+
+  @media screen and (max-width: 300px) {
+    padding: 10px 5px;
+  }
 `;
 
 export const Menu = styled.div`
@@ -24,7 +28,7 @@ export const Menu = styled.div`
   width: 100%;
   height: 100vh;
   position: fixed;
-  top: var(--navbar-height);
+  top: calc(var(--navbar-height) + 25px);
   right: 0;
   transform: ${({ isVisible }) =>
     isVisible ? "translateX(0%)" : "translateX(200%)"};

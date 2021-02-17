@@ -3,7 +3,9 @@ import { ResponsiveContainer } from "assets/styles/GlobalStyles";
 
 export const Container = styled.div`
   z-index: 100;
+  padding: 15px 0;
   width: 100%;
+  height: auto;
   min-height: var(--navbar-height);
   position: fixed;
   left: 0%;
