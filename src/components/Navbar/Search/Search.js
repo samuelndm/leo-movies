@@ -38,12 +38,18 @@ const Search = () => {
     <S.Form isVisible={isVisible} onSubmit={handleSubmit}>
       <S.Input
         type='search'
+        aria-labelledby='search input'
         placeholder='Search'
         isVisible={isVisible}
         onChange={(e) => setKeyword(e.target.value)}
       />
 
-      <S.Button isVisible={isVisible} type='submit' onClick={toggleVisibility}>
+      <S.Button
+        type='submit'
+        aria-label='search'
+        isVisible={isVisible}
+        onClick={toggleVisibility}
+      >
         <S.Icon isVisible={isVisible} className='fas fa-search' />
       </S.Button>
     </S.Form>
