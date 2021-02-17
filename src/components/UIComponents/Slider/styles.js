@@ -29,7 +29,7 @@ const DefaultArrowStyle = styled.button`
 `;
 
 export const DefaultPrevArrow = styled(DefaultArrowStyle)`
-  left: -5%;
+  left: -3%;
 
   &:before {
     content: "\f104";
@@ -45,7 +45,7 @@ export const DefaultPrevArrow = styled(DefaultArrowStyle)`
 `;
 
 export const DefaultNextArrow = styled(DefaultArrowStyle)`
-  right: -5%;
+  right: -3%;
 
   &:before {
     content: "\f105";
