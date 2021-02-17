@@ -14,7 +14,7 @@ const PopularPersonPreview = ({ preview }) => {
       if (preview) {
         setImageUrl(
           preview.profile_path
-            ? `${process.env.REACT_APP_API_IMAGES}/${IMAGE_SIZES.WIDTH_500}${preview.profile_path}`
+            ? `${process.env.REACT_APP_API_IMAGES}/${IMAGE_SIZES.POSTER_SIZES.WIDTH_780}${preview.profile_path}`
             : placeholder
         );
       }

@@ -14,7 +14,7 @@ const PopularTvShowPreview = ({ preview }) => {
       if (preview) {
         setImageUrl(
           preview.poster_path
-            ? `${process.env.REACT_APP_API_IMAGES}/${IMAGE_SIZES.WIDTH_500}${preview.poster_path}`
+            ? `${process.env.REACT_APP_API_IMAGES}/${IMAGE_SIZES.POSTER_SIZES.WIDTH_780}${preview.poster_path}`
             : placeholder
         );
       }
