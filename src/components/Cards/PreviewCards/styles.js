@@ -24,6 +24,7 @@ export const Container = styled.div`
     margin: 15px auto 0;
     width: 225px;
     height: 440px;
+    align-items: center;
 
     & > .skeleton-body {
       width: 225px;
@@ -88,9 +89,18 @@ export const Title = styled.h2`
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+
+  @media screen and (max-width: 575px) {
+    text-align: center;
+  }
 `;
 
 export const ReleaseDate = styled.span`
   color: rgba(0, 0, 0, 0.6);
   font-size: 14px;
+  text-align: left;
+
+  @media screen and (max-width: 575px) {
+    text-align: center;
+  }
 `;
