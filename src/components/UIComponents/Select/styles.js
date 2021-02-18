@@ -12,6 +12,9 @@ export const Container = styled.div`
   & .css-yk16xz-control {
     width: 100%;
     border-radius: 18px;
+  }
+
+  & .css-yk16xz-control {
     box-shadow: inset 1px 1px 3px 0 rgba(79, 82, 88, 0.34);
     border: none;
   }
