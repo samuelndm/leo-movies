@@ -25,7 +25,7 @@ export const getTvShowImagesById = (id, params = {}) => {
 };
 
 export const getSearchedTvShows = (params = {}) => {
-  return api.get(`search/tv/`, {
+  return api.get(`search/tv`, {
     params: { ...params },
   });
 };

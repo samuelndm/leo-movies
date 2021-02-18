@@ -19,7 +19,7 @@ export const getPersonImagesById = (id, params = {}) => {
 };
 
 export const getSearchedPerson = (params = {}) => {
-  return api.get(`search/person/`, {
+  return api.get(`search/person`, {
     params: { ...params },
   });
 };
