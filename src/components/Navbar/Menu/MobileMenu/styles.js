@@ -28,7 +28,7 @@ export const Menu = styled.div`
   width: 100%;
   height: 100vh;
   position: fixed;
-  top: calc(var(--navbar-height) + 25px);
+  top: var(--navbar-height);
   right: 0;
   transform: ${({ isVisible }) =>
     isVisible ? "translateX(0%)" : "translateX(200%)"};
