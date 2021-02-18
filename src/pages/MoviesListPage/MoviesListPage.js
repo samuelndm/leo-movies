@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { SORT_BY } from "utils/constants";
 import * as API from "services/Loaders";
 import * as GS from "assets/styles/GlobalStyles";
 import * as C from "components";
@@ -11,7 +12,7 @@ const MoviesListPage = () => {
   const [page, setPage] = useState(1);
   const [params, setParams] = useState({
     page,
-    sort_by: "title.asc",
+    sort_by: SORT_BY.POPULARITY_DESC,
   });
 
   const loadData = async (params) => {
