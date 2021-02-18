@@ -23,7 +23,7 @@ const PersonsListPage = () => {
 
   return (
     <GS.PageContainer>
-      <GS.PageTitle>Most Popular Persons</GS.PageTitle>
+      <GS.PageTitle>Popular People</GS.PageTitle>
 
       <C.PersonsList persons={persons} />
 

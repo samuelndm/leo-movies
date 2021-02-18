@@ -19,6 +19,41 @@ export const SORT_BY = {
   VOTE_COUNT_DESC: "vote_count.desc",
 };
 
+export const SORT_BY_LIST = [
+  {
+    label: "Popularity Descending",
+    value: SORT_BY.POPULARITY_DESC,
+  },
+  {
+    label: "Popularity Ascending",
+    value: SORT_BY.POPULARITY_ASC,
+  },
+  {
+    label: "Title (A-Z)",
+    value: SORT_BY.TITLE_ASC,
+  },
+  {
+    label: "Title (Z-A)",
+    value: SORT_BY.TITLE_DESC,
+  },
+  {
+    label: "Rating Descending",
+    value: SORT_BY.VOTE_AVERAGE_DESC,
+  },
+  {
+    label: "Rating Ascending",
+    value: SORT_BY.VOTE_AVERAGE_ASC,
+  },
+  {
+    label: "Release Date Descending",
+    value: SORT_BY.RELEASE_DATE_DESC,
+  },
+  {
+    label: "Release Date Ascending",
+    value: SORT_BY.RELEASE_DATE_ASC,
+  },
+];
+
 export const IMAGE_SIZES = {
   ORIGINAL: "original",
 

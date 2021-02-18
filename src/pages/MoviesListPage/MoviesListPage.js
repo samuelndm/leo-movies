@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { SORT_BY } from "utils/constants";
+import { SORT_BY, SORT_BY_LIST } from "utils/constants";
 import * as API from "services/Loaders";
 import * as GS from "assets/styles/GlobalStyles";
 import * as C from "components";
@@ -10,9 +10,10 @@ const MoviesListPage = () => {
   const [movies, setMovies] = useState([]);
   const [totalItems, setTotalItems] = useState(0);
   const [page, setPage] = useState(1);
+  const [sortBy, setSortBy] = useState(SORT_BY.POPULARITY_DESC);
   const [params, setParams] = useState({
     page,
-    sort_by: SORT_BY.POPULARITY_DESC,
+    sort_by: sortBy,
   });
 
   const loadData = async (params) => {
@@ -27,12 +28,19 @@ const MoviesListPage = () => {
   }, [params]);
 
   useEffect(() => {
-    setParams((params) => ({ ...params, page }));
-  }, [page]);
+    setParams((params) => ({ ...params, page, sort_by: sortBy }));
+  }, [page, sortBy]);
 
   return (
     <GS.PageContainer>
       <GS.PageTitle>Movies</GS.PageTitle>
+
+      <UI.Select
+        options={SORT_BY_LIST}
+        defaultValue={sortBy}
+        label="Sort Results By"
+        onChange={setSortBy}
+      />
 
       <C.MoviesList movies={movies} />
 
