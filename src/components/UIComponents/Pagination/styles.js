@@ -5,6 +5,7 @@ export const Container = styled.div`
   width: 100%;
   max-width: 100%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   overflow: hidden;
