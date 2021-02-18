@@ -13,7 +13,7 @@ const TvShowDetailsPage = ({ match }) => {
   };
 
   useEffect(() => {
-    loadData(tvShowId);
+    return loadData(tvShowId);
   }, [tvShowId]);
 
   return (

@@ -13,7 +13,7 @@ const PersonDetailsPage = ({ match }) => {
   };
 
   useEffect(() => {
-    loadData(personId);
+    return loadData(personId);
   }, [personId]);
 
   return (

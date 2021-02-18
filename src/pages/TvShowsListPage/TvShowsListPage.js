@@ -32,11 +32,11 @@ const TvShowsListPage = () => {
   };
 
   useEffect(() => {
-    loadData(params);
+    return loadData(params);
   }, [params]);
 
   useEffect(() => {
-    setParams((params) => ({
+    return setParams((params) => ({
       ...params,
       page,
       sort_by: sortBy,

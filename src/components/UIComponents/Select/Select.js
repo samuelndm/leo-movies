@@ -8,7 +8,7 @@ const Select = ({
   defaultValue,
   label,
   onChange,
-  isSearchable,
+  isSearchable = false,
   isClearable,
 }) => {
   const [customOptions, setCustomOptions] = useState([]);

@@ -13,7 +13,7 @@ const MovieDetailsPage = ({ match }) => {
   };
 
   useEffect(() => {
-    loadData(movieId);
+    return loadData(movieId);
   }, [movieId]);
 
   return (

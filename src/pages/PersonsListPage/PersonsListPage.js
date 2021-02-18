@@ -29,11 +29,11 @@ const PersonsListPage = () => {
   };
 
   useEffect(() => {
-    loadData(params);
+    return loadData(params);
   }, [params]);
 
   useEffect(() => {
-    setParams((params) => ({
+    return setParams((params) => ({
       ...params,
       page,
       query: searched,

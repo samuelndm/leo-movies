@@ -24,7 +24,7 @@ const HomePage = () => {
   };
 
   useEffect(() => {
-    loadData(params);
+    return loadData(params);
   }, [params]);
 
   return (
