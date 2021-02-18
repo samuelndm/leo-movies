@@ -26,11 +26,20 @@ const PreviewPopularPerson = ({ preview }) => {
   return (
     <S.Container>
       {imageUrl ? (
-        <UI.LinkHandler url={`/person/${preview.id}`}>
-          <S.Image src={imageUrl} alt="popular person preview poster" />
-        </UI.LinkHandler>
+        <>
+          <UI.LinkHandler url={`/person/${preview.id}`}>
+            <S.Image src={imageUrl} alt='person preview poster' />
+          </UI.LinkHandler>
+
+          <S.Popularity popularity={preview?.vote_average}>
+            {preview?.popularity?.toFixed(1) || "NR"}
+          </S.Popularity>
+
+          <S.Title>{preview?.name || "*"}</S.Title>
+          <S.Department>{preview?.known_for_department || "*"}</S.Department>
+        </>
       ) : (
-        <Skeleton className="skeleton-body" variant="rect" animation="wave" />
+        <Skeleton className='skeleton-body' variant='rect' animation='wave' />
       )}
     </S.Container>
   );

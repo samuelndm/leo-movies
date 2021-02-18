@@ -13,4 +13,4 @@ export const Popularity = styled(PreviewDefaultStyles.Popularity)`
 
 export const Title = styled(PreviewDefaultStyles.Title)``;
 
-export const ReleaseDate = styled(PreviewDefaultStyles.ReleaseDate)``;
+export const Department = styled(PreviewDefaultStyles.ReleaseDate)``;

@@ -36,7 +36,7 @@ const PreviewPerson = ({ preview }) => {
           </S.Popularity>
 
           <S.Title>{preview?.name || "*"}</S.Title>
-          <S.ReleaseDate>{preview?.release_date || "*"}</S.ReleaseDate>
+          <S.Department>{preview?.known_for_department || "*"}</S.Department>
         </>
       ) : (
         <Skeleton className='skeleton-body' variant='rect' animation='wave' />
