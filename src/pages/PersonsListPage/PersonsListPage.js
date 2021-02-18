@@ -7,29 +7,31 @@ import * as UI from "components/UIComponents";
 const PersonsListPage = () => {
   const itemsPerPage = 20;
   const [persons, setPersons] = useState([]);
+  const [totalItems, setTotalItems] = useState(0);
   const [page, setPage] = useState(1);
-  const [params] = useState({
-    page,
-  });
 
-  const loadData = async (params) => {
-    const persons = await API.loadPopularPersons(params);
-    setPersons(persons?.results || []);
+  const loadData = async (page) => {
+    const response = await API.loadPopularPersons({ page });
+
+    setPersons(response?.results || []);
+    setTotalItems(response?.total_results || 0);
   };
 
   useEffect(() => {
-    loadData(params);
-  }, [params]);
+    loadData(page);
+  }, [page]);
 
   return (
     <GS.PageContainer>
+      <GS.PageTitle>Most Popular Persons</GS.PageTitle>
+
       <C.PersonsList persons={persons} />
 
       <UI.Pagination
         itemsPerPage={itemsPerPage}
         initialPage={page}
         setCurrentPage={setPage}
-        totalItems={persons.length}
+        totalItems={totalItems}
       />
     </GS.PageContainer>
   );

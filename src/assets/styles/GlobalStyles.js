@@ -25,6 +25,10 @@ export default createGlobalStyle`
       --secondary-gradient-color: linear-gradient(90deg, #00506E, #032541);
       --background-color: #fff;
       --navbar-height: 127px;
+
+      @media screen and (max-width: 991px) {
+        --navbar-height: 160px;
+      }
     }
 
 `;
@@ -39,6 +43,27 @@ export const PageContainer = styled.div`
   align-items: center;
   justify-content: flex-start;
   background-color: var(--background-color);
+`;
+
+export const PageTitle = styled.h1`
+  margin: 50px auto 10px;
+  padding: 0 15px;
+  width: 100%;
+  color: #333;
+
+  @media (min-width: 480px) {
+    max-width: 728px;
+    text-align: center;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 960px;
+    text-align: left;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
 `;
 
 export const ResponsiveContainer = styled.div`

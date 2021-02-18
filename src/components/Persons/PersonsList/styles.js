@@ -11,4 +11,8 @@ export const Persons = styled.div`
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: flex-start;
+
+  @media screen and (max-width: 991px) {
+    justify-content: center;
+  }
 `;

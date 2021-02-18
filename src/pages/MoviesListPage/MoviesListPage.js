@@ -7,30 +7,39 @@ import * as UI from "components/UIComponents";
 const MoviesListPage = () => {
   const itemsPerPage = 20;
   const [movies, setMovies] = useState([]);
+  const [totalItems, setTotalItems] = useState(0);
   const [page, setPage] = useState(1);
-  const [params] = useState({
+  const [params, setParams] = useState({
     page,
     sort_by: "title.asc",
   });
 
   const loadData = async (params) => {
-    const movies = await API.loadMoviesList(params);
-    setMovies(movies?.results || []);
+    const response = await API.loadMoviesList(params);
+
+    setMovies(response?.results || []);
+    setTotalItems(response?.total_results || 0);
   };
 
   useEffect(() => {
     loadData(params);
   }, [params]);
 
+  useEffect(() => {
+    setParams((params) => ({ ...params, page }));
+  }, [page]);
+
   return (
     <GS.PageContainer>
+      <GS.PageTitle>Movies</GS.PageTitle>
+
       <C.MoviesList movies={movies} />
 
       <UI.Pagination
         itemsPerPage={itemsPerPage}
         initialPage={page}
         setCurrentPage={setPage}
-        totalItems={movies.length}
+        totalItems={totalItems}
       />
     </GS.PageContainer>
   );

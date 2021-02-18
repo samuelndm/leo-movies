@@ -26,11 +26,20 @@ const PreviewPopularTvShow = ({ preview }) => {
   return (
     <S.Container>
       {imageUrl ? (
-        <UI.LinkHandler url={`/tv/${preview.id}`}>
-          <S.Image src={imageUrl} alt="popular tv show preview poster" />
-        </UI.LinkHandler>
+        <>
+          <UI.LinkHandler url={`/tv/${preview.id}`}>
+            <S.Image src={imageUrl} alt='popular tv show preview poster' />
+          </UI.LinkHandler>
+
+          <S.Popularity popularity={preview?.vote_average}>
+            {preview?.vote_average || "NR"}
+          </S.Popularity>
+
+          <S.Title>{preview?.name || "*"}</S.Title>
+          <S.ReleaseDate>{preview?.first_air_date || "*"}</S.ReleaseDate>
+        </>
       ) : (
-        <Skeleton className="skeleton-body" variant="rect" animation="wave" />
+        <Skeleton className='skeleton-body' variant='rect' animation='wave' />
       )}
     </S.Container>
   );

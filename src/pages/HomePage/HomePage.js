@@ -6,7 +6,6 @@ import * as C from "components";
 const HomePage = () => {
   const [popularMovies, setPopularMovies] = useState([]);
   const [popularTvShows, setTopularTvShows] = useState([]);
-  const [popularPersons, setPopularPersons] = useState([]);
   const [params] = useState({
     page: 1,
   });
@@ -15,16 +14,13 @@ const HomePage = () => {
     const allResponses = await Promise.all([
       API.loadPopularMovies(params),
       API.loadPopularTvShows(params),
-      API.loadPopularPersons(params),
     ]);
 
     const movies = allResponses[0]?.results || [];
     const tvShows = allResponses[1]?.results || [];
-    const persons = allResponses[2]?.results || [];
 
     setPopularMovies(movies);
     setTopularTvShows(tvShows);
-    setPopularPersons(persons);
   };
 
   useEffect(() => {
@@ -35,7 +31,6 @@ const HomePage = () => {
     <GS.PageContainer>
       <C.PopularMovies movies={popularMovies} />
       <C.PopularTvShows tvShows={popularTvShows} />
-      <C.PopularPersons persons={popularPersons} />
     </GS.PageContainer>
   );
 };

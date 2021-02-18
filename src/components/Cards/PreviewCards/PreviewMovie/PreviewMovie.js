@@ -23,16 +23,23 @@ const PreviewMovie = ({ preview }) => {
     }, [1000]);
   }, [preview, baseUrl, imageSize]);
 
-  console.log("preview", preview);
-
   return (
     <S.Container>
       {imageUrl ? (
-        <UI.LinkHandler url={`/movie/${preview.id}`}>
-          <S.Image src={imageUrl} alt="movie preview poster" />
-        </UI.LinkHandler>
+        <>
+          <UI.LinkHandler url={`/movie/${preview.id}`}>
+            <S.Image src={imageUrl} alt='movie preview poster' />
+          </UI.LinkHandler>
+
+          <S.Popularity popularity={preview?.vote_average}>
+            {preview?.vote_average || "NR"}
+          </S.Popularity>
+
+          <S.Title>{preview?.title || "*"}</S.Title>
+          <S.ReleaseDate>{preview?.release_date || "*"}</S.ReleaseDate>
+        </>
       ) : (
-        <Skeleton className="skeleton-body" variant="rect" animation="wave" />
+        <Skeleton className='skeleton-body' variant='rect' animation='wave' />
       )}
     </S.Container>
   );

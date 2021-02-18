@@ -7,30 +7,39 @@ import * as UI from "components/UIComponents";
 const TvShowsListPage = () => {
   const itemsPerPage = 20;
   const [tvShows, setTvShows] = useState([]);
+  const [totalItems, setTotalItems] = useState(0);
   const [page, setPage] = useState(1);
-  const [params] = useState({
+  const [params, setParams] = useState({
     page,
     sort_by: "title.asc",
   });
 
   const loadData = async (params) => {
-    const tvShows = await API.loadTvShowsList(params);
-    setTvShows(tvShows?.results || []);
+    const response = await API.loadTvShowsList(params);
+
+    setTvShows(response?.results || []);
+    setTotalItems(response?.total_results || 0);
   };
 
   useEffect(() => {
     loadData(params);
   }, [params]);
 
+  useEffect(() => {
+    setParams((params) => ({ ...params, page }));
+  }, [page]);
+
   return (
     <GS.PageContainer>
+      <GS.PageTitle>Tv Shows</GS.PageTitle>
+
       <C.TvShowsList tvShows={tvShows} />
 
       <UI.Pagination
         itemsPerPage={itemsPerPage}
         initialPage={page}
         setCurrentPage={setPage}
-        totalItems={tvShows.length}
+        totalItems={totalItems}
       />
     </GS.PageContainer>
   );

@@ -8,7 +8,8 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  --pagination-color: ${({ color }) => color || "#31217C"};
+  --pagination-color: ${({ color }) =>
+    color || "var(--primary-color, #31217C)"};
 `;
 
 export const Icon = styled.i`
