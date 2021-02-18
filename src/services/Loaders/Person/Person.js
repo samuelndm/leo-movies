@@ -36,3 +36,15 @@ export const loadPersonImagesById = async (id, params) => {
     return {};
   }
 };
+
+export const loadSearchedPersons = async (params) => {
+  try {
+    const { data } = await API_ENDPOINTS.getSearchedPerson(params);
+    return data || {};
+  } catch (err) {
+    console.error(err);
+    createDangerNotification({ message: err?.response?.data?.status_message });
+
+    return {};
+  }
+};

@@ -23,3 +23,9 @@ export const getMovieImagesById = (id, params = {}) => {
     params: { ...params },
   });
 };
+
+export const getSearchedMovies = (params = {}) => {
+  return api.get(`search/movie/`, {
+    params: { ...params },
+  });
+};

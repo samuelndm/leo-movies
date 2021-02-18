@@ -48,3 +48,15 @@ export const loadMovieImagesById = async (id, params) => {
     return {};
   }
 };
+
+export const loadSearchedMovies = async (params) => {
+  try {
+    const { data } = await API_ENDPOINTS.getSearchedMovies(params);
+    return data || {};
+  } catch (err) {
+    console.error(err);
+    createDangerNotification({ message: err?.response?.data?.status_message });
+
+    return {};
+  }
+};

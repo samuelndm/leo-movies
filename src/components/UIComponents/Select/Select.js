@@ -3,7 +3,14 @@ import PropTypes from "prop-types";
 import CustomSelect from "react-select";
 import * as S from "./styles";
 
-const Select = ({ options, defaultValue, label, onChange, isClearable }) => {
+const Select = ({
+  options,
+  defaultValue,
+  label,
+  onChange,
+  isSearchable,
+  isClearable,
+}) => {
   const [customOptions, setCustomOptions] = useState([]);
 
   useEffect(() => {
@@ -31,7 +38,11 @@ const Select = ({ options, defaultValue, label, onChange, isClearable }) => {
         value={customOptions.find((option) => option.value === defaultValue)}
         isDisabled={!customOptions.length}
         isClearable={isClearable}
+        isSearchable={isSearchable}
         onChange={(e) => onChange((e && e.value) || "")}
+        components={{
+          IndicatorSeparator: () => null,
+        }}
       />
     </S.Container>
   );
@@ -39,8 +50,10 @@ const Select = ({ options, defaultValue, label, onChange, isClearable }) => {
 
 Select.propTypes = {
   options: PropTypes.array,
+  defaultValue: PropTypes.any,
   label: PropTypes.string,
   onChange: PropTypes.func.isRequired,
+  isSearchable: PropTypes.bool,
   isClearable: PropTypes.bool,
 };
 

@@ -93,3 +93,45 @@ export const ContainerTitle = styled.h2`
     text-align: center;
   }
 `;
+
+export const PageOptions = styled(ResponsiveContainer)`
+  margin: 30px 0 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const FlexContainer = styled.div`
+  width: ${({ width }) => width || "100%"};
+  display: flex;
+  flex-wrap: wrap;
+  align-items: ${({ alignItems }) => alignItems || "center"};
+  justify-content: ${({ justifyContent }) => justifyContent || "center"};
+
+  &:after {
+    content: "";
+    flex: auto;
+  }
+`;
+
+export const FlexItem = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: ${({ lg }) => (lg ? (100 / 12) * lg : "16.66")}%;
+
+  @media screen and (max-width: 1199px) {
+    width: ${({ mg }) => (mg ? (100 / 12) * mg : "20")}%;
+  }
+
+  @media screen and (max-width: 991px) {
+    width: ${({ sm }) => (sm ? (100 / 12) * sm : "33.33")}%;
+  }
+
+  @media screen and (max-width: 584px) {
+    width: ${({ xs }) => (xs ? (100 / 12) * xs : "100")}%;
+  }
+`;

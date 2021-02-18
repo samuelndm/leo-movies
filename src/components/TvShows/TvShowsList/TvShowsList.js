@@ -1,19 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./styles";
+import * as GS from "assets/styles/GlobalStyles";
 import * as Card from "components/Cards";
 
 const TvShowsList = ({ tvShows }) => {
   return (
     <S.Container>
-      <S.Movies>
+      <GS.FlexContainer>
         {tvShows.map((tvShow) => (
-          <Card.PreviewTvShow
-            preview={tvShow}
-            key={`previewTvShow-${tvShow.id}`}
-          />
+          <GS.FlexItem lg={2} xs={12} key={`previewTvShow-${tvShow.id}`}>
+            <Card.PreviewTvShow preview={tvShow} />
+          </GS.FlexItem>
         ))}
-      </S.Movies>
+      </GS.FlexContainer>
     </S.Container>
   );
 };

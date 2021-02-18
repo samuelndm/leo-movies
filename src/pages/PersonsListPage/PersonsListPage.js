@@ -6,24 +6,52 @@ import * as UI from "components/UIComponents";
 
 const PersonsListPage = () => {
   const itemsPerPage = 20;
+  const [isLoading, setIsLoading] = useState(false);
   const [persons, setPersons] = useState([]);
   const [totalItems, setTotalItems] = useState(0);
   const [page, setPage] = useState(1);
+  const [searched, setSearched] = useState("");
+  const [params, setParams] = useState({
+    page,
+    query: searched,
+  });
 
-  const loadData = async (page) => {
-    const response = await API.loadPopularPersons({ page });
+  const loadData = async (params) => {
+    setIsLoading(true);
+
+    const response = params.query
+      ? await API.loadSearchedPersons(params)
+      : await API.loadPopularPersons(params);
 
     setPersons(response?.results || []);
     setTotalItems(response?.total_results || 0);
+    setIsLoading(false);
   };
 
   useEffect(() => {
-    loadData(page);
-  }, [page]);
+    loadData(params);
+  }, [params]);
+
+  useEffect(() => {
+    setParams((params) => ({
+      ...params,
+      page,
+      query: searched,
+    }));
+  }, [page, searched]);
 
   return (
     <GS.PageContainer>
       <GS.PageTitle>Popular People</GS.PageTitle>
+
+      <GS.PageOptions>
+        <UI.Search
+          placeholder="Search a Person"
+          margin="40px 0 10px"
+          isLoading={isLoading}
+          onChange={setSearched}
+        />
+      </GS.PageOptions>
 
       <C.PersonsList persons={persons} />
 
