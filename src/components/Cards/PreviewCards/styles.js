@@ -34,8 +34,12 @@ export const Container = styled.div`
 
 export const Image = styled.img`
   width: 100%;
-  height: auto;
+  height: 225px;
   border-radius: 6px;
+
+  @media screen and (max-width: 575px) {
+    height: 337.5px;
+  }
 `;
 
 export const Popularity = styled.span`
