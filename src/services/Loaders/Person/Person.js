@@ -1,5 +1,6 @@
 import { createDangerNotification } from "utils/notifications";
 import * as API_ENDPOINTS from "services/Endpoints";
+import { ERROR } from "../messages";
 
 export const loadPersonDetailsById = async (id, params) => {
   try {
@@ -7,7 +8,9 @@ export const loadPersonDetailsById = async (id, params) => {
     return data || {};
   } catch (err) {
     console.error(err);
-    createDangerNotification({ message: err?.response?.data?.status_message });
+    createDangerNotification({
+      message: err?.response?.data?.status_message || ERROR.DEFAULT,
+    });
 
     return {};
   }
@@ -19,7 +22,9 @@ export const loadPopularPersons = async (params) => {
     return data || {};
   } catch (err) {
     console.error(err);
-    createDangerNotification({ message: err?.response?.data?.status_message });
+    createDangerNotification({
+      message: err?.response?.data?.status_message || ERROR.DEFAULT,
+    });
 
     return {};
   }
@@ -31,7 +36,9 @@ export const loadPersonImagesById = async (id, params) => {
     return data || {};
   } catch (err) {
     console.error(err);
-    createDangerNotification({ message: err?.response?.data?.status_message });
+    createDangerNotification({
+      message: err?.response?.data?.status_message || ERROR.DEFAULT,
+    });
 
     return {};
   }
@@ -43,7 +50,9 @@ export const loadSearchedPersons = async (params) => {
     return data || {};
   } catch (err) {
     console.error(err);
-    createDangerNotification({ message: err?.response?.data?.status_message });
+    createDangerNotification({
+      message: err?.response?.data?.status_message || ERROR.DEFAULT,
+    });
 
     return {};
   }
