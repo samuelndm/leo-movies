@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/leo-moviegas/static/css/main.7c58a89f.chunk.css",
-    "main.js": "/leo-moviegas/static/js/main.8b184aca.chunk.js",
-    "main.js.map": "/leo-moviegas/static/js/main.8b184aca.chunk.js.map",
+    "main.js": "/leo-moviegas/static/js/main.954f7c8a.chunk.js",
+    "main.js.map": "/leo-moviegas/static/js/main.954f7c8a.chunk.js.map",
     "runtime-main.js": "/leo-moviegas/static/js/runtime-main.182e01b0.js",
     "runtime-main.js.map": "/leo-moviegas/static/js/runtime-main.182e01b0.js.map",
     "static/css/2.faeb12cc.chunk.css": "/leo-moviegas/static/css/2.faeb12cc.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.faeb12cc.chunk.css",
     "static/js/2.1e00b255.chunk.js",
     "static/css/main.7c58a89f.chunk.css",
-    "static/js/main.8b184aca.chunk.js"
+    "static/js/main.954f7c8a.chunk.js"
   ]
 }
