@@ -12,9 +12,9 @@ const MoviesList = ({ movies }) => {
           <GS.FlexItem
             lg={2}
             xs={12}
-            key={`previewMovie-${movie?.id || index}`}
+            key={`moviePreview-${movie?.id || index}`}
           >
-            <Card.PreviewMovie preview={movie} />
+            <Card.MoviePreview preview={movie} />
           </GS.FlexItem>
         ))}
       </GS.FlexContainer>

@@ -9,8 +9,8 @@ const PersonsList = ({ persons }) => {
     <S.Container>
       <GS.FlexContainer>
         {persons.map((person) => (
-          <GS.FlexItem lg={2} xs={12} key={`previewPerson-${person.id}`}>
-            <Card.PreviewPerson preview={person} />
+          <GS.FlexItem lg={2} xs={12} key={`personPreview-${person.id}`}>
+            <Card.PersonPreview preview={person} />
           </GS.FlexItem>
         ))}
       </GS.FlexContainer>

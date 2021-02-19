@@ -12,7 +12,7 @@ const PopularPersons = ({ persons }) => {
 
       <C.PreviewSlider
         previews={persons}
-        PreviewCard={Card.PreviewPopularPerson}
+        PreviewCard={Card.PopularPersonPreview}
       />
     </S.Container>
   );

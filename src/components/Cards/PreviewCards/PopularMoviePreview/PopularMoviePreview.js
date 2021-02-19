@@ -6,16 +6,16 @@ import { IMAGE_SIZES } from "utils/constants";
 import * as S from "./styles";
 import * as UI from "components/UIComponents";
 
-const PreviewPerson = ({ preview }) => {
+const PopularMoviePreview = ({ preview }) => {
   const [baseUrl] = useState(`${process.env.REACT_APP_API_IMAGES}`);
-  const [imageSize] = useState(`/${IMAGE_SIZES.PROFILE_SIZES.WIDTH_780}`);
+  const [imageSize] = useState(`/${IMAGE_SIZES.POSTER_SIZES.WIDTH_780}`);
   const [imageUrl, setImageUrl] = useState("");
 
   useEffect(() => {
     setTimeout(() => {
       if (preview) {
-        const url = preview.profile_path
-          ? `${baseUrl}${imageSize}${preview.profile_path}`
+        const url = preview.poster_path
+          ? `${baseUrl}${imageSize}${preview.poster_path}`
           : placeholder;
 
         setImageUrl(url);
@@ -27,16 +27,16 @@ const PreviewPerson = ({ preview }) => {
     <S.Container>
       {imageUrl ? (
         <>
-          <UI.LinkHandler url={`/person/${preview.id}`}>
-            <S.Image src={imageUrl} alt='person preview poster' />
+          <UI.LinkHandler url={`/movie/${preview.id}`}>
+            <S.Image src={imageUrl} alt='popular movie preview poster' />
           </UI.LinkHandler>
 
           <S.Popularity popularity={preview?.vote_average}>
-            {preview?.popularity?.toFixed(1) || "NR"}
+            {preview?.vote_average || "NR"}
           </S.Popularity>
 
-          <S.Title>{preview?.name || "*"}</S.Title>
-          <S.Department>{preview?.known_for_department || "*"}</S.Department>
+          <S.Title>{preview?.title || "*"}</S.Title>
+          <S.ReleaseDate>{preview?.release_date || "*"}</S.ReleaseDate>
         </>
       ) : (
         <Skeleton className='skeleton-body' variant='rect' animation='wave' />
@@ -45,8 +45,8 @@ const PreviewPerson = ({ preview }) => {
   );
 };
 
-PreviewPerson.propTypes = {
+PopularMoviePreview.propTypes = {
   preview: PropTypes.object,
 };
 
-export default PreviewPerson;
+export default PopularMoviePreview;

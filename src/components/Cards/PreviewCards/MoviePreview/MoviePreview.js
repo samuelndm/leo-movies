@@ -6,7 +6,7 @@ import { IMAGE_SIZES } from "utils/constants";
 import * as S from "./styles";
 import * as UI from "components/UIComponents";
 
-const PreviewTvShow = ({ preview }) => {
+const MoviePreview = ({ preview }) => {
   const [baseUrl] = useState(`${process.env.REACT_APP_API_IMAGES}`);
   const [imageSize] = useState(`/${IMAGE_SIZES.POSTER_SIZES.WIDTH_780}`);
   const [imageUrl, setImageUrl] = useState("");
@@ -27,16 +27,16 @@ const PreviewTvShow = ({ preview }) => {
     <S.Container>
       {imageUrl ? (
         <>
-          <UI.LinkHandler url={`/tv/${preview.id}`}>
-            <S.Image src={imageUrl} alt='tv show preview poster' />
+          <UI.LinkHandler url={`/movie/${preview.id}`}>
+            <S.Image src={imageUrl} alt='movie preview poster' />
           </UI.LinkHandler>
 
           <S.Popularity popularity={preview?.vote_average}>
             {preview?.vote_average || "NR"}
           </S.Popularity>
 
-          <S.Title>{preview?.name || "*"}</S.Title>
-          <S.ReleaseDate>{preview?.first_air_date || "*"}</S.ReleaseDate>
+          <S.Title>{preview?.title || "*"}</S.Title>
+          <S.ReleaseDate>{preview?.release_date || "*"}</S.ReleaseDate>
         </>
       ) : (
         <Skeleton className='skeleton-body' variant='rect' animation='wave' />
@@ -45,8 +45,8 @@ const PreviewTvShow = ({ preview }) => {
   );
 };
 
-PreviewTvShow.propTypes = {
+MoviePreview.propTypes = {
   preview: PropTypes.object,
 };
 
-export default PreviewTvShow;
+export default MoviePreview;

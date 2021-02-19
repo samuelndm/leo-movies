@@ -9,8 +9,8 @@ const TvShowsList = ({ tvShows }) => {
     <S.Container>
       <GS.FlexContainer>
         {tvShows.map((tvShow) => (
-          <GS.FlexItem lg={2} xs={12} key={`previewTvShow-${tvShow.id}`}>
-            <Card.PreviewTvShow preview={tvShow} />
+          <GS.FlexItem lg={2} xs={12} key={`tvShowPreview-${tvShow.id}`}>
+            <Card.TvShowPreview preview={tvShow} />
           </GS.FlexItem>
         ))}
       </GS.FlexContainer>
