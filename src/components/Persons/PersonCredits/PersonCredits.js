@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import { removeDuplicatesByKey } from "utils/utils";
 import * as S from "./styles";
 import * as C from "components";
 import * as Card from "components/Cards";
@@ -15,7 +16,9 @@ const PersonCredits = ({ credits }) => {
     const cast = credits?.cast?.slice(0, MAX_CAST) || [];
     const crew = credits?.crew?.slice(0, MAX_CREW) || [];
 
-    setPersonCredits([...cast, ...crew]);
+    const personCredits = removeDuplicatesByKey([...cast, ...crew], "name");
+
+    setPersonCredits(personCredits);
   }, [credits]);
 
   return (

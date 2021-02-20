@@ -71,6 +71,23 @@ export const resizeArray = (array, maxAmount) => {
   return newArray;
 };
 
+export const removeDuplicatesByKey = (array, Key) => {
+  const newArray = [];
+  const tempObject = {};
+
+  if (array) {
+    for (let i = 0; i < array.length; i++) {
+      const item = array[i];
+      if (!tempObject[item[Key]]) {
+        newArray.push(item);
+        tempObject[item[Key]] = item[Key];
+      }
+    }
+  }
+
+  return newArray;
+};
+
 export const normalizeString = (string) => {
   let newString = "";
   if (string) {
