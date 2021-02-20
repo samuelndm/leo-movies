@@ -25,11 +25,10 @@ const PersonsListPage = () => {
     setIsLoading(false);
   };
 
-  const updateParams = (page, sortBy, searched) => {
+  const updateParams = (page, searched) => {
     setParams((params) => ({
       ...params,
       page,
-      sort_by: sortBy,
       query: searched,
     }));
   };

@@ -10,7 +10,7 @@ const Image = ({ imageUrl, redirectUrl }) => {
 
   useEffect(() => {
     // Just to make a cool effect with skeleton
-    setTimeout(() => {
+    return setTimeout(() => {
       setUrl(imageUrl);
     }, 500);
   }, [imageUrl]);

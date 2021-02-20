@@ -1,3 +1,4 @@
+export { default as CardContainer } from "./CardContainer/CardContainer";
 export { default as Departament } from "./Departament/Departament";
 export { default as Image } from "./Image/Image";
 export { default as Popularity } from "./Popularity/Popularity";

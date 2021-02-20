@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.h2`
   margin: 30px 0 0;
+  width: 100%;
   color: #000;
   font-size: 14px;
   font-weight: 700;

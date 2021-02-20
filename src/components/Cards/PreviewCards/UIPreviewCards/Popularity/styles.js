@@ -12,8 +12,8 @@ export const Container = styled.span`
   justify-content: center;
 
   background-color: var(--primary-color, #333);
-  border-radius: 50%;
   border: 3px solid var(--secondary-color, #bf0000);
+  border-radius: 50%;
 
   color: #fff;
   font-weight: 700;

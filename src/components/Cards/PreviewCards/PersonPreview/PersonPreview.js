@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { IMAGE_SIZES } from "utils/constants";
 import { handleImageUrl } from "utils/cardsUtil";
-import * as S from "./styles";
 import * as UIPreview from "../UIPreviewCards";
 
 const PersonPreview = ({ preview }) => {
@@ -17,7 +16,7 @@ const PersonPreview = ({ preview }) => {
   }, [preview, imageSize]);
 
   return (
-    <S.Container>
+    <UIPreview.CardContainer style={{ margin: "15px" }}>
       <UIPreview.Image
         imageUrl={imageUrl}
         redirectUrl={`/person/${preview?.id}`}
@@ -30,7 +29,7 @@ const PersonPreview = ({ preview }) => {
       <UIPreview.Departament
         departament={preview?.known_for_department || ""}
       />
-    </S.Container>
+    </UIPreview.CardContainer>
   );
 };
 

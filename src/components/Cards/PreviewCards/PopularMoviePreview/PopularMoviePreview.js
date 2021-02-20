@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { IMAGE_SIZES } from "utils/constants";
 import { handleImageUrl } from "utils/cardsUtil";
-import * as S from "./styles";
 import * as UIPreview from "../UIPreviewCards";
 
 const PopularMoviePreview = ({ preview }) => {
@@ -17,7 +16,7 @@ const PopularMoviePreview = ({ preview }) => {
   }, [preview, imageSize]);
 
   return (
-    <S.Container>
+    <UIPreview.CardContainer>
       <UIPreview.Image
         imageUrl={imageUrl}
         redirectUrl={`/movie/${preview?.id}`}
@@ -28,7 +27,7 @@ const PopularMoviePreview = ({ preview }) => {
       <UIPreview.Title title={preview?.title || ""} />
 
       <UIPreview.ReleaseDate releaseDate={preview?.release_date || ""} />
-    </S.Container>
+    </UIPreview.CardContainer>
   );
 };
 
