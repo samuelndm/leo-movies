@@ -1,25 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import Skeleton from "@material-ui/lab/Skeleton";
 import placeholder from "assets/images/vertical-placeholder.png";
 import * as S from "./styles";
 import * as UI from "components/UIComponents";
 
-const Image = ({ imageUrl, redirectUrl }) => {
-  const [url, setUrl] = useState(null);
-
-  useEffect(() => {
-    // Just to make a cool effect with skeleton
-    return setTimeout(() => {
-      setUrl(imageUrl);
-    }, 500);
-  }, [imageUrl]);
-
+const Image = ({ imageUrl = null, redirectUrl }) => {
   return (
     <S.Container>
-      {url || url === "" ? (
+      {imageUrl !== null ? (
         <UI.LinkHandler url={redirectUrl}>
-          <S.Image src={url || placeholder} alt='Preview poster' />
+          <S.Image src={imageUrl || placeholder} alt='Preview poster' />
         </UI.LinkHandler>
       ) : (
         <Skeleton className='skeleton-body' variant='rect' animation='wave' />

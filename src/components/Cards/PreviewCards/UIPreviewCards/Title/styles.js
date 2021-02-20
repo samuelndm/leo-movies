@@ -14,6 +14,11 @@ export const Container = styled.h2`
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 
+  & > .skeleton-body {
+    width: 100%;
+    border-radius: 6px;
+  }
+
   @media screen and (max-width: 575px) {
     text-align: center;
   }

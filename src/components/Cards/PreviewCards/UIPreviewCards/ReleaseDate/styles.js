@@ -6,6 +6,11 @@ export const Container = styled.span`
   font-size: 14px;
   text-align: left;
 
+  & > .skeleton-body {
+    width: 100%;
+    border-radius: 6px;
+  }
+
   @media screen and (max-width: 575px) {
     text-align: center;
   }

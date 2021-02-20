@@ -23,14 +23,12 @@ const PersonPreview = ({ preview, showPopularity }) => {
       />
 
       {showPopularity && (
-        <UIPreview.Popularity popularity={preview?.popularity || 0} />
+        <UIPreview.Popularity popularity={preview?.popularity} />
       )}
 
-      <UIPreview.Title title={preview?.name || ""} />
+      <UIPreview.Title title={preview?.name} />
 
-      <UIPreview.Departament
-        departament={preview?.known_for_department || ""}
-      />
+      <UIPreview.Departament departament={preview?.known_for_department} />
     </UIPreview.CardContainer>
   );
 };

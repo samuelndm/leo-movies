@@ -12,6 +12,8 @@ const PreviewsSlider = ({
   previews,
   PreviewCard,
   slidesToShow = SLIDES_TO_SHOW_DEFAULT,
+  showVoteAverage,
+  showPopularity,
 }) => {
   const [content, setContent] = useState(UTIL.createEmptyArray(slidesToShow));
 
@@ -33,6 +35,8 @@ const PreviewsSlider = ({
         {content.map((preview, index) => (
           <PreviewCard
             preview={preview}
+            showVoteAverage={showVoteAverage}
+            showPopularity={showPopularity}
             key={`preview-${preview?.id || index}`}
           />
         ))}
@@ -44,6 +48,8 @@ const PreviewsSlider = ({
 PreviewsSlider.propTypes = {
   previews: PropTypes.array,
   PreviewCard: PropTypes.func,
+  showVoteAverage: PropTypes.bool,
+  showPopularity: PropTypes.bool,
   slidesToShow: PropTypes.number,
 };
 

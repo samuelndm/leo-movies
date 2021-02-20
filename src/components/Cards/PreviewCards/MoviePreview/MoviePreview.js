@@ -23,12 +23,12 @@ const MoviePreview = ({ preview, showVoteAverage }) => {
       />
 
       {showVoteAverage && (
-        <UIPreview.VoteAverage voteAverage={preview?.vote_average || 0} />
+        <UIPreview.VoteAverage voteAverage={preview?.vote_average} />
       )}
 
-      <UIPreview.Title title={preview?.title || ""} />
+      <UIPreview.Title title={preview?.title} />
 
-      <UIPreview.ReleaseDate releaseDate={preview?.release_date || ""} />
+      <UIPreview.ReleaseDate releaseDate={preview?.release_date} />
     </UIPreview.CardContainer>
   );
 };

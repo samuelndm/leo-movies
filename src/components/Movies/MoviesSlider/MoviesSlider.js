@@ -14,6 +14,7 @@ const MoviesSlider = ({ movies, slidesToShow, title }) => {
         previews={movies}
         PreviewCard={Card.MoviePreview}
         slidesToShow={slidesToShow}
+        showVoteAverage
       />
     </S.Container>
   );

@@ -11,11 +11,14 @@ export const Container = styled.span`
   align-items: center;
   justify-content: center;
 
-  background-color: var(--primary-color, #333);
+  background-color: ${({ voteAverage }) =>
+    voteAverage !== null ? "var(--primary-color, #333)" : "transparent"};
   border-radius: 50%;
   border: 3px solid
     ${({ voteAverage }) => {
-      if (!voteAverage) {
+      if (voteAverage === null) {
+        return "#e3e3e3";
+      } else if (!voteAverage) {
         return "#7b7b7b";
       } else if (voteAverage >= 7) {
         return "#2eba72";
@@ -28,6 +31,12 @@ export const Container = styled.span`
 
   color: #fff;
   font-weight: 700;
+
+  & > .skeleton-body {
+    width: 100%;
+    height: 100%;
+    background-color: #e3e3e3;
+  }
 
   @media screen and (max-width: 575px) {
     top: 70%;

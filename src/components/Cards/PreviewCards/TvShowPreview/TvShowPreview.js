@@ -20,12 +20,12 @@ const TvShowPreview = ({ preview, showVoteAverage }) => {
       <UIPreview.Image imageUrl={imageUrl} redirectUrl={`/tv/${preview?.id}`} />
 
       {showVoteAverage && (
-        <UIPreview.VoteAverage voteAverage={preview?.vote_average || 0} />
+        <UIPreview.VoteAverage voteAverage={preview?.vote_average} />
       )}
 
-      <UIPreview.Title title={preview?.name || ""} />
+      <UIPreview.Title title={preview?.name} />
 
-      <UIPreview.ReleaseDate releaseDate={preview?.first_air_date || ""} />
+      <UIPreview.ReleaseDate releaseDate={preview?.first_air_date} />
     </UIPreview.CardContainer>
   );
 };
