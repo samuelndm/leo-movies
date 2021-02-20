@@ -14,11 +14,7 @@ const MoviesListPage = () => {
   const [page, setPage] = useState(1);
   const [sortBy, setSortBy] = useState(SORT_BY.POPULARITY_DESC);
   const [searched, setSearched] = useState("");
-  const [params, setParams] = useState({
-    page,
-    sort_by: sortBy,
-    query: searched,
-  });
+  const [params, setParams] = useState(null);
 
   const loadData = async (params) => {
     setIsLoading(true);
@@ -31,17 +27,21 @@ const MoviesListPage = () => {
     setIsLoading(false);
   };
 
-  useEffect(() => {
-    return loadData(params);
-  }, [params]);
-
-  useEffect(() => {
-    return setParams((params) => ({
+  const updateParams = (page, sortBy, searched) => {
+    setParams((params) => ({
       ...params,
       page,
       sort_by: sortBy,
       query: searched,
     }));
+  };
+
+  useEffect(() => {
+    return params && loadData(params);
+  }, [params]);
+
+  useEffect(() => {
+    return updateParams(page, sortBy, searched);
   }, [page, sortBy, searched]);
 
   return (

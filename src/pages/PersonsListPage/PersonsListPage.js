@@ -12,10 +12,7 @@ const PersonsListPage = () => {
   const [totalItems, setTotalItems] = useState(0);
   const [page, setPage] = useState(1);
   const [searched, setSearched] = useState("");
-  const [params, setParams] = useState({
-    page,
-    query: searched,
-  });
+  const [params, setParams] = useState(null);
 
   const loadData = async (params) => {
     setIsLoading(true);
@@ -28,16 +25,21 @@ const PersonsListPage = () => {
     setIsLoading(false);
   };
 
+  const updateParams = (page, sortBy, searched) => {
+    setParams((params) => ({
+      ...params,
+      page,
+      sort_by: sortBy,
+      query: searched,
+    }));
+  };
+
   useEffect(() => {
-    return loadData(params);
+    return params && loadData(params);
   }, [params]);
 
   useEffect(() => {
-    return setParams((params) => ({
-      ...params,
-      page,
-      query: searched,
-    }));
+    return updateParams(page, searched);
   }, [page, searched]);
 
   return (
