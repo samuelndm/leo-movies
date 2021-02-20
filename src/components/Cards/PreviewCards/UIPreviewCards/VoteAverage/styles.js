@@ -38,7 +38,7 @@ export const Container = styled.span`
     background-color: #e3e3e3;
   }
 
-  @media screen and (max-width: 575px) {
+  @media screen and (max-width: 586px) {
     top: 70%;
   }
 `;

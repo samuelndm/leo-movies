@@ -89,7 +89,7 @@ export const ContainerTitle = styled.h2`
   margin: 0 0 35px;
   color: #333;
 
-  @media screen and (max-width: 575px) {
+  @media screen and (max-width: 586px) {
     text-align: center;
   }
 `;
@@ -131,7 +131,7 @@ export const FlexItem = styled.div`
     width: ${({ sm }) => (sm ? (100 / 12) * sm : "33.33")}%;
   }
 
-  @media screen and (max-width: 584px) {
+  @media screen and (max-width: 586px) {
     width: ${({ xs }) => (xs ? (100 / 12) * xs : "100")}%;
   }
 

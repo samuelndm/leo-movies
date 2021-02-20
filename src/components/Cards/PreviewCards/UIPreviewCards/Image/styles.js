@@ -11,7 +11,7 @@ export const Container = styled.div`
     border-radius: inherit;
   }
 
-  @media screen and (max-width: 575px) {
+  @media screen and (max-width: 586px) {
     height: 337.5px;
   }
 `;
@@ -21,7 +21,7 @@ export const Image = styled.img`
   height: 225px;
   border-radius: 6px;
 
-  @media screen and (max-width: 575px) {
+  @media screen and (max-width: 586px) {
     height: 337.5px;
   }
 `;

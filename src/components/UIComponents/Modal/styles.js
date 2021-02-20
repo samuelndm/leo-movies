@@ -12,7 +12,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media screen and (max-width: 575px) {
+  @media screen and (max-width: 586px) {
     padding: 0;
     height: 100vh;
   }

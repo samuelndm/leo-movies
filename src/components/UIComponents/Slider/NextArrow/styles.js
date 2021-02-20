@@ -12,7 +12,7 @@ export const DefaultNextArrow = styled(SliderStyles.DefaultArrowStyle)`
     right: -1%;
   }
 
-  @media screen and (max-width: 575px) {
-    right: -2%;
+  @media screen and (max-width: 586px) {
+    right: 0;
   }
 `;

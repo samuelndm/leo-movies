@@ -19,7 +19,7 @@ export const Container = styled.h2`
     border-radius: 6px;
   }
 
-  @media screen and (max-width: 575px) {
+  @media screen and (max-width: 586px) {
     text-align: center;
   }
 `;

@@ -11,7 +11,7 @@ export const Container = styled.div`
     border-radius: inherit;
   }
 
-  @media screen and (max-width: 575px) {
+  @media screen and (max-width: 586px) {
     height: 337.5px;
   }
 `;

@@ -12,7 +12,7 @@ export const Container = styled.div`
   justify-content: flex-start;
   border-radius: 6px;
 
-  @media screen and (max-width: 575px) {
+  @media screen and (max-width: 586px) {
     margin: 15px auto 0;
     width: 225px;
     height: 440px;

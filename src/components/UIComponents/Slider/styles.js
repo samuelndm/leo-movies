@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
-export const SliderStyle = { width: "100%", maxWidth: "100%" };
+export const SliderStyle = {
+  width: "100%",
+  maxWidth: "100%",
+};
 
 export const DefaultArrowStyle = styled.button`
   z-index: 2;
@@ -40,8 +43,6 @@ export const Dots = styled.ul`
   }
 
   & li > button {
-    width: 48px;
-    height: 48px;
   }
 
   & li button:before {
