@@ -24,7 +24,7 @@ export default createGlobalStyle`
       --primary-gradient-color: linear-gradient(90deg, #032541, #00506E );
       --secondary-gradient-color: linear-gradient(90deg, #00506E, #032541);
       --background-color: #fff;
-      --navbar-height: 127px;
+      --navbar-height: 90px;
 
       @media screen and (max-width: 991px) {
         --navbar-height: 160px;
