@@ -71,3 +71,17 @@ export const loadSearchedMovies = async (params) => {
     return {};
   }
 };
+
+export const loadMovieCreditsById = async (id, params) => {
+  try {
+    const { data } = await API_ENDPOINTS.getMovieCreditsById(id, params);
+    return data || {};
+  } catch (err) {
+    console.error(err);
+    createDangerNotification({
+      message: err?.response?.data?.status_message || ERROR.DEFAULT,
+    });
+
+    return {};
+  }
+};

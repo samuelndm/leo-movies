@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./styles";
-import * as GS from "assets/styles/GlobalStyles";
+import * as Card from "components/Cards";
 
 const MovieDetails = ({ movie }) => {
   return (
     <S.Container>
-      <GS.ContainerTitle>{movie?.title || "*"}</GS.ContainerTitle>
+      <Card.MovieDetails content={movie} />
     </S.Container>
   );
 };

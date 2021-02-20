@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { SLIDES_TO_SHOW, sliderSettings } from "./PreviewSliderSettings";
+import {
+  SLIDES_TO_SHOW_DEFAULT,
+  sliderSettings,
+} from "./PreviewsSliderSettings";
 import * as UTIL from "utils/utils";
 import * as S from "./styles";
 import * as UI from "components/UIComponents";
 
-const PreviewSlider = ({ previews, PreviewCard }) => {
-  const [content, setContent] = useState(UTIL.createEmptyArray(SLIDES_TO_SHOW));
+const PreviewsSlider = ({
+  previews,
+  PreviewCard,
+  slidesToShow = SLIDES_TO_SHOW_DEFAULT,
+}) => {
+  const [content, setContent] = useState(UTIL.createEmptyArray(slidesToShow));
 
   useEffect(() => {
     if (previews && previews.length) {
@@ -16,11 +23,16 @@ const PreviewSlider = ({ previews, PreviewCard }) => {
 
   return (
     <S.Container>
-      <UI.Slider settings={sliderSettings}>
+      <UI.Slider
+        settings={{
+          ...sliderSettings,
+          slidesToShow,
+          slidesToScroll: slidesToShow,
+        }}
+      >
         {content.map((preview, index) => (
           <PreviewCard
             preview={preview}
-            aria-modal='true'
             key={`preview-${preview?.id || index}`}
           />
         ))}
@@ -29,9 +41,10 @@ const PreviewSlider = ({ previews, PreviewCard }) => {
   );
 };
 
-PreviewSlider.propTypes = {
+PreviewsSlider.propTypes = {
   previews: PropTypes.array,
   PreviewCard: PropTypes.func,
+  slidesToShow: PropTypes.number,
 };
 
-export default PreviewSlider;
+export default PreviewsSlider;

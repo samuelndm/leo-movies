@@ -5,21 +5,24 @@ import * as GS from "assets/styles/GlobalStyles";
 import * as C from "components";
 import * as Card from "components/Cards";
 
-const PopularTvShows = ({ tvShows }) => {
+const TvShowsSlider = ({ tvShows, slidesToShow, title }) => {
   return (
     <S.Container>
-      <GS.ContainerTitle>Most Popular TvShows</GS.ContainerTitle>
+      {title && <GS.ContainerTitle>{title}</GS.ContainerTitle>}
 
-      <C.PreviewSlider
+      <C.PreviewsSlider
         previews={tvShows}
-        PreviewCard={Card.PopularTvShowPreview}
+        PreviewCard={Card.TvShowPreview}
+        slidesToShow={slidesToShow}
       />
     </S.Container>
   );
 };
 
-PopularTvShows.propTypes = {
+TvShowsSlider.propTypes = {
   tvShows: PropTypes.array,
+  title: PropTypes.string,
+  slidesToShow: PropTypes.number,
 };
 
-export default PopularTvShows;
+export default TvShowsSlider;

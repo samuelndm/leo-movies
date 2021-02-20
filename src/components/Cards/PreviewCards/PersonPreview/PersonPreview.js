@@ -4,7 +4,7 @@ import { IMAGE_SIZES } from "utils/constants";
 import { handleImageUrl } from "utils/cardsUtil";
 import * as UIPreview from "../UIPreviewCards";
 
-const PersonPreview = ({ preview }) => {
+const PersonPreview = ({ preview, showPopularity }) => {
   const [imageSize] = useState(`/${IMAGE_SIZES.PROFILE_SIZES.WIDTH_780}`);
   const [imageUrl, setImageUrl] = useState(null);
 
@@ -16,13 +16,15 @@ const PersonPreview = ({ preview }) => {
   }, [preview, imageSize]);
 
   return (
-    <UIPreview.CardContainer style={{ margin: "15px" }}>
+    <UIPreview.CardContainer>
       <UIPreview.Image
         imageUrl={imageUrl}
         redirectUrl={`/person/${preview?.id}`}
       />
 
-      <UIPreview.Popularity popularity={preview?.popularity || 0} />
+      {showPopularity && (
+        <UIPreview.Popularity popularity={preview?.popularity || 0} />
+      )}
 
       <UIPreview.Title title={preview?.name || ""} />
 
@@ -35,6 +37,7 @@ const PersonPreview = ({ preview }) => {
 
 PersonPreview.propTypes = {
   preview: PropTypes.object,
+  showPopularity: PropTypes.bool,
 };
 
 export default PersonPreview;

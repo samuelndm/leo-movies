@@ -134,4 +134,9 @@ export const FlexItem = styled.div`
   @media screen and (max-width: 584px) {
     width: ${({ xs }) => (xs ? (100 / 12) * xs : "100")}%;
   }
+
+  & > * {
+    margin: ${({ margin }) => margin || "0"};
+    padding: ${({ padding }) => padding || "0"};
+  }
 `;

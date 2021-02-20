@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import * as S from "./styles";
+import * as UIDetails from "../UIDetailCards";
 
 const TvShowDetails = ({ content }) => {
-  return <S.Container></S.Container>;
+  return <UIDetails.CardContainer></UIDetails.CardContainer>;
 };
 
 TvShowDetails.propTypes = {
-  content: PropTypes.object,
+  content: PropTypes.any,
 };
 
 export default TvShowDetails;

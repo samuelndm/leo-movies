@@ -29,8 +29,17 @@ const HomePage = () => {
 
   return (
     <GS.PageContainer>
-      <C.PopularMovies movies={popularMovies} />
-      <C.PopularTvShows tvShows={popularTvShows} />
+      <C.MoviesSlider
+        movies={popularMovies}
+        slidesToShow={6}
+        title='Popular Movies'
+      />
+
+      <C.TvShowsSlider
+        tvShows={popularTvShows}
+        slidesToShow={6}
+        title='Popular Tv Shows'
+      />
     </GS.PageContainer>
   );
 };

@@ -29,3 +29,9 @@ export const getSearchedTvShows = (params = {}) => {
     params: { ...params },
   });
 };
+
+export const getTvShowCreditsById = (id, params = {}) => {
+  return api.get(`tv/${id}/credits`, {
+    params: { ...params },
+  });
+};

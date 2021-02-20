@@ -5,21 +5,24 @@ import * as GS from "assets/styles/GlobalStyles";
 import * as C from "components";
 import * as Card from "components/Cards";
 
-const PopularMovies = ({ movies }) => {
+const MoviesSlider = ({ movies, slidesToShow, title }) => {
   return (
     <S.Container>
-      <GS.ContainerTitle>Most Popular Movies</GS.ContainerTitle>
+      {title && <GS.ContainerTitle>{title}</GS.ContainerTitle>}
 
-      <C.PreviewSlider
+      <C.PreviewsSlider
         previews={movies}
-        PreviewCard={Card.PopularMoviePreview}
+        PreviewCard={Card.MoviePreview}
+        slidesToShow={slidesToShow}
       />
     </S.Container>
   );
 };
 
-PopularMovies.propTypes = {
+MoviesSlider.propTypes = {
   movies: PropTypes.array,
+  title: PropTypes.string,
+  slidesToShow: PropTypes.number,
 };
 
-export default PopularMovies;
+export default MoviesSlider;

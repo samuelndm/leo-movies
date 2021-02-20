@@ -57,3 +57,17 @@ export const loadSearchedPersons = async (params) => {
     return {};
   }
 };
+
+export const loadPersonCreditsById = async (id, params) => {
+  try {
+    const { data } = await API_ENDPOINTS.getPersonCreditsById(id, params);
+    return data || {};
+  } catch (err) {
+    console.error(err);
+    createDangerNotification({
+      message: err?.response?.data?.status_message || ERROR.DEFAULT,
+    });
+
+    return {};
+  }
+};

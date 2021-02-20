@@ -4,7 +4,7 @@ import { IMAGE_SIZES } from "utils/constants";
 import { handleImageUrl } from "utils/cardsUtil";
 import * as UIPreview from "../UIPreviewCards";
 
-const MoviePreview = ({ preview }) => {
+const MoviePreview = ({ preview, showVoteAverage }) => {
   const [imageSize] = useState(IMAGE_SIZES.POSTER_SIZES.WIDTH_780);
   const [imageUrl, setImageUrl] = useState(null);
 
@@ -16,13 +16,15 @@ const MoviePreview = ({ preview }) => {
   }, [preview, imageSize]);
 
   return (
-    <UIPreview.CardContainer style={{ margin: "15px" }}>
+    <UIPreview.CardContainer>
       <UIPreview.Image
         imageUrl={imageUrl}
         redirectUrl={`/movie/${preview?.id}`}
       />
 
-      <UIPreview.VoteAverage voteAverage={preview?.vote_average || 0} />
+      {showVoteAverage && (
+        <UIPreview.VoteAverage voteAverage={preview?.vote_average || 0} />
+      )}
 
       <UIPreview.Title title={preview?.title || ""} />
 
@@ -33,6 +35,7 @@ const MoviePreview = ({ preview }) => {
 
 MoviePreview.propTypes = {
   preview: PropTypes.object,
+  showVoteAverage: PropTypes.bool,
 };
 
 export default MoviePreview;

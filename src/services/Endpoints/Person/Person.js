@@ -23,3 +23,9 @@ export const getSearchedPerson = (params = {}) => {
     params: { ...params },
   });
 };
+
+export const getPersonCreditsById = (id, params = {}) => {
+  return api.get(`person/${id}/combined_credits`, {
+    params: { ...params },
+  });
+};

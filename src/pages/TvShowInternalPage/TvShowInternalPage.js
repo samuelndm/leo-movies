@@ -3,15 +3,18 @@ import * as API from "services/Loaders";
 import * as GS from "assets/styles/GlobalStyles";
 import * as C from "components";
 
-const TvShowDetailsPage = ({ match }) => {
+const TvShowInternalPage = ({ match }) => {
   const [tvShowId] = useState(match?.params?.id);
-  const [tvShow, setTvShow] = useState({});
+  const [tvShow, setTvShow] = useState(null);
+  const [credits, setCredits] = useState({});
 
   const loadData = async (tvShowId) => {
     const tvShow = await API.loadTvShowDetailsById(tvShowId);
-    setTvShow(tvShow);
-  };
+    const credits = await API.loadTvShowCreditsById(tvShowId);
 
+    setTvShow(tvShow);
+    setCredits(credits);
+  };
   useEffect(() => {
     return loadData(tvShowId);
   }, [tvShowId]);
@@ -19,8 +22,9 @@ const TvShowDetailsPage = ({ match }) => {
   return (
     <GS.PageContainer>
       <C.TvShowDetails tvShow={tvShow} />
+      <C.TvShowCredits credits={credits} />
     </GS.PageContainer>
   );
 };
 
-export default TvShowDetailsPage;
+export default TvShowInternalPage;

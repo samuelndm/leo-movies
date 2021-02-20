@@ -1,8 +1,6 @@
-export const SLIDES_TO_SHOW = 6;
+export const SLIDES_TO_SHOW_DEFAULT = 6;
 
 export const sliderSettings = {
-  slidesToShow: SLIDES_TO_SHOW,
-  slidesToScroll: SLIDES_TO_SHOW,
   infinite: false,
   responsive: [
     {

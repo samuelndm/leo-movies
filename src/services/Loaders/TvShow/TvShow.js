@@ -71,3 +71,17 @@ export const loadSearchedTvShows = async (params) => {
     return {};
   }
 };
+
+export const loadTvShowCreditsById = async (id, params) => {
+  try {
+    const { data } = await API_ENDPOINTS.getTvShowCreditsById(id, params);
+    return data || {};
+  } catch (err) {
+    console.error(err);
+    createDangerNotification({
+      message: err?.response?.data?.status_message || ERROR.DEFAULT,
+    });
+
+    return {};
+  }
+};

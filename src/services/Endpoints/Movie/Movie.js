@@ -29,3 +29,9 @@ export const getSearchedMovies = (params = {}) => {
     params: { ...params },
   });
 };
+
+export const getMovieCreditsById = (id, params = {}) => {
+  return api.get(`movie/${id}/credits`, {
+    params: { ...params },
+  });
+};

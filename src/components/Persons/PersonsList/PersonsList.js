@@ -12,9 +12,10 @@ const PersonsList = ({ persons }) => {
           <GS.FlexItem
             lg={2}
             xs={12}
+            margin='15px'
             key={`personPreview-${person?.id || index}`}
           >
-            <Card.PersonPreview preview={person} />
+            <Card.PersonPreview preview={person} showPopularity />
           </GS.FlexItem>
         ))}
       </GS.FlexContainer>
