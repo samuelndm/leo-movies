@@ -20,7 +20,7 @@ const PreviewSlider = ({ previews, PreviewCard }) => {
         {content.map((preview, index) => (
           <PreviewCard
             preview={preview}
-            aria-modal="true"
+            aria-modal='true'
             key={`preview-${preview?.id || index}`}
           />
         ))}

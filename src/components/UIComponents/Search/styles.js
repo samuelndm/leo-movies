@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Form = styled.form`
   flex-grow: 1;
-  margin: ${({ margin }) => margin || "0 10px 0 0"};
+  margin: "0 10px 0 0";
   position: relative;
   display: flex;
   align-items: center;

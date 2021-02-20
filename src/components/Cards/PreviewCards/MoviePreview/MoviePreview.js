@@ -1,46 +1,33 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import Skeleton from "@material-ui/lab/Skeleton";
-import placeholder from "assets/images/vertical-placeholder.png";
 import { IMAGE_SIZES } from "utils/constants";
+import { handleImageUrl } from "utils/cardsUtil";
 import * as S from "./styles";
-import * as UI from "components/UIComponents";
+import * as UIPreview from "../UIPreviewCards";
 
 const MoviePreview = ({ preview }) => {
-  const [baseUrl] = useState(`${process.env.REACT_APP_API_IMAGES}`);
-  const [imageSize] = useState(`/${IMAGE_SIZES.POSTER_SIZES.WIDTH_780}`);
-  const [imageUrl, setImageUrl] = useState("");
+  const [imageSize] = useState(IMAGE_SIZES.POSTER_SIZES.WIDTH_780);
+  const [imageUrl, setImageUrl] = useState(null);
 
   useEffect(() => {
-    setTimeout(() => {
-      if (preview) {
-        const url = preview.poster_path
-          ? `${baseUrl}${imageSize}${preview.poster_path}`
-          : placeholder;
-
-        setImageUrl(url);
-      }
-    }, [1000]);
-  }, [preview, baseUrl, imageSize]);
+    if (preview) {
+      const url = handleImageUrl(preview.poster_path, imageSize);
+      setImageUrl(url);
+    }
+  }, [preview, imageSize]);
 
   return (
     <S.Container>
-      {imageUrl ? (
-        <>
-          <UI.LinkHandler url={`/movie/${preview.id}`}>
-            <S.Image src={imageUrl} alt='movie preview poster' />
-          </UI.LinkHandler>
+      <UIPreview.Image
+        imageUrl={imageUrl}
+        redirectUrl={`/movie/${preview?.id}`}
+      />
 
-          <S.Popularity popularity={preview?.vote_average}>
-            {preview?.vote_average || "NR"}
-          </S.Popularity>
+      <UIPreview.VoteAverage voteAverage={preview?.vote_average || 0} />
 
-          <S.Title>{preview?.title || "*"}</S.Title>
-          <S.ReleaseDate>{preview?.release_date || "*"}</S.ReleaseDate>
-        </>
-      ) : (
-        <Skeleton className='skeleton-body' variant='rect' animation='wave' />
-      )}
+      <UIPreview.Title title={preview?.title || ""} />
+
+      <UIPreview.ReleaseDate releaseDate={preview?.release_date || ""} />
     </S.Container>
   );
 };

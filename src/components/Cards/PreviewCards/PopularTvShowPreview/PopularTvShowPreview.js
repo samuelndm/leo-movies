@@ -1,46 +1,30 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import Skeleton from "@material-ui/lab/Skeleton";
-import placeholder from "assets/images/vertical-placeholder.png";
 import { IMAGE_SIZES } from "utils/constants";
+import { handleImageUrl } from "utils/cardsUtil";
 import * as S from "./styles";
-import * as UI from "components/UIComponents";
+import * as UIPreview from "../UIPreviewCards";
 
 const PopularTvShowPreview = ({ preview }) => {
-  const [baseUrl] = useState(`${process.env.REACT_APP_API_IMAGES}`);
-  const [imageSize] = useState(`/${IMAGE_SIZES.POSTER_SIZES.WIDTH_780}`);
-  const [imageUrl, setImageUrl] = useState("");
+  const [imageSize] = useState(IMAGE_SIZES.POSTER_SIZES.WIDTH_780);
+  const [imageUrl, setImageUrl] = useState(null);
 
   useEffect(() => {
-    setTimeout(() => {
-      if (preview) {
-        const url = preview.poster_path
-          ? `${baseUrl}${imageSize}${preview.poster_path}`
-          : placeholder;
-
-        setImageUrl(url);
-      }
-    }, [1000]);
-  }, [preview, baseUrl, imageSize]);
+    if (preview) {
+      const url = handleImageUrl(preview.poster_path, imageSize);
+      setImageUrl(url);
+    }
+  }, [preview, imageSize]);
 
   return (
     <S.Container>
-      {imageUrl ? (
-        <>
-          <UI.LinkHandler url={`/tv/${preview.id}`}>
-            <S.Image src={imageUrl} alt='popular tv show preview poster' />
-          </UI.LinkHandler>
+      <UIPreview.Image imageUrl={imageUrl} redirectUrl={`/tv/${preview?.id}`} />
 
-          <S.Popularity popularity={preview?.vote_average}>
-            {preview?.vote_average || "NR"}
-          </S.Popularity>
+      <UIPreview.VoteAverage voteAverage={preview?.vote_average || 0} />
 
-          <S.Title>{preview?.name || "*"}</S.Title>
-          <S.ReleaseDate>{preview?.first_air_date || "*"}</S.ReleaseDate>
-        </>
-      ) : (
-        <Skeleton className='skeleton-body' variant='rect' animation='wave' />
-      )}
+      <UIPreview.Title title={preview?.name || ""} />
+
+      <UIPreview.ReleaseDate releaseDate={preview?.first_air_date || ""} />
     </S.Container>
   );
 };

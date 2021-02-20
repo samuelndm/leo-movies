@@ -8,8 +8,12 @@ const PersonsList = ({ persons }) => {
   return (
     <S.Container>
       <GS.FlexContainer>
-        {persons.map((person) => (
-          <GS.FlexItem lg={2} xs={12} key={`personPreview-${person.id}`}>
+        {persons?.map((person, index) => (
+          <GS.FlexItem
+            lg={2}
+            xs={12}
+            key={`personPreview-${person?.id || index}`}
+          >
             <Card.PersonPreview preview={person} />
           </GS.FlexItem>
         ))}

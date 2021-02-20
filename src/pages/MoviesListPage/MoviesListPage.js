@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { createEmptyArray } from "utils/utils";
 import { SORT_BY, SORT_BY_LIST } from "utils/constants";
 import * as API from "services/Loaders";
 import * as GS from "assets/styles/GlobalStyles";
@@ -8,7 +9,7 @@ import * as UI from "components/UIComponents";
 const MoviesListPage = () => {
   const itemsPerPage = 20;
   const [isLoading, setIsLoading] = useState(false);
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState(createEmptyArray(itemsPerPage));
   const [totalItems, setTotalItems] = useState(0);
   const [page, setPage] = useState(1);
   const [sortBy, setSortBy] = useState(SORT_BY.POPULARITY_DESC);
@@ -21,7 +22,6 @@ const MoviesListPage = () => {
 
   const loadData = async (params) => {
     setIsLoading(true);
-
     const response = params.query
       ? await API.loadSearchedMovies(params)
       : await API.loadMoviesList(params);
@@ -50,16 +50,16 @@ const MoviesListPage = () => {
 
       <GS.PageOptions>
         <UI.Search
-          placeholder="Search a Movie"
-          margin="40px 7px 10px"
+          placeholder='Search a Movie'
           isLoading={isLoading}
           onChange={setSearched}
+          style={{ margin: "40px 7px 10px" }}
         />
 
         <UI.Select
           options={SORT_BY_LIST}
           defaultValue={sortBy}
-          label="Sort Results By"
+          label='Sort Results By'
           onChange={setSortBy}
         />
       </GS.PageOptions>
