@@ -37,7 +37,7 @@ export const createSuccessNotification = (newNotification) => {
     message,
     dismiss: {
       ...notification.dismiss,
-      duration,
+      duration: duration || notification.dismiss.duration,
     },
   });
 };
