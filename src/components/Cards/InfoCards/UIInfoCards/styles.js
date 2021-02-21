@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  padding: 15px 0;
   width: 100%;
   height: auto;
   display: flex;
@@ -44,9 +45,10 @@ export const Content = styled.div`
 
 export const Separator = styled.span`
   width: 4px;
-  display: list-item;
+  display: ${({ isVisible }) => (isVisible ? "list-item" : "none")};
   list-style-type: disc;
   list-style-position: inside;
+
   @media screen and (max-width: 991px) {
     display: none;
   }

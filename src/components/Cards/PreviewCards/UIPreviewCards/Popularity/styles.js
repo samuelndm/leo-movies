@@ -23,13 +23,12 @@ export const Container = styled.span`
   font-weight: 700;
   font-size: 14px;
 
-  & > .skeleton {
-    width: 100%;
-    height: 100%;
-    background-color: #e3e3e3;
-  }
-
   @media screen and (max-width: 586px) {
     top: 70%;
   }
+`;
+
+export const SkeletonStyle = styled(Container)`
+  background-color: #e3e3e3;
+  border: none;
 `;

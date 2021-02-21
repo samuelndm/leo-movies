@@ -1,17 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Skeleton from "@material-ui/lab/Skeleton";
 import * as S from "./styles";
+import * as UI from "components/UIComponents";
 
 const ReleaseDate = ({ releaseDate = null }) => {
-  return (
-    <S.Container>
-      {releaseDate !== null ? (
-        releaseDate || ""
-      ) : (
-        <Skeleton className='skeleton' variant='text' animation='wave' />
-      )}
-    </S.Container>
+  return releaseDate !== null ? (
+    <S.Container>{releaseDate || ""}</S.Container>
+  ) : (
+    <UI.Skeleton variant='text' animation='wave' width='100%' />
   );
 };
 

@@ -9,17 +9,18 @@ export const Container = styled.span`
   font-style: italic;
   opacity: 0.7;
 
-  & > .skeleton {
-    width: 60%;
-    height: 40px;
-    border-radius: 6px;
-
-    @media screen and (max-width: 991px) {
-      width: 100%;
-    }
-  }
-
   @media screen and (max-width: 991px) {
     text-align: center;
+  }
+`;
+
+export const SkeletonStyle = styled.div`
+  margin: 10px 0 0 0;
+  width: 200px;
+  height: 20px;
+  border-radius: 6px;
+
+  @media screen and (max-width: 991px) {
+    width: 100%;
   }
 `;

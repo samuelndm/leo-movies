@@ -1,24 +1,29 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Skeleton from "@material-ui/lab/Skeleton";
 import * as S from "./styles";
+import * as UI from "components/UIComponents";
 
 const Overview = ({ overview = null }) => {
-  return (
+  return overview !== null ? (
     <S.Container>
-      {overview !== null ? (
-        <>
-          <S.Title>Overview</S.Title>
-          <S.Content>{overview || ""}</S.Content>
-        </>
-      ) : (
-        <>
-          <Skeleton className='skeleton-1' variant='text' animation='wave' />
-          <Skeleton className='skeleton-2' variant='text' animation='wave' />
-          <Skeleton className='skeleton-3' variant='text' animation='wave' />
-        </>
-      )}
+      <S.Title>Overview</S.Title>
+      <S.Content>{overview || ""}</S.Content>
     </S.Container>
+  ) : (
+    <>
+      <UI.Skeleton
+        variant='text'
+        animation='wave'
+        SkeletonStyle={S.SkeletonTitleStyle}
+      />
+
+      <UI.Skeleton
+        variant='text'
+        animation='wave'
+        count={3}
+        SkeletonStyle={S.SkeletonTextStyle}
+      />
+    </>
   );
 };
 

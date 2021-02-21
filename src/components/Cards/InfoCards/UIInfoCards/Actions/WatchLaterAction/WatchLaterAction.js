@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { useWatchLaterContext } from "contexts";
 import * as S from "../styles";
+import * as UI from "components/UIComponents";
 
-const WatchLaterAction = ({ content }) => {
+const WatchLaterAction = ({ content = null }) => {
   const {
     getWatchLater,
     addWatchLater,
@@ -28,13 +29,19 @@ const WatchLaterAction = ({ content }) => {
     setIsWatchLater(isWatchLater);
   }, [content, getWatchLater]);
 
-  return (
+  return content !== null ? (
     <S.CircleAction onClick={handleClick}>
       <S.Icon
         color={isWatchLater ? "#EC9929" : ""}
         className={`${isWatchLater ? "fas" : "far"} fa-bookmark`}
       />
     </S.CircleAction>
+  ) : (
+    <UI.Skeleton
+      variant='circle'
+      animation='wave'
+      SkeletonStyle={S.SkeletonCircleStyle}
+    />
   );
 };
 

@@ -29,10 +29,10 @@ const MovieInfo = ({ content, style }) => {
         <S.Content>
           <C.ReleaseDate releaseDate={content?.release_date} />
 
-          <S.Separator />
+          <S.Separator isVisible={content} />
           <C.Genres genres={content?.genres} />
 
-          <S.Separator />
+          <S.Separator isVisible={content} />
           <C.Duration duration={content?.runtime} />
         </S.Content>
 

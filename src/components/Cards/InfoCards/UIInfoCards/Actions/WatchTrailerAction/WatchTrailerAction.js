@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import * as S from "../styles";
 import * as UI from "components/UIComponents";
 
-const WatchTrailerAction = ({ trailerKey }) => {
+const WatchTrailerAction = ({ trailerKey = null }) => {
   const [key, setKey] = useState("");
 
   const handleClick = (event) => {
@@ -11,11 +11,13 @@ const WatchTrailerAction = ({ trailerKey }) => {
     setKey(trailerKey || "");
   };
 
-  return (
+  return trailerKey !== null ? (
     <>
       <S.RectAction onClick={handleClick}>
-        <S.Icon className='fab fa-youtube' />
-        Watch Trailer
+        <>
+          <S.Icon className='fab fa-youtube' />
+          Watch Trailer
+        </>
       </S.RectAction>
 
       {key && (
@@ -24,6 +26,12 @@ const WatchTrailerAction = ({ trailerKey }) => {
         </UI.Modal>
       )}
     </>
+  ) : (
+    <UI.Skeleton
+      variant='rect'
+      animation='wave'
+      SkeletonStyle={S.SkeletonRectleStyle}
+    />
   );
 };
 

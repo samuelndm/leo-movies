@@ -19,10 +19,9 @@ export const Container = styled.span`
   color: #fff;
   font-weight: 700;
   font-size: 14px;
+`;
 
-  & > .skeleton {
-    width: 100%;
-    height: 100%;
-    background-color: #e3e3e3;
-  }
+export const SkeletonStyle = styled(Container)`
+  background: none;
+  border: none;
 `;

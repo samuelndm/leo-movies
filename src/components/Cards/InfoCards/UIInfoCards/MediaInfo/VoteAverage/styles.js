@@ -30,3 +30,9 @@ export const Container = styled.span`
   color: #fff;
   font-weight: 700;
 `;
+
+export const SkeletonStyle = styled(Container)`
+  padding: 0;
+  background: none;
+  border: none;
+`;

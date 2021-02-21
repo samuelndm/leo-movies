@@ -1,17 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Skeleton from "@material-ui/lab/Skeleton";
 import * as S from "./styles";
+import * as UI from "components/UIComponents";
 
 const VoteAverage = ({ voteAverage = null, style }) => {
-  return (
+  return voteAverage !== null ? (
     <S.Container voteAverage={voteAverage} style={style}>
-      {voteAverage !== null ? (
-        voteAverage || "NR"
-      ) : (
-        <Skeleton className='skeleton' variant='circle' animation='wave' />
-      )}
+      {voteAverage || "NR"}
     </S.Container>
+  ) : (
+    <UI.Skeleton
+      variant='circle'
+      animation='wave'
+      SkeletonStyle={S.SkeletonStyle}
+    />
   );
 };
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import Skeleton from "@material-ui/lab/Skeleton";
 import * as S from "./styles";
+import * as UI from "components/UIComponents";
 
 const Biography = ({ biography = null }) => {
   const [paragraphs, setParagraphs] = useState([]);
@@ -11,22 +11,27 @@ const Biography = ({ biography = null }) => {
     setParagraphs(paragraphs);
   }, [biography]);
 
-  return (
+  return biography !== null ? (
     <S.Container>
-      {biography !== null ? (
-        <>
-          <S.Title>Biography</S.Title>
-          <S.Content>{paragraphs[0] || ""}</S.Content>
-          {/* <S.Content>{paragraphs[1] || ""}</S.Content> */}
-        </>
-      ) : (
-        <>
-          <Skeleton className='skeleton-1' variant='text' animation='wave' />
-          <Skeleton className='skeleton-2' variant='text' animation='wave' />
-          <Skeleton className='skeleton-3' variant='text' animation='wave' />
-        </>
-      )}
+      <S.Title>Biography</S.Title>
+      <S.Content>{paragraphs[0] || ""}</S.Content>
+      {/* <S.Content>{paragraphs[1] || ""}</S.Content> */}
     </S.Container>
+  ) : (
+    <>
+      <UI.Skeleton
+        variant='text'
+        animation='wave'
+        SkeletonStyle={S.SkeletonTitleStyle}
+      />
+
+      <UI.Skeleton
+        variant='text'
+        animation='wave'
+        count={4}
+        SkeletonStyle={S.SkeletonTextStyle}
+      />
+    </>
   );
 };
 

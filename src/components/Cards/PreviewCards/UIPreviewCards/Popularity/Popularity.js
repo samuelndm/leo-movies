@@ -1,17 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Skeleton from "@material-ui/lab/Skeleton";
 import * as S from "./styles";
+import * as UI from "components/UIComponents";
 
 const Popularity = ({ popularity = null }) => {
-  return (
+  return popularity !== null ? (
     <S.Container popularity={popularity}>
-      {popularity !== null ? (
-        popularity?.toFixed(1) || "NR"
-      ) : (
-        <Skeleton className='skeleton' variant='circle' animation='wave' />
-      )}
+      {popularity?.toFixed(1) || "NR"}
     </S.Container>
+  ) : (
+    <UI.Skeleton
+      variant='circle'
+      animation='wave'
+      SkeletonStyle={S.SkeletonStyle}
+    />
   );
 };
 

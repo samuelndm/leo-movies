@@ -8,3 +8,9 @@ export const Container = styled.h2`
     text-align: center;
   }
 `;
+
+export const SkeletonStyle = styled.div`
+  width: 300px;
+  height: 30px;
+  border-radius: 6px;
+`;
