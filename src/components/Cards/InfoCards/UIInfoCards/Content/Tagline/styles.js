@@ -4,6 +4,7 @@ export const Container = styled.span`
   margin: 10px 0 0;
   width: 100%;
   color: #fff;
+  font-size: 14px;
   font-weight: 400;
   font-style: italic;
   opacity: 0.7;

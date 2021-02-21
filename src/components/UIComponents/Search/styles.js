@@ -8,7 +8,7 @@ export const Form = styled.form`
   align-items: center;
   justify-content: center;
 
-  @media screen and (max-width: 975px) {
+  @media screen and (max-width: 991px) {
     max-width: 100%;
   }
 `;
@@ -21,7 +21,7 @@ export const Input = styled.input`
   border-radius: 18px;
   box-shadow: inset 1px 1px 3px 0 rgba(79, 82, 88, 0.34);
 
-  @media screen and (max-width: 975px) {
+  @media screen and (max-width: 991px) {
     padding: 10px;
   }
 

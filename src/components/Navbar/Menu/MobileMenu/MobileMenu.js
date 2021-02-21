@@ -26,7 +26,6 @@ const MobileMenu = ({ menu }) => {
         {menu.map((link, index) => (
           <Link
             link={link}
-            setIsVisible={setIsVisible}
             setHasClicked={setHasClicked}
             key={`mobilemenu-${index}`}
           />

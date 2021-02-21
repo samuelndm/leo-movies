@@ -26,7 +26,7 @@ export default createGlobalStyle`
       --gradient-secondary-color: linear-gradient(90deg, #9BAEBC, #677A86);
      
       --inverse-gradient-primary-color: linear-gradient(90deg, #00506E, #032541);
-      --inverse-gradient-secondary-color: linear-gradient(90deg, #DCF2FF, #395171);
+      --inverse-gradient-secondary-color: linear-gradient(90deg, #677A86, #9BAEBC);
       
       --background-color: #fff;
       --navbar-height: 90px;

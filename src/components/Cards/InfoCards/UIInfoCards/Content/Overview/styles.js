@@ -12,16 +12,17 @@ export const Container = styled.div`
   & > .skeleton-1,
   .skeleton-2,
   .skeleton-3 {
+    margin: 0;
     height: 40px;
     border-radius: 6px;
 
-    @media screen and (max-width: 975px) {
+    @media screen and (max-width: 991px) {
       width: 100%;
     }
   }
 
   & > .skeleton-1 {
-    width: 170px;
+    width: 150px;
   }
 
   @media screen and (max-width: 991px) {
@@ -31,4 +32,10 @@ export const Container = styled.div`
 
 export const Title = styled.h3``;
 
-export const Content = styled.p``;
+export const Content = styled.p`
+  font-size: 15px;
+
+  @media screen and (max-width: 991px) {
+    font-size: 13px;
+  }
+`;

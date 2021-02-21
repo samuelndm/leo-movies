@@ -9,15 +9,15 @@ export const Container = styled.div`
   justify-content: flex-start;
 
   & > .skeleton-rect {
-    margin: 5px;
-    padding: 0 5px;
+    margin: 0 5px;
+    padding: 0 15px;
     border-radius: 18px;
-    width: 146px;
-    height: 40px;
+    width: 130px;
+    height: 35px;
   }
 
   & > .skeleton-circle {
-    margin: 5px;
+    margin: 0 5px;
     padding: 0 5px;
     width: 50px;
     height: 50px;
@@ -33,16 +33,12 @@ export const Action = styled.span`
   padding: 0 5px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 
   background: var(--gradient-secondary-color);
   box-shadow: 0 10px 20px 0 rgba(14, 14, 14, 0.15);
   color: #fff;
   cursor: pointer;
-
-  & > * {
-    margin: 5px;
-  }
 
   &:hover {
     color: #ec9929;
@@ -56,8 +52,8 @@ export const CircleAction = styled(Action)`
 `;
 
 export const RectAction = styled(Action)`
-  padding: 15px;
-  width: auto;
+  padding: 0 10px;
+  width: 130px;
   height: 35px;
   border-radius: 18px;
   font-size: 14px;

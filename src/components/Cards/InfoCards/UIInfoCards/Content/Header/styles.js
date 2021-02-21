@@ -12,7 +12,7 @@ export const Container = styled.div`
     height: 40px;
     border-radius: 6px;
 
-    @media screen and (max-width: 975px) {
+    @media screen and (max-width: 991px) {
       width: 100%;
     }
   }
@@ -32,6 +32,7 @@ export const Content = styled.div`
   }
 
   @media screen and (max-width: 991px) {
+    flex-direction: column;
     justify-content: center;
   }
 `;
@@ -41,4 +42,8 @@ export const Separator = styled.span`
   display: list-item;
   list-style-type: disc;
   list-style-position: inside;
+
+  @media screen and (max-width: 991px) {
+    display: none;
+  }
 `;
