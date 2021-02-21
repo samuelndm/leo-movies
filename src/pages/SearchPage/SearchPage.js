@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { createEmptyArray } from "utils/utils";
 import * as UTIL from "utils/searchUtil";
 import * as API from "services/Loaders";
-import * as GS from "assets/styles/GlobalStyles";
+import * as S from "./styles";
 import * as Card from "components/Cards";
 import * as UI from "components/UIComponents";
 import { MEDIA_TYPES } from "utils/constants";
@@ -43,15 +43,15 @@ const SearchPage = () => {
   }, [page, history, history.location]);
 
   return (
-    <GS.PageContainer>
-      <GS.ResponsiveContainer>
-        <GS.PageTitle>
+    <S.Container>
+      <S.Content>
+        <S.Title>
           {searchedList?.length ? "Search" : "No results found"}
-        </GS.PageTitle>
+        </S.Title>
 
-        <GS.FlexContainer style={{ minHeight: "70vh" }}>
+        <S.FlexContainer style={{ minHeight: "70vh" }}>
           {searchedList?.map((searchItem, index) => (
-            <GS.FlexItem
+            <S.FlexItem
               lg={2}
               xs={12}
               margin='15px'
@@ -62,9 +62,9 @@ const SearchPage = () => {
               ) : (
                 <Card.MediaPreview preview={searchItem} showVoteAverage />
               )}
-            </GS.FlexItem>
+            </S.FlexItem>
           ))}
-        </GS.FlexContainer>
+        </S.FlexContainer>
 
         <UI.Pagination
           itemsPerPage={itemsPerPage}
@@ -72,8 +72,8 @@ const SearchPage = () => {
           setCurrentPage={setPage}
           totalItems={totalItems}
         />
-      </GS.ResponsiveContainer>
-    </GS.PageContainer>
+      </S.Content>
+    </S.Container>
   );
 };
 

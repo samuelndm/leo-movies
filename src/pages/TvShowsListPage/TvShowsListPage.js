@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { SORT_BY, SORT_BY_LIST } from "utils/constants";
 import { createEmptyArray } from "utils/utils";
 import * as API from "services/Loaders";
-import * as GS from "assets/styles/GlobalStyles";
+import * as S from "./styles";
 import * as C from "components";
 import * as UI from "components/UIComponents";
 
@@ -45,9 +45,9 @@ const TvShowsListPage = () => {
   }, [page, sortBy, searched]);
 
   return (
-    <GS.PageContainer>
-      <GS.PageTitle>Tv Shows</GS.PageTitle>
-      <GS.PageOptions>
+    <S.Container>
+      <S.Title>Tv Shows</S.Title>
+      <S.Options>
         <UI.Search
           placeholder='Search a Tv Serie'
           isLoading={isLoading}
@@ -61,7 +61,7 @@ const TvShowsListPage = () => {
           label='Sort Results By'
           onChange={setSortBy}
         />
-      </GS.PageOptions>
+      </S.Options>
 
       <C.TvShowsList tvShows={tvShows} />
 
@@ -71,7 +71,7 @@ const TvShowsListPage = () => {
         setCurrentPage={setPage}
         totalItems={totalItems}
       />
-    </GS.PageContainer>
+    </S.Container>
   );
 };
 

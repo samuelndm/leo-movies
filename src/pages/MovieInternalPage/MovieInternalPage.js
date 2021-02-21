@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import * as API from "services/Loaders";
-import * as GS from "assets/styles/GlobalStyles";
+import * as S from "./styles";
 import * as C from "components";
 
 const MovieInternalPage = ({ match }) => {
@@ -31,10 +31,10 @@ const MovieInternalPage = ({ match }) => {
   }, [movieId]);
 
   return (
-    <GS.PageContainer>
+    <S.Container>
       <C.MovieInfo movie={movie} />
       <C.MovieCredits credits={credits} />
-    </GS.PageContainer>
+    </S.Container>
   );
 };
 

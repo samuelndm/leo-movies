@@ -6,7 +6,7 @@ export const getPersonById = (id, params = {}) => {
   });
 };
 
-export const getPopularPersons = (params = {}) => {
+export const getPopularPeople = (params = {}) => {
   return api.get("person/popular", {
     params: { ...params },
   });

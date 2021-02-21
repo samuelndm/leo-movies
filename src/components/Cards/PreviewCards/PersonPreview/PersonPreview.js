@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { IMAGE_SIZES } from "utils/constants";
 import { handleImageUrl } from "utils/cardsUtil";
-import * as UIPreview from "../UIPreviewCards";
+import * as S from "../UIPreviewCards/styles";
+import * as C from "../UIPreviewCards";
 
 const PersonPreview = ({ preview, showPopularity }) => {
   const [imageSize] = useState(`/${IMAGE_SIZES.PROFILE_SIZES.WIDTH_780}`);
@@ -16,20 +17,15 @@ const PersonPreview = ({ preview, showPopularity }) => {
   }, [preview, imageSize]);
 
   return (
-    <UIPreview.CardContainer>
-      <UIPreview.Image
-        imageUrl={imageUrl}
-        redirectUrl={`/person/${preview?.id}`}
-      />
+    <S.Container>
+      <C.Image imageUrl={imageUrl} redirectUrl={`/person/${preview?.id}`} />
 
-      {showPopularity && (
-        <UIPreview.Popularity popularity={preview?.popularity} />
-      )}
+      {showPopularity && <C.Popularity popularity={preview?.popularity} />}
 
-      <UIPreview.Title title={preview?.name} />
+      <C.Title title={preview?.name} />
 
-      <UIPreview.Departament departament={preview?.known_for_department} />
-    </UIPreview.CardContainer>
+      <C.Departament departament={preview?.known_for_department} />
+    </S.Container>
   );
 };
 

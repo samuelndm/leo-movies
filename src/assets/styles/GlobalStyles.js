@@ -40,7 +40,7 @@ export default createGlobalStyle`
 `;
 
 export const PageContainer = styled.div`
-  padding: calc(var(--navbar-height) + 30px) 0 var(--navbar-height);
+  padding: var(--navbar-height) 0 var(--navbar-height);
   width: 100%;
   max-width: 100%;
   min-height: 100vh;
@@ -53,7 +53,7 @@ export const PageContainer = styled.div`
 `;
 
 export const PageTitle = styled.h1`
-  margin: 50px auto 10px;
+  margin: 20px auto 10px;
   padding: 0 15px;
   width: 100%;
   color: #333;

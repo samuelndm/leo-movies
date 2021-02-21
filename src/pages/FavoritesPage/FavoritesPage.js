@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useFavoritesContext } from "contexts";
 import { MEDIA_TYPES } from "utils/constants";
 import * as API from "services/Loaders";
-import * as GS from "assets/styles/GlobalStyles";
+import * as S from "./styles";
 import * as Card from "components/Cards";
 
 const FavoritesPage = () => {
@@ -32,28 +32,28 @@ const FavoritesPage = () => {
   }, [favoritesStorage]);
 
   return (
-    <GS.PageContainer>
-      <GS.ResponsiveContainer>
-        <GS.PageTitle>
+    <S.Container style={{ margin: "50px 0 0" }}>
+      <S.Content>
+        <S.Title>
           {favoritesStorage?.length
             ? "Favorites"
             : "No media added to favorites"}
-        </GS.PageTitle>
+        </S.Title>
 
-        <GS.FlexContainer>
+        <S.FlexContainer>
           {favorites?.map((favorite, index) => (
-            <GS.FlexItem
+            <S.FlexItem
               lg={2}
               xs={12}
               margin='15px'
               key={`favoritePreview-${favorite?.id || index}`}
             >
               <Card.MediaPreview preview={favorite} showVoteAverage />
-            </GS.FlexItem>
+            </S.FlexItem>
           ))}
-        </GS.FlexContainer>
-      </GS.ResponsiveContainer>
-    </GS.PageContainer>
+        </S.FlexContainer>
+      </S.Content>
+    </S.Container>
   );
 };
 

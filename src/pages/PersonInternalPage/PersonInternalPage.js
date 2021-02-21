@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import * as API from "services/Loaders";
-import * as GS from "assets/styles/GlobalStyles";
+import * as S from "./styles";
 import * as C from "components";
 
 const PersonInternalPage = ({ match }) => {
@@ -24,10 +24,10 @@ const PersonInternalPage = ({ match }) => {
   }, [personId]);
 
   return (
-    <GS.PageContainer>
+    <S.Container>
       <C.PersonInfo person={person} />
       <C.PersonCredits credits={credits} />
-    </GS.PageContainer>
+    </S.Container>
   );
 };
 

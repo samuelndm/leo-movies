@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import * as API from "services/Loaders";
-import * as GS from "assets/styles/GlobalStyles";
-import * as C from "components";
 import { resizeArray } from "utils/utils";
+import * as API from "services/Loaders";
+import * as S from "./styles";
+import * as C from "components";
 
 const MAX_ITEMS = 12;
 
@@ -34,7 +34,7 @@ const HomePage = () => {
   }, [params]);
 
   return (
-    <GS.PageContainer>
+    <S.Container>
       <C.MoviesSlider
         movies={popularMovies}
         slidesToShow={6}
@@ -46,7 +46,7 @@ const HomePage = () => {
         slidesToShow={6}
         title='Popular Tv Shows'
       />
-    </GS.PageContainer>
+    </S.Container>
   );
 };
 

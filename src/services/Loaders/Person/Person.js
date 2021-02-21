@@ -16,9 +16,9 @@ export const loadPersonById = async (id, params) => {
   }
 };
 
-export const loadPopularPersons = async (params) => {
+export const loadPopularPeople = async (params) => {
   try {
-    const { data } = await API_ENDPOINTS.getPopularPersons(params);
+    const { data } = await API_ENDPOINTS.getPopularPeople(params);
     return data || {};
   } catch (err) {
     console.error(err);
@@ -44,7 +44,7 @@ export const loadPersonImagesById = async (id, params) => {
   }
 };
 
-export const loadSearchedPersons = async (params) => {
+export const loadSearchedPeople = async (params) => {
   try {
     const { data } = await API_ENDPOINTS.getSearchedPerson(params);
     return data || {};

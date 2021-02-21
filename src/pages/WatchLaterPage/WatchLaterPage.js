@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useWatchLaterContext } from "contexts";
 import { MEDIA_TYPES } from "utils/constants";
 import * as API from "services/Loaders";
-import * as GS from "assets/styles/GlobalStyles";
+import * as S from "./styles";
 import * as Card from "components/Cards";
 
 const WatchLaterPage = () => {
@@ -32,28 +32,28 @@ const WatchLaterPage = () => {
   }, [watchLaterStorage]);
 
   return (
-    <GS.PageContainer>
-      <GS.ResponsiveContainer>
-        <GS.PageTitle>
+    <S.Container>
+      <S.Content>
+        <S.Title>
           {watchLaterStorage?.length
             ? "Watch Later"
             : "No media added to watch later"}
-        </GS.PageTitle>
+        </S.Title>
 
-        <GS.FlexContainer>
+        <S.FlexContainer>
           {watchLaterList?.map((watchLater, index) => (
-            <GS.FlexItem
+            <S.FlexItem
               lg={2}
               xs={12}
               margin='15px'
               key={`watchLaterPreview-${watchLater?.id || index}`}
             >
               <Card.MediaPreview preview={watchLater} showVoteAverage />
-            </GS.FlexItem>
+            </S.FlexItem>
           ))}
-        </GS.FlexContainer>
-      </GS.ResponsiveContainer>
-    </GS.PageContainer>
+        </S.FlexContainer>
+      </S.Content>
+    </S.Container>
   );
 };
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { updateUrlParamByKey } from "utils/utils";
 import { URL_PARAMS } from "utils/constants";
@@ -35,6 +35,13 @@ const Search = () => {
       setIsVisible((isVisible) => !isVisible);
     }
   };
+
+  useEffect(() => {
+    document.documentElement.style.setProperty(
+      "--navbar-height",
+      isVisible ? "160px" : "90px"
+    );
+  }, [isVisible]);
 
   return (
     <S.Form isVisible={isVisible} onSubmit={handleSubmit}>

@@ -1,7 +1,18 @@
 import styled from "styled-components";
-import { ResponsiveContainer } from "assets/styles/GlobalStyles";
+import * as GS from "assets/styles/GlobalStyles";
 
-export const Container = styled(ResponsiveContainer)`
+export const Container = styled(GS.PageContainer)`
+  width: 100%;
+  height: 100%;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #414141;
+`;
+
+export const Content = styled(GS.ResponsiveContainer)`
   width: 100%;
   height: 100%;
   min-height: 70vh;

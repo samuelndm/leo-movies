@@ -14,6 +14,7 @@ const PreviewsSlider = ({
   slidesToShow = SLIDES_TO_SHOW_DEFAULT,
   showVoteAverage,
   showPopularity,
+  style,
 }) => {
   const [content, setContent] = useState(UTIL.createEmptyArray(slidesToShow));
 
@@ -24,7 +25,7 @@ const PreviewsSlider = ({
   }, [previews]);
 
   return (
-    <S.Container>
+    <S.Container style={style}>
       <UI.Slider
         settings={{
           ...sliderSettings,
@@ -51,6 +52,7 @@ PreviewsSlider.propTypes = {
   showVoteAverage: PropTypes.bool,
   showPopularity: PropTypes.bool,
   slidesToShow: PropTypes.number,
+  style: PropTypes.object,
 };
 
 export default PreviewsSlider;
