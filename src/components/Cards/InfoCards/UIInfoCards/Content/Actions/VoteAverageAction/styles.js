@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.span`
+  margin: 10px;
+  padding: 0 5px;
   width: 50px;
   height: 50px;
 
