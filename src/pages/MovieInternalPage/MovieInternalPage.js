@@ -19,8 +19,11 @@ const MovieInternalPage = ({ match }) => {
     const videos = allResponses[1];
     const credits = allResponses[2];
 
-    setMovie({ ...movie, videos });
-    setCredits(credits);
+    setTimeout(() => {
+      // Just to make a cool effect with skeleton ^^
+      setMovie({ ...movie, videos });
+      setCredits(credits);
+    }, 1000);
   };
 
   useEffect(() => {

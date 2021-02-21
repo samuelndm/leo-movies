@@ -12,8 +12,11 @@ const PersonInternalPage = ({ match }) => {
     const person = await API.loadPersonById(personId);
     const credits = await API.loadPersonCreditsById(personId);
 
-    setPerson(person);
-    setCredits(credits);
+    setTimeout(() => {
+      // Just to make a cool effect with skeleton ^^
+      setPerson(person);
+      setCredits(credits);
+    }, 1000);
   };
 
   useEffect(() => {

@@ -19,8 +19,11 @@ const TvShowInternalPage = ({ match }) => {
     const videos = allResponses[1];
     const credits = allResponses[2];
 
-    setTvShow({ ...tvShow, videos });
-    setCredits(credits);
+    setTimeout(() => {
+      // Just to make a cool effect with skeleton ^^
+      setTvShow({ ...tvShow, videos });
+      setCredits(credits);
+    }, 1000);
   };
   useEffect(() => {
     return loadData(tvShowId);
