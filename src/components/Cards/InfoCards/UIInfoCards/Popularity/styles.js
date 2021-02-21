@@ -8,7 +8,7 @@ export const Container = styled.span`
   align-items: center;
   justify-content: center;
 
-  background-color: ${({ popularity }) =>
+  background: ${({ popularity }) =>
     popularity !== null ? "var(--primary-color, #333)" : "transparent"};
   border: 3px solid
     ${({ popularity }) =>

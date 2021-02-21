@@ -26,8 +26,10 @@ export const Container = styled.div`
   }
 `;
 
-export const Title = styled.h3``;
+export const Title = styled.h3`
+  font-size: 15px;
+`;
 
 export const Content = styled.p`
-  font-size: 14px;
+  font-size: 13px;
 `;
