@@ -5,7 +5,7 @@ import * as UI from "components/UIComponents";
 
 const ReleaseDate = ({ releaseDate = null }) => {
   return releaseDate !== null ? (
-    <S.Container>{releaseDate || ""}</S.Container>
+    <S.Container>{releaseDate || "*"}</S.Container>
   ) : (
     <UI.Skeleton variant='text' animation='wave' width='100%' />
   );

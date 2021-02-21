@@ -21,9 +21,9 @@ const Skeleton = ({
     }
   }, [count]);
 
-  return skeletons?.map(() =>
+  return skeletons?.map((index) =>
     SkeletonStyle ? (
-      <SkeletonStyle className='skeleton-style'>
+      <SkeletonStyle className='skeleton-style' key={`skeleton-style-${index}`}>
         <SkeletonUIMaterial
           className={`skeleton-ui-material ${className}`}
           variant={variant}
@@ -39,6 +39,7 @@ const Skeleton = ({
         animation={animation}
         width={width}
         height={height}
+        key={`skeleton-material-${index}`}
       />
     )
   );
