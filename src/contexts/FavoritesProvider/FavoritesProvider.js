@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
+import * as UTIL from "utils/mediaUtil";
 import * as STORAGE from "utils/storage";
 import * as NF from "utils/notifications";
 
@@ -7,28 +8,37 @@ const FavoritesContext = createContext();
 export const useFavoritesContext = () => useContext(FavoritesContext);
 
 const FavoritesProvider = ({ children }) => {
-  const [favorites, setFavorites] = useState([]);
+  const [favoritesStorage, setFavorites] = useState([]);
 
   const getFavorite = (favoriteId) => {
-    return favorites.find((id) => id === favoriteId);
+    return favoritesStorage.find(
+      (favoriteStorage) => favoriteStorage?.id === favoriteId
+    );
   };
 
-  const addFavorite = (favoriteId) => {
-    const hasFavorite = getFavorite(favoriteId);
+  const addFavorite = (favorite) => {
+    const hasFavorite = getFavorite(favorite?.id);
 
     if (!hasFavorite) {
-      const newFavorites = [...favorites, favoriteId];
+      const newFavorite = {
+        id: favorite?.id,
+        media_type: UTIL.getMediaType(favorite),
+      };
+
+      const newFavorites = [...favoritesStorage, newFavorite];
       setFavorites(newFavorites);
       STORAGE.updateFavoritesStorage(newFavorites);
       NF.createSuccessNotification({ message: "Added to favorites." });
     }
   };
 
-  const removeFavorite = (favoriteId) => {
-    const hasFavorite = getFavorite(favoriteId);
+  const removeFavorite = (favorite) => {
+    const hasFavorite = getFavorite(favorite?.id);
 
     if (hasFavorite) {
-      const newFavorites = favorites?.filter((id) => id !== favoriteId);
+      const newFavorites = favoritesStorage?.filter(
+        (favoriteStorage) => favoriteStorage?.id !== favorite?.id
+      );
       setFavorites(newFavorites);
       STORAGE.updateFavoritesStorage(newFavorites);
       NF.createDangerNotification({ message: "Removed from favorites." });
@@ -42,7 +52,7 @@ const FavoritesProvider = ({ children }) => {
 
   return (
     <FavoritesContext.Provider
-      value={{ favorites, getFavorite, addFavorite, removeFavorite }}
+      value={{ favoritesStorage, getFavorite, addFavorite, removeFavorite }}
     >
       {children}
     </FavoritesContext.Provider>

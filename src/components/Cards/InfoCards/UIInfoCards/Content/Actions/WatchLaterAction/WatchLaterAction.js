@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import * as S from "../styles";
 import { useWatchLaterContext } from "contexts";
+import * as S from "../styles";
 
-const WatchLaterAction = ({ contentId }) => {
+const WatchLaterAction = ({ content }) => {
   const {
     getWatchLater,
     addWatchLater,
@@ -15,18 +15,18 @@ const WatchLaterAction = ({ contentId }) => {
     event.preventDefault();
 
     if (!isWatchLater) {
-      addWatchLater(contentId);
+      addWatchLater(content);
       setIsWatchLater(true);
     } else {
-      removeWatchLater(contentId);
+      removeWatchLater(content);
       setIsWatchLater(false);
     }
   };
 
   useEffect(() => {
-    const isWatchLater = getWatchLater(contentId);
+    const isWatchLater = getWatchLater(content?.id);
     setIsWatchLater(isWatchLater);
-  }, [contentId, getWatchLater]);
+  }, [content, getWatchLater]);
 
   return (
     <S.CircleAction onClick={handleClick}>
@@ -39,7 +39,7 @@ const WatchLaterAction = ({ contentId }) => {
 };
 
 WatchLaterAction.propTypes = {
-  contentId: PropTypes.number,
+  content: PropTypes.object,
 };
 
 export default WatchLaterAction;

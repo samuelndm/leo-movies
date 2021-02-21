@@ -22,7 +22,7 @@ export default createGlobalStyle`
       --primary-color: #032541;
       --secondary-color: #00506E;
       
-      --gradient-primary-color: linear-gradient(90deg, #032541, #00506E );
+      --gradient-primary-color: linear-gradient(90deg, #032541, #00506E);
       --gradient-secondary-color: linear-gradient(90deg, #9BAEBC, #677A86);
      
       --inverse-gradient-primary-color: linear-gradient(90deg, #00506E, #032541);
@@ -30,8 +30,9 @@ export default createGlobalStyle`
       
       --background-color: #fff;
       --navbar-height: 90px;
+   
 
-      @media screen and (max-width: 991px) {
+      @media screen and (max-width: 1199px) {
         --navbar-height: 160px;
       }
     }
@@ -39,7 +40,7 @@ export default createGlobalStyle`
 `;
 
 export const PageContainer = styled.div`
-  padding: var(--navbar-height) 0;
+  padding: calc(var(--navbar-height) + 30px) 0 var(--navbar-height);
   width: 100%;
   max-width: 100%;
   min-height: 100vh;

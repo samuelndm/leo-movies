@@ -10,8 +10,8 @@ const Actions = ({ content = null }) => {
       {content !== null ? (
         <>
           <Action.WatchTrailer trailerKey={content?.videos?.[0]?.key} />
-          <Action.Favorite contentId={content?.id} />
-          <Action.WatchLater contentId={content?.id} />
+          <Action.Favorite content={content} />
+          <Action.WatchLater content={content} />
         </>
       ) : (
         <>

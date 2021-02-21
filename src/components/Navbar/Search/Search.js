@@ -30,8 +30,10 @@ const Search = () => {
   };
 
   const toggleVisibility = (event) => {
-    event.preventDefault();
-    setIsVisible((isVisible) => !isVisible);
+    if (!keyword) {
+      event.preventDefault();
+      setIsVisible((isVisible) => !isVisible);
+    }
   };
 
   return (

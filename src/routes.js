@@ -16,6 +16,9 @@ const Routes = () => {
         <Route exact path='/tv' component={P.TvShowsListPage} />
         <Route exact path='/person/:id' component={P.PersonInternalPage} />
         <Route exact path='/persons' component={P.PersonsListPage} />
+        <Route exact path='/favorites' component={P.FavoritesPage} />
+        <Route exact path='/watch-later' component={P.WatchLaterPage} />
+        <Route exact path='/search' component={P.SearchPage} />
         <Route exact path='*' component={P.NotFoundPage} />
       </Switch>
     </HashRouter>

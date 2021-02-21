@@ -7,7 +7,7 @@ const ReleaseDate = ({ releaseDate = null }) => {
   return (
     <S.Container>
       {releaseDate !== null ? (
-        releaseDate || "*"
+        releaseDate || ""
       ) : (
         <Skeleton className='skeleton' variant='text' animation='wave' />
       )}

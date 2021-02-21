@@ -6,3 +6,6 @@ export { default as PersonInternalPage } from "./PersonInternalPage/PersonIntern
 export { default as PersonsListPage } from "./PersonsListPage/PersonsListPage";
 export { default as TvShowInternalPage } from "./TvShowInternalPage/TvShowInternalPage";
 export { default as TvShowsListPage } from "./TvShowsListPage/TvShowsListPage";
+export { default as FavoritesPage } from "./FavoritesPage/FavoritesPage";
+export { default as WatchLaterPage } from "./WatchLaterPage/WatchLaterPage";
+export { default as SearchPage } from "./SearchPage/SearchPage";

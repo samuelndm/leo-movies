@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
+import * as UTIL from "utils/mediaUtil";
 import * as STORAGE from "utils/storage";
 import * as NF from "utils/notifications";
 
@@ -7,29 +8,35 @@ const WatchLaterContext = createContext();
 export const useWatchLaterContext = () => useContext(WatchLaterContext);
 
 const WatchLaterProvider = ({ children }) => {
-  const [watchLaterList, setWatchLaterList] = useState([]);
+  const [watchLaterStorage, setWatchLaterList] = useState([]);
 
   const getWatchLater = (watchLaterId) => {
-    return watchLaterList.find((id) => id === watchLaterId);
+    return watchLaterStorage.find(
+      (watchLaterStorage) => watchLaterStorage?.id === watchLaterId
+    );
   };
 
-  const addWatchLater = (watchLaterId) => {
-    const hasWatchLater = getWatchLater(watchLaterId);
+  const addWatchLater = (watchLater) => {
+    const hasWatchLater = getWatchLater(watchLater?.id);
 
     if (!hasWatchLater) {
-      const newWatchLaterList = [...watchLaterList, watchLaterId];
+      const newWatchLater = {
+        id: watchLater?.id,
+        media_type: UTIL.getMediaType(watchLater),
+      };
+      const newWatchLaterList = [...watchLaterStorage, newWatchLater];
       setWatchLaterList(newWatchLaterList);
       STORAGE.updateWatchLaterStorage(newWatchLaterList);
       NF.createSuccessNotification({ message: "Added to watch later." });
     }
   };
 
-  const removeWatchLater = (favoriteId) => {
-    const hasWatchLater = getWatchLater(favoriteId);
+  const removeWatchLater = (watchLater) => {
+    const hasWatchLater = getWatchLater(watchLater?.id);
 
     if (hasWatchLater) {
-      const newWatchLaterList = watchLaterList?.filter(
-        (id) => id !== favoriteId
+      const newWatchLaterList = watchLaterStorage?.filter(
+        (watchLaterStorage) => watchLaterStorage?.id !== watchLater?.id
       );
       setWatchLaterList(newWatchLaterList);
       STORAGE.updateWatchLaterStorage(newWatchLaterList);
@@ -46,7 +53,12 @@ const WatchLaterProvider = ({ children }) => {
 
   return (
     <WatchLaterContext.Provider
-      value={{ watchLaterList, getWatchLater, addWatchLater, removeWatchLater }}
+      value={{
+        watchLaterStorage,
+        getWatchLater,
+        addWatchLater,
+        removeWatchLater,
+      }}
     >
       {children}
     </WatchLaterContext.Provider>

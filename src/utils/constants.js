@@ -2,6 +2,12 @@ export const URL_PARAMS = {
   SEARCH: "search",
 };
 
+export const MEDIA_TYPES = {
+  MOVIE: "movie",
+  TV_SHOW: "tv",
+  PERSON: "person",
+};
+
 export const SORT_BY = {
   POPULARITY_ASC: "popularity.asc",
   POPULARITY_DESC: "popularity.desc",

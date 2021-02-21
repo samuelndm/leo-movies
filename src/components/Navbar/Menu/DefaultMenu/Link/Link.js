@@ -6,7 +6,7 @@ import * as UI from "components/UIComponents";
 const Link = ({ link }) => {
   if (!link) return null;
   return (
-    <S.Container>
+    <S.Container style={link?.style}>
       <UI.LinkHandler url={link.url} target={link.target} title={link.title} />
     </S.Container>
   );

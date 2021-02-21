@@ -1,14 +1,8 @@
 import React from "react";
 import * as S from "./styles";
+import { menu } from "./MenuSettings";
 import DefaultMenu from "./DefaultMenu/DefaultMenu";
 import MobileMenu from "./MobileMenu/MobileMenu";
-
-const menu = [
-  { url: "/", title: "Home" },
-  { url: "/movies", title: "Movies" },
-  { url: "/tv", title: "TV Shows" },
-  { url: "/persons", title: "Persons" },
-];
 
 const Menu = () => {
   return (

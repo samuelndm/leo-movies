@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Form = styled.form`
   flex-grow: 1;
-  width: auto;
+  width: 100%;
   max-width: ${({ isVisible }) => (isVisible ? "1000px" : "0")};
   padding: 20px;
   margin: 0 0 0 auto;

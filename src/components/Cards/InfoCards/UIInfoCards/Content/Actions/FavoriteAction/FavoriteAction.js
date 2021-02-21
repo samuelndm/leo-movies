@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { useFavoritesContext } from "contexts/FavoritesProvider/FavoritesProvider";
+import { useFavoritesContext } from "contexts";
 import * as S from "../styles";
 
-const FavoriteAction = ({ contentId }) => {
+const FavoriteAction = ({ content }) => {
   const { getFavorite, addFavorite, removeFavorite } = useFavoritesContext();
   const [isFavorited, setIsFavorited] = useState(false);
 
@@ -11,18 +11,18 @@ const FavoriteAction = ({ contentId }) => {
     event.preventDefault();
 
     if (!isFavorited) {
-      addFavorite(contentId);
+      addFavorite(content);
       setIsFavorited(true);
     } else {
-      removeFavorite(contentId);
+      removeFavorite(content);
       setIsFavorited(false);
     }
   };
 
   useEffect(() => {
-    const isFavorited = getFavorite(contentId);
+    const isFavorited = getFavorite(content?.id);
     setIsFavorited(isFavorited);
-  }, [contentId, getFavorite]);
+  }, [content, getFavorite]);
 
   return (
     <S.CircleAction onClick={handleClick}>
@@ -35,7 +35,7 @@ const FavoriteAction = ({ contentId }) => {
 };
 
 FavoriteAction.propTypes = {
-  contentId: PropTypes.number,
+  content: PropTypes.object,
 };
 
 export default FavoriteAction;
