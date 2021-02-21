@@ -13,8 +13,12 @@ export const Container = styled.span`
     height: 40px;
     border-radius: 6px;
 
-    @media screen and (max-width: 975px) {
+    @media screen and (max-width: 991px) {
       width: 100%;
     }
+  }
+
+  @media screen and (max-width: 991px) {
+    text-align: center;
   }
 `;
