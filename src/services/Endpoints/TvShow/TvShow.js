@@ -1,6 +1,6 @@
 import api from "services/api";
 
-export const getTvShowDetailsById = (id, params = {}) => {
+export const getTvShowById = (id, params = {}) => {
   return api.get(`tv/${id}`, {
     params: { ...params },
   });
@@ -32,6 +32,12 @@ export const getSearchedTvShows = (params = {}) => {
 
 export const getTvShowCreditsById = (id, params = {}) => {
   return api.get(`tv/${id}/credits`, {
+    params: { ...params },
+  });
+};
+
+export const getTvShowVideosById = (id, params = {}) => {
+  return api.get(`tv/${id}/videos`, {
     params: { ...params },
   });
 };

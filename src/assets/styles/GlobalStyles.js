@@ -21,8 +21,13 @@ export default createGlobalStyle`
     #root {
       --primary-color: #032541;
       --secondary-color: #00506E;
-      --primary-gradient-color: linear-gradient(90deg, #032541, #00506E );
-      --secondary-gradient-color: linear-gradient(90deg, #00506E, #032541);
+      
+      --gradient-primary-color: linear-gradient(90deg, #032541, #00506E );
+      --gradient-secondary-color: linear-gradient(90deg, #9BAEBC, #677A86);
+     
+      --inverse-gradient-primary-color: linear-gradient(90deg, #00506E, #032541);
+      --inverse-gradient-secondary-color: linear-gradient(90deg, #DCF2FF, #395171);
+      
       --background-color: #fff;
       --navbar-height: 90px;
 
@@ -34,7 +39,7 @@ export default createGlobalStyle`
 `;
 
 export const PageContainer = styled.div`
-  padding: var(--navbar-height) 0 0;
+  padding: var(--navbar-height) 0;
   width: 100%;
   max-width: 100%;
   min-height: 100vh;
@@ -42,7 +47,8 @@ export const PageContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background-color: var(--background-color);
+  background: ${({ backgroundColor }) =>
+    backgroundColor || "var(--background-color, #fff)"};
 `;
 
 export const PageTitle = styled.h1`
@@ -86,7 +92,7 @@ export const ResponsiveContainer = styled.div`
 `;
 
 export const ContainerTitle = styled.h2`
-  margin: 0 0 35px;
+  margin: 0 0 10px;
   color: #333;
 
   @media screen and (max-width: 586px) {

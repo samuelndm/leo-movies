@@ -1,6 +1,6 @@
 import api from "services/api";
 
-export const getPersonDetailsById = (id, params = {}) => {
+export const getPersonById = (id, params = {}) => {
   return api.get(`person/${id}`, {
     params: { ...params },
   });

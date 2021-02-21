@@ -2,9 +2,9 @@ import { createDangerNotification } from "utils/notifications";
 import { ERROR } from "../messages";
 import * as API_ENDPOINTS from "services/Endpoints";
 
-export const loadTvShowDetailsById = async (id, params) => {
+export const loadTvShowById = async (id, params) => {
   try {
-    const { data } = await API_ENDPOINTS.getTvShowDetailsById(id, params);
+    const { data } = await API_ENDPOINTS.getTvShowById(id, params);
     return data || {};
   } catch (err) {
     console.error(err);
@@ -83,5 +83,19 @@ export const loadTvShowCreditsById = async (id, params) => {
     });
 
     return {};
+  }
+};
+
+export const loadTvShowVideosById = async (id, params) => {
+  try {
+    const { data } = await API_ENDPOINTS.getTvShowVideosById(id, params);
+    return data?.results || [];
+  } catch (err) {
+    console.error(err);
+    createDangerNotification({
+      message: err?.response?.data?.status_message || ERROR.DEFAULT,
+    });
+
+    return [];
   }
 };

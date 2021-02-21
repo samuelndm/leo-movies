@@ -5,7 +5,7 @@ export const Container = styled.div`
   height: 225px;
   border-radius: 6px;
 
-  & > .skeleton-body {
+  & > .skeleton {
     width: 100%;
     height: 100%;
     border-radius: inherit;

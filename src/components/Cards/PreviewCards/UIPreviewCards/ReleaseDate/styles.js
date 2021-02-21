@@ -6,7 +6,7 @@ export const Container = styled.span`
   font-size: 14px;
   text-align: left;
 
-  & > .skeleton-body {
+  & > .skeleton {
     width: 100%;
     border-radius: 6px;
   }

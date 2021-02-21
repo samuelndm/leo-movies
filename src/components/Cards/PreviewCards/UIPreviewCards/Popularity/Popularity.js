@@ -9,7 +9,7 @@ const Popularity = ({ popularity = null }) => {
       {popularity !== null ? (
         popularity?.toFixed(1) || "NR"
       ) : (
-        <Skeleton className='skeleton-body' variant='circle' animation='wave' />
+        <Skeleton className='skeleton' variant='circle' animation='wave' />
       )}
     </S.Container>
   );

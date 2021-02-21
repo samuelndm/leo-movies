@@ -39,10 +39,13 @@ const Modal = ({ openModal, closeModal, children, size }) => {
 };
 
 Modal.propTypes = {
-  openModal: PropTypes.bool,
+  openModal: PropTypes.any,
   closeModal: PropTypes.func.isRequired,
-  children: PropTypes.element.isRequired,
-  size: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.func.isRequired,
+    PropTypes.element.isRequired,
+  ]).isRequired,
+  size: PropTypes.oneOf(["lg", "md", "sm"]),
 };
 
 export default Modal;

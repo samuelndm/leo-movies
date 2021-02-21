@@ -1,2 +1,2 @@
-export * from "./DetailCards";
+export * from "./InfoCards";
 export * from "./PreviewCards";

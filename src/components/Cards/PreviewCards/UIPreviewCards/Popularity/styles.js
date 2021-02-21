@@ -23,7 +23,7 @@ export const Container = styled.span`
   font-weight: 700;
   font-size: 14px;
 
-  & > .skeleton-body {
+  & > .skeleton {
     width: 100%;
     height: 100%;
     background-color: #e3e3e3;

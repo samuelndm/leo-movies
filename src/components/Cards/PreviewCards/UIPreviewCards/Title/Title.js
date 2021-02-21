@@ -9,7 +9,7 @@ const Title = ({ title = null }) => {
       {title !== null ? (
         title || "*"
       ) : (
-        <Skeleton className='skeleton-body' variant='text' animation='wave' />
+        <Skeleton className='skeleton' variant='text' animation='wave' />
       )}
     </S.Container>
   );

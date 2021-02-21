@@ -2,9 +2,9 @@ import { createDangerNotification } from "utils/notifications";
 import * as API_ENDPOINTS from "services/Endpoints";
 import { ERROR } from "../messages";
 
-export const loadMovieDetailsById = async (id, params) => {
+export const loadMovieById = async (id, params) => {
   try {
-    const { data } = await API_ENDPOINTS.getMovieDetailsById(id, params);
+    const { data } = await API_ENDPOINTS.getMovieById(id, params);
     return data || {};
   } catch (err) {
     console.error(err);
@@ -83,5 +83,19 @@ export const loadMovieCreditsById = async (id, params) => {
     });
 
     return {};
+  }
+};
+
+export const loadMovieVideosById = async (id, params) => {
+  try {
+    const { data } = await API_ENDPOINTS.getMovieVideosById(id, params);
+    return data?.results || [];
+  } catch (err) {
+    console.error(err);
+    createDangerNotification({
+      message: err?.response?.data?.status_message || ERROR.DEFAULT,
+    });
+
+    return [];
   }
 };

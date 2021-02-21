@@ -27,7 +27,7 @@ const PersonCredits = ({ credits }) => {
 
       <C.PreviewsSlider
         previews={personCredits}
-        PreviewCard={Card.MoviePreview}
+        PreviewCard={Card.MediaPreview}
         slidesToShow={SLIDES_TO_SHOW}
       />
     </S.Container>

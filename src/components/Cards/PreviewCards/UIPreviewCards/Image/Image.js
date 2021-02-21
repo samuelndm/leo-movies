@@ -13,7 +13,7 @@ const Image = ({ imageUrl = null, redirectUrl }) => {
           <S.Image src={imageUrl || placeholder} alt='Preview poster' />
         </UI.LinkHandler>
       ) : (
-        <Skeleton className='skeleton-body' variant='rect' animation='wave' />
+        <Skeleton className='skeleton' variant='rect' animation='wave' />
       )}
     </S.Container>
   );

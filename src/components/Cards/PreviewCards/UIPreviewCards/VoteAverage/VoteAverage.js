@@ -9,7 +9,7 @@ const VoteAverage = ({ voteAverage = null, style }) => {
       {voteAverage !== null ? (
         voteAverage || "NR"
       ) : (
-        <Skeleton className='skeleton-body' variant='circle' animation='wave' />
+        <Skeleton className='skeleton' variant='circle' animation='wave' />
       )}
     </S.Container>
   );

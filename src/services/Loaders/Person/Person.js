@@ -2,9 +2,9 @@ import { createDangerNotification } from "utils/notifications";
 import * as API_ENDPOINTS from "services/Endpoints";
 import { ERROR } from "../messages";
 
-export const loadPersonDetailsById = async (id, params) => {
+export const loadPersonById = async (id, params) => {
   try {
-    const { data } = await API_ENDPOINTS.getPersonDetailsById(id, params);
+    const { data } = await API_ENDPOINTS.getPersonById(id, params);
     return data || {};
   } catch (err) {
     console.error(err);

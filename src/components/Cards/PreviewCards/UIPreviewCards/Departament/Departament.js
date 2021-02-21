@@ -9,7 +9,7 @@ const Departament = ({ departament = null }) => {
       {departament !== null ? (
         departament || "*"
       ) : (
-        <Skeleton className='skeleton-body' variant='text' animation='wave' />
+        <Skeleton className='skeleton' variant='text' animation='wave' />
       )}
     </S.Container>
   );

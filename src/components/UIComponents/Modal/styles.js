@@ -45,11 +45,12 @@ export const ContentClosingAnimation = keyframes`
 export const Content = styled.div`
   z-index: 99999;
   margin: auto;
+  padding: 15px;
   position: relative;
   border-radius: 6px;
   background-color: transparent;
   animation: ${({ isOpen }) =>
-      isOpen ? ContentOpenAnimation : ContentClosingAnimation}
+    isOpen ? ContentOpenAnimation : ContentClosingAnimation}
     0.5s ease-in-out;
 
   width: ${({ size }) => {
@@ -66,6 +67,7 @@ export const Content = styled.div`
     }
   }};
 
+
   @media (min-width: 480px) {
     max-width: 728px;
   }
@@ -77,7 +79,8 @@ export const Content = styled.div`
   @media (min-width: 1200px) {
     max-width: 1140px;
   }
-`;
+}
+  `;
 
 export const CloseButton = styled.button`
   z-index: 999999;

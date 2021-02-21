@@ -9,7 +9,7 @@ const ReleaseDate = ({ releaseDate = null }) => {
       {releaseDate !== null ? (
         releaseDate || "*"
       ) : (
-        <Skeleton className='skeleton-body' variant='text' animation='wave' />
+        <Skeleton className='skeleton' variant='text' animation='wave' />
       )}
     </S.Container>
   );

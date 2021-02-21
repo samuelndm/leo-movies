@@ -1,6 +1,6 @@
 import api from "services/api";
 
-export const getMovieDetailsById = (id, params = {}) => {
+export const getMovieById = (id, params = {}) => {
   return api.get(`movie/${id}`, {
     params: { ...params },
   });
@@ -32,6 +32,12 @@ export const getSearchedMovies = (params = {}) => {
 
 export const getMovieCreditsById = (id, params = {}) => {
   return api.get(`movie/${id}/credits`, {
+    params: { ...params },
+  });
+};
+
+export const getMovieVideosById = (id, params = {}) => {
+  return api.get(`movie/${id}/videos`, {
     params: { ...params },
   });
 };

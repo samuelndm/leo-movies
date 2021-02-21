@@ -32,7 +32,7 @@ export const Container = styled.span`
   color: #fff;
   font-weight: 700;
 
-  & > .skeleton-body {
+  & > .skeleton {
     width: 100%;
     height: 100%;
     background-color: #e3e3e3;

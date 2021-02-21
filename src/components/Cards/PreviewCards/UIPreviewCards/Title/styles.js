@@ -14,7 +14,7 @@ export const Container = styled.h2`
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 
-  & > .skeleton-body {
+  & > .skeleton {
     width: 100%;
     border-radius: 6px;
   }

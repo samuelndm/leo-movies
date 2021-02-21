@@ -1,3 +1,4 @@
+export * from "./ContentMedias";
 export { default as LinkHandler } from "./LinkHandler/LinkHandler";
 export { default as Modal } from "./Modal/Modal";
 export { default as Pagination } from "./Pagination/Pagination";
