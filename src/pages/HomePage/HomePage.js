@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import * as API from "services/Loaders";
 import * as GS from "assets/styles/GlobalStyles";
 import * as C from "components";
+import { resizeArray } from "utils/utils";
+
+const MAX_ITEMS = 12;
 
 const HomePage = () => {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -19,8 +22,11 @@ const HomePage = () => {
     const movies = allResponses[0]?.results || [];
     const tvShows = allResponses[1]?.results || [];
 
-    setPopularMovies(movies);
-    setTopularTvShows(tvShows);
+    const resizedMovies = resizeArray(movies, MAX_ITEMS);
+    const tvShowsMovies = resizeArray(tvShows, MAX_ITEMS);
+
+    setPopularMovies(resizedMovies);
+    setTopularTvShows(tvShowsMovies);
   };
 
   useEffect(() => {
