@@ -50,17 +50,17 @@ const SearchPage = () => {
         </GS.PageTitle>
 
         <GS.FlexContainer style={{ minHeight: "70vh" }}>
-          {searchedList?.map((serachItem, index) => (
+          {searchedList?.map((searchItem, index) => (
             <GS.FlexItem
               lg={2}
               xs={12}
               margin='15px'
-              key={`searchPreview-${serachItem?.id || index}`}
+              key={`searchPreview-${searchItem?.id || index}`}
             >
-              {serachItem.media_type === MEDIA_TYPES.PERSON ? (
-                <Card.PersonPreview preview={serachItem} showPopularity />
+              {searchItem?.media_type === MEDIA_TYPES.PERSON ? (
+                <Card.PersonPreview preview={searchItem} showPopularity />
               ) : (
-                <Card.MediaPreview preview={serachItem} showVoteAverage />
+                <Card.MediaPreview preview={searchItem} showVoteAverage />
               )}
             </GS.FlexItem>
           ))}
