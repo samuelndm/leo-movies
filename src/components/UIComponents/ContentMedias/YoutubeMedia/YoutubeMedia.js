@@ -6,7 +6,7 @@ const YoutubeMedia = ({ mediaKey }) => {
   if (!mediaKey) return null;
   return (
     <S.Iframe
-      src={`http://www.youtube.com/embed/${mediaKey}?autoplay=1&autohide=1`}
+      src={`https://www.youtube.com/embed/${mediaKey}?autoplay=1&autohide=1`}
       type='text/html'
       title='trailer'
       allowFullScreen
