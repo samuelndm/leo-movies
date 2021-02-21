@@ -10,10 +10,8 @@ const Header = ({ content = null }) => {
       {content !== null ? (
         <>
           <S.Content>
-            <HeaderC.Title title={content?.title || content?.name || "*"} />
-            <HeaderC.Year
-              date={content?.release_date || content?.first_air_date || "*"}
-            />
+            <HeaderC.Title title={content?.title || content?.name} />
+            <HeaderC.VoteAverage voteAverage={content?.vote_average} />
           </S.Content>
 
           <S.Content>

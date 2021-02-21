@@ -12,16 +12,10 @@ const Actions = ({ content = null }) => {
           <Action.WatchTrailer trailerKey={content?.videos?.[0]?.key} />
           <Action.Favorite content={content} />
           <Action.WatchLater content={content} />
-          <Action.VoteAverage voteAverage={content?.vote_average} />
         </>
       ) : (
         <>
           <Skeleton className='skeleton-rect' variant='rect' animation='wave' />
-          <Skeleton
-            className='skeleton-circle'
-            variant='circle'
-            animation='wave'
-          />
           <Skeleton
             className='skeleton-circle'
             variant='circle'

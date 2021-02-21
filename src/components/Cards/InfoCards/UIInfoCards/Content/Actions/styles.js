@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin: 20px 0 0;
+  margin: 20px 0 0 5px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -53,13 +53,13 @@ export const CircleAction = styled(Action)`
 
 export const RectAction = styled(Action)`
   padding: 0 10px;
-  width: 130px;
+  width: 160px;
   height: 35px;
   border-radius: 18px;
   font-size: 14px;
   font-weight: 700;
 
-  @media screen and (max-width: 991px) {
+  @media screen and (max-width: 586px) {
     width: 100%;
   }
 `;

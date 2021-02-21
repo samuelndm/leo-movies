@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.span`
-  margin: 10px 0 0;
+  margin: 10px 0 0 5px;
   width: 100%;
   color: #fff;
   font-size: 14px;
