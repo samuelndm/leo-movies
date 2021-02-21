@@ -62,6 +62,10 @@ export const RectAction = styled(Action)`
   border-radius: 18px;
   font-size: 14px;
   font-weight: 700;
+
+  @media screen and (max-width: 991px) {
+    width: 100%;
+  }
 `;
 
 export const Icon = styled.i`

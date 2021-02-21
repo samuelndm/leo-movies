@@ -11,7 +11,7 @@ export default createGlobalStyle`
         height: 100%;
     }
 
-    *, button, input, textarea {
+    p, button, input, textarea {
         border: 0;
         outline: 0;
         font-family: Raleway, sans-serif;
