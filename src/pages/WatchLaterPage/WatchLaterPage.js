@@ -14,10 +14,16 @@ const WatchLaterPage = () => {
       const watchLaterType = watchLater?.media_type;
       let response = {};
 
-      if (watchLaterType === MEDIA_TYPES.MOVIE) {
-        response = await API.loadMovieById(watchLater?.id);
-      } else if (watchLaterType === MEDIA_TYPES.TV_SHOW) {
-        response = await API.loadTvShowById(watchLater?.id);
+      switch (watchLaterType) {
+        case MEDIA_TYPES.MOVIE:
+          response = await API.loadMovieById(watchLater?.id);
+          break;
+        case MEDIA_TYPES.TV_SHOW:
+          response = await API.loadTvShowById(watchLater?.id);
+          break;
+
+        default:
+          break;
       }
 
       setWatchLaterList((prev) => [

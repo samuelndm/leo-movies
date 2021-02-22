@@ -15,10 +15,16 @@ const FavoritesPage = () => {
       const favoriteType = favorite?.media_type;
       let response = {};
 
-      if (favoriteType === MEDIA_TYPES.MOVIE) {
-        response = await API.loadMovieById(favorite?.id);
-      } else if (favoriteType === MEDIA_TYPES.TV_SHOW) {
-        response = await API.loadTvShowById(favorite?.id);
+      switch (favoriteType) {
+        case MEDIA_TYPES.MOVIE:
+          response = await API.loadMovieById(favorite?.id);
+          break;
+        case MEDIA_TYPES.TV_SHOW:
+          response = await API.loadTvShowById(favorite?.id);
+          break;
+
+        default:
+          break;
       }
 
       setFavorites((prev) => [
