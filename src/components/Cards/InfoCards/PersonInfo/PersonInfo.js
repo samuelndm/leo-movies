@@ -23,7 +23,6 @@ const MovieInfo = ({ content, style }) => {
       <S.Details content={content}>
         <S.Content>
           <C.Title title={content?.name} />
-          <C.Popularity popularity={content?.popularity} />
         </S.Content>
 
         <S.Content>
