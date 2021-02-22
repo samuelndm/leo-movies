@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { default as StickSlider } from "react-slick";
+import { removeElementsAttrByQuery } from "utils/utils";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import * as S from "./styles";
@@ -28,6 +29,8 @@ const Slider = ({
     responsive: responsive || [],
     ...settings,
   };
+
+  removeElementsAttrByQuery(".slick-slide", "aria-hidden");
 
   return (
     <StickSlider {...defaultSettings} style={S.SliderStyle}>

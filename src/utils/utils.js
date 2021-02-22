@@ -147,3 +147,11 @@ export const removeUrlParamByKey = (search, key) => {
 
   return `?${newParams?.join("&") || ""}`;
 };
+
+export const removeElementsAttrByQuery = (query, attr) => {
+  const elements = document.querySelectorAll(query);
+
+  elements.forEach((element) => {
+    element?.removeAttribute(attr);
+  });
+};
