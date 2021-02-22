@@ -4,6 +4,7 @@ import { MEDIA_TYPES } from "utils/constants";
 import * as API from "services/Loaders";
 import * as S from "./styles";
 import * as Card from "components/Cards";
+import { ScrollToTop } from "utils/utils";
 
 const FavoritesPage = () => {
   const { favoritesStorage } = useFavoritesContext();
@@ -28,6 +29,7 @@ const FavoritesPage = () => {
   };
 
   useEffect(() => {
+    ScrollToTop();
     return loadData(favoritesStorage);
   }, [favoritesStorage]);
 

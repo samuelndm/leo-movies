@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { createEmptyArray } from "utils/utils";
+import { createEmptyArray, ScrollToTop } from "utils/utils";
 import { SORT_BY, SORT_BY_LIST } from "utils/constants";
 import * as API from "services/Loaders";
 import * as S from "./styles";
@@ -37,6 +37,7 @@ const MoviesListPage = () => {
   };
 
   useEffect(() => {
+    ScrollToTop();
     return params && loadData(params);
   }, [params]);
 

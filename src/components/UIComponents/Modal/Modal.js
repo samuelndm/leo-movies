@@ -14,9 +14,11 @@ const Modal = ({ openModal, closeModal, children, size }) => {
 
     setIsOpen(false);
 
-    return setTimeout(() => {
+    const timeOut = setTimeout(() => {
       closeModal(null);
     }, 400);
+
+    return () => clearTimeout(timeOut);
   };
 
   if (!openModal) return null;
