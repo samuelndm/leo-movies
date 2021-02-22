@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { createEmptyArray, ScrollToTop } from "utils/utils";
+import { createEmptyArray } from "utils/utils";
 import { SORT_BY, SORT_BY_LIST } from "utils/constants";
 import * as API from "services/Loaders";
 import * as S from "./styles";
@@ -37,7 +37,6 @@ const MoviesListPage = () => {
   };
 
   useEffect(() => {
-    ScrollToTop();
     return params && loadData(params);
   }, [params]);
 
@@ -51,7 +50,7 @@ const MoviesListPage = () => {
 
       <S.Options>
         <UI.Search
-          placeholder='Search a Movie'
+          placeholder="Search a Movie"
           isLoading={isLoading}
           onChange={setSearched}
           style={{ margin: "40px 7px 10px" }}
@@ -60,7 +59,7 @@ const MoviesListPage = () => {
         <UI.Select
           options={SORT_BY_LIST}
           defaultValue={sortBy}
-          label='Sort Results By'
+          label="Sort Results By"
           onChange={setSortBy}
         />
       </S.Options>

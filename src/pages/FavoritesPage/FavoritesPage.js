@@ -4,7 +4,6 @@ import { MEDIA_TYPES } from "utils/constants";
 import * as API from "services/Loaders";
 import * as S from "./styles";
 import * as Card from "components/Cards";
-import { ScrollToTop } from "utils/utils";
 
 const FavoritesPage = () => {
   const { favoritesStorage } = useFavoritesContext();
@@ -35,7 +34,6 @@ const FavoritesPage = () => {
   };
 
   useEffect(() => {
-    ScrollToTop();
     return loadData(favoritesStorage);
   }, [favoritesStorage]);
 
@@ -53,7 +51,7 @@ const FavoritesPage = () => {
             <S.FlexItem
               lg={2}
               xs={12}
-              margin='15px'
+              margin="15px"
               key={`favoritePreview-${favorite?.id || index}`}
             >
               <Card.MediaPreview preview={favorite} showVoteAverage />
