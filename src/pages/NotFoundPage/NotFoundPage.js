@@ -5,8 +5,8 @@ const NotFoundPage = () => {
   return (
     <S.Container>
       <S.Content>
-        <S.Title>Página não encontrada</S.Title>
-        <S.Icon className='fas fa-frown-open' />
+        <S.Title>Página not found</S.Title>
+        <S.Icon className="fas fa-frown-open" />
       </S.Content>
     </S.Container>
   );
