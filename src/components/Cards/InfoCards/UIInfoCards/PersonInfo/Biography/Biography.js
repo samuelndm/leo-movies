@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import { useCountdownTimer } from "hooks";
 import * as S from "./styles";
 import * as UI from "components/UIComponents";
 
 const Biography = ({ biography = null }) => {
+  const { countdown } = useCountdownTimer(9);
   const [paragraphs, setParagraphs] = useState([]);
 
   useEffect(() => {
@@ -11,10 +13,11 @@ const Biography = ({ biography = null }) => {
     setParagraphs(paragraphs);
   }, [biography]);
 
+  if (countdown === 0 && biography === null) biography = "";
   return biography !== null ? (
     <S.Container>
       <S.Title>Biography</S.Title>
-      <S.Content>{paragraphs[0] || ""}</S.Content>
+      <S.Content>{paragraphs[0] || "*"}</S.Content>
       {/* <S.Content>{paragraphs[1] || ""}</S.Content> */}
     </S.Container>
   ) : (

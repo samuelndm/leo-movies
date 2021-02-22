@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { useCountdownTimer } from "hooks";
 import * as S from "../styles";
 import * as UI from "components/UIComponents";
 
 const WatchTrailerAction = ({ trailerKey = null }) => {
+  const { countdown } = useCountdownTimer(9);
   const [key, setKey] = useState("");
 
   const handleClick = (event) => {
@@ -11,12 +13,13 @@ const WatchTrailerAction = ({ trailerKey = null }) => {
     setKey(trailerKey || "");
   };
 
+  if (countdown === 0 && trailerKey === null) trailerKey = "";
   return trailerKey !== null ? (
     <>
       <S.RectAction onClick={handleClick}>
         <>
           <S.Icon className='fab fa-youtube' />
-          Watch Trailer
+          {trailerKey ? "Watch Trailer" : "Trailer Unavailable"}
         </>
       </S.RectAction>
 

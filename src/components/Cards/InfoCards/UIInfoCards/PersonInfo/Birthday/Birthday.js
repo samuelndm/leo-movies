@@ -1,10 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useCountdownTimer } from "hooks";
 import * as UTIL from "utils/cardsUtil";
 import * as S from "./styles";
 import * as UI from "components/UIComponents";
 
 const Birthday = ({ birthday = null }) => {
+  const { countdown } = useCountdownTimer(9);
+
+  if (countdown === 0 && birthday === null) birthday = "";
   return birthday !== null ? (
     <S.Container>
       <S.Title>Birthday</S.Title>

@@ -23,11 +23,13 @@ export const CircleAction = styled(Action)`
 `;
 
 export const RectAction = styled(Action)`
+  padding: 0 5px;
   width: 160px;
   height: 35px;
   border-radius: 18px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
+  text-align: center;
 
   @media screen and (max-width: 586px) {
     width: 100%;
@@ -35,7 +37,7 @@ export const RectAction = styled(Action)`
 `;
 
 export const Icon = styled.i`
-  margin: 0 10px;
+  margin: 0 5px;
   font-size: 14px;
   color: ${({ color }) => color};
 `;

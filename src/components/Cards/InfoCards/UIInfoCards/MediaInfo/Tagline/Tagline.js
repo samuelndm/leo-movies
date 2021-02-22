@@ -1,9 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useCountdownTimer } from "hooks";
 import * as S from "./styles";
 import * as UI from "components/UIComponents";
 
 const Tagline = ({ tagline = null }) => {
+  const { countdown } = useCountdownTimer(9);
+
+  if (countdown === 0 && tagline === null) tagline = "";
   return tagline !== null ? (
     <S.Container>{tagline || ""}</S.Container>
   ) : (
