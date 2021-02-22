@@ -10,20 +10,20 @@ const FavoritesPage = () => {
   const { favoritesStorage } = useFavoritesContext();
   const [favorites, setFavorites] = useState([]);
 
-  const loadData = async (watchLaterStorage) => {
-    watchLaterStorage?.forEach(async (watchLater) => {
-      const watchLaterType = watchLater?.media_type;
+  const loadData = async (favoritesStorage) => {
+    favoritesStorage?.forEach(async (favorite) => {
+      const favoriteType = favorite?.media_type;
       let response = {};
 
-      if (watchLaterType === MEDIA_TYPES.MOVIE) {
-        response = await API.loadMovieById(watchLater?.id);
-      } else if (watchLaterType === MEDIA_TYPES.TV_SHOW) {
-        response = await API.loadTvShowById(watchLater?.id);
+      if (favoriteType === MEDIA_TYPES.MOVIE) {
+        response = await API.loadMovieById(favorite?.id);
+      } else if (favoriteType === MEDIA_TYPES.TV_SHOW) {
+        response = await API.loadTvShowById(favorite?.id);
       }
 
       setFavorites((prev) => [
         ...prev,
-        { ...response, media_type: watchLaterType },
+        { ...response, media_type: favoriteType },
       ]);
     });
   };
