@@ -4,8 +4,8 @@ import { useCountdownTimer } from "hooks";
 import * as S from "./styles";
 import * as UI from "components/UIComponents";
 
-const Biography = ({ biography = null }) => {
-  const { countdown } = useCountdownTimer(9);
+const Biography = ({ biography }) => {
+  const { countdown } = useCountdownTimer();
   const [paragraphs, setParagraphs] = useState([]);
 
   useEffect(() => {
@@ -13,12 +13,10 @@ const Biography = ({ biography = null }) => {
     setParagraphs(paragraphs);
   }, [biography]);
 
-  if (countdown === 0 && biography === null) biography = "";
-  return biography !== null ? (
+  return biography || countdown === 0 ? (
     <S.Container>
       <S.Title>Biography</S.Title>
       <S.Content>{paragraphs[0] || "*"}</S.Content>
-      {/* <S.Content>{paragraphs[1] || ""}</S.Content> */}
     </S.Container>
   ) : (
     <>

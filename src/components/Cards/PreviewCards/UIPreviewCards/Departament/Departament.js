@@ -4,11 +4,10 @@ import { useCountdownTimer } from "hooks";
 import * as S from "./styles";
 import * as UI from "components/UIComponents";
 
-const Departament = ({ departament = null }) => {
-  const { countdown } = useCountdownTimer(9);
+const Departament = ({ departament }) => {
+  const { countdown } = useCountdownTimer();
 
-  if (countdown === 0 && departament === null) departament = "";
-  return departament !== null ? (
+  return departament || countdown === 0 ? (
     <S.Container>{departament || "*"}</S.Container>
   ) : (
     <UI.Skeleton variant='text' animation='wave' width='100%' />

@@ -4,11 +4,10 @@ import { useCountdownTimer } from "hooks";
 import * as S from "./styles";
 import * as UI from "components/UIComponents";
 
-const Tagline = ({ tagline = null }) => {
-  const { countdown } = useCountdownTimer(9);
+const Tagline = ({ tagline }) => {
+  const { countdown } = useCountdownTimer();
 
-  if (countdown === 0 && tagline === null) tagline = "";
-  return tagline !== null ? (
+  return tagline || countdown === 0 ? (
     <S.Container>{tagline || ""}</S.Container>
   ) : (
     <UI.Skeleton

@@ -5,11 +5,10 @@ import * as UTIL from "utils/cardsUtil";
 import * as S from "./styles";
 import * as UI from "components/UIComponents";
 
-const ReleaseDate = ({ releaseDate = null }) => {
-  const { countdown } = useCountdownTimer(9);
+const ReleaseDate = ({ releaseDate }) => {
+  const { countdown } = useCountdownTimer();
 
-  if (countdown === 0 && releaseDate === null) releaseDate = "";
-  return releaseDate !== null ? (
+  return releaseDate || countdown === 0 ? (
     <S.Container>{UTIL.formatDateToSlash(releaseDate) || "*"}</S.Container>
   ) : (
     <UI.Skeleton

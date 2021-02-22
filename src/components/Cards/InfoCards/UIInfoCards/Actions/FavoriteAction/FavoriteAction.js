@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { useFavoritesContext } from "contexts";
+import { useCountdownTimer } from "hooks";
 import * as S from "../styles";
 import * as UI from "components/UIComponents";
 
-const FavoriteAction = ({ content = null }) => {
+const FavoriteAction = ({ content }) => {
   const { getFavorite, addFavorite, removeFavorite } = useFavoritesContext();
+  const { countdown } = useCountdownTimer();
   const [isFavorited, setIsFavorited] = useState(false);
 
   const handleClick = (event) => {
@@ -25,8 +27,8 @@ const FavoriteAction = ({ content = null }) => {
     setIsFavorited(isFavorited);
   }, [content, getFavorite]);
 
-  return content !== null ? (
-    <S.CircleAction onClick={handleClick}>
+  return content || countdown === 0 ? (
+    <S.CircleAction isDisabled={!content} onClick={handleClick}>
       <S.Icon
         color={isFavorited ? "#EC9929" : ""}
         className={`${isFavorited ? "fas" : "far"} fa-star`}

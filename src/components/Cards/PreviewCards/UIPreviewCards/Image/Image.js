@@ -1,15 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-import placeholder from "assets/images/vertical-placeholder.png";
 import { useCountdownTimer } from "hooks";
+import placeholder from "assets/images/vertical-placeholder.png";
 import * as S from "./styles";
 import * as UI from "components/UIComponents";
 
-const Image = ({ imageUrl = null, redirectUrl }) => {
-  const { countdown } = useCountdownTimer(9);
+const Image = ({ imageUrl, redirectUrl }) => {
+  const { countdown } = useCountdownTimer();
 
-  if (countdown === 0 && imageUrl === null) imageUrl = "";
-  return imageUrl !== null ? (
+  return imageUrl || countdown === 0 ? (
     <S.Container>
       {
         <UI.LinkHandler url={redirectUrl}>

@@ -5,22 +5,19 @@ import placeholder from "assets/images/vertical-placeholder.png";
 import * as S from "./styles";
 import * as UI from "components/UIComponents";
 
-const Image = ({ imageUrl = null }) => {
-  const { countdown } = useCountdownTimer(9);
+const Image = ({ imageUrl }) => {
+  const { countdown } = useCountdownTimer();
 
-  if (countdown === 0 && imageUrl === null) imageUrl = "";
-  return (
+  return imageUrl || countdown === 0 ? (
     <S.Container>
-      {imageUrl !== null ? (
-        <S.Image src={imageUrl || placeholder} alt='Preview poster' />
-      ) : (
-        <UI.Skeleton
-          variant='rect'
-          animation='wave'
-          SkeletonStyle={S.SkeletonStyle}
-        />
-      )}
+      <S.Image src={imageUrl || placeholder} alt='Preview poster' />
     </S.Container>
+  ) : (
+    <UI.Skeleton
+      variant='rect'
+      animation='wave'
+      SkeletonStyle={S.SkeletonStyle}
+    />
   );
 };
 

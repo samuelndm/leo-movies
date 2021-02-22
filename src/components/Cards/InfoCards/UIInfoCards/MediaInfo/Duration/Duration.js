@@ -5,11 +5,10 @@ import * as UTIL from "utils/cardsUtil";
 import * as S from "./styles";
 import * as UI from "components/UIComponents";
 
-export const Duration = ({ duration = null }) => {
-  const { countdown } = useCountdownTimer(9);
+export const Duration = ({ duration }) => {
+  const { countdown } = useCountdownTimer();
 
-  if (countdown === 0 && duration === null) duration = "";
-  return duration !== null ? (
+  return duration || countdown === 0 ? (
     <S.Container>{UTIL.formatDuration(duration) || "*"}</S.Container>
   ) : (
     <UI.Skeleton

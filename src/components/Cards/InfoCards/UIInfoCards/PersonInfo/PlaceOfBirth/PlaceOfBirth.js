@@ -4,11 +4,10 @@ import { useCountdownTimer } from "hooks";
 import * as S from "./styles";
 import * as UI from "components/UIComponents";
 
-const PlaceOfBirth = ({ placeOfBirth = null }) => {
-  const { countdown } = useCountdownTimer(9);
+const PlaceOfBirth = ({ placeOfBirth }) => {
+  const { countdown } = useCountdownTimer();
 
-  if (countdown === 0 && placeOfBirth === null) placeOfBirth = "";
-  return placeOfBirth !== null ? (
+  return placeOfBirth || countdown === 0 ? (
     <S.Container>
       <S.Title>Place of Birth</S.Title>
       <S.Content>{placeOfBirth || "*"}</S.Content>

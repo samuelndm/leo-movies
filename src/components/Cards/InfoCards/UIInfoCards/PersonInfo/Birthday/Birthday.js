@@ -5,11 +5,10 @@ import * as UTIL from "utils/cardsUtil";
 import * as S from "./styles";
 import * as UI from "components/UIComponents";
 
-const Birthday = ({ birthday = null }) => {
-  const { countdown } = useCountdownTimer(9);
+const Birthday = ({ birthday }) => {
+  const { countdown } = useCountdownTimer();
 
-  if (countdown === 0 && birthday === null) birthday = "";
-  return birthday !== null ? (
+  return birthday || countdown === 0 ? (
     <S.Container>
       <S.Title>Birthday</S.Title>
       <S.Content>{UTIL.formatDateToSlash(birthday) || "*"}</S.Content>

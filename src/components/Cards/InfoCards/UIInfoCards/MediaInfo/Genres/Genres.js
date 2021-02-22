@@ -5,11 +5,10 @@ import * as UTIL from "utils/cardsUtil";
 import * as S from "./styles";
 import * as UI from "components/UIComponents";
 
-const Genres = ({ genres = null }) => {
-  const { countdown } = useCountdownTimer(9);
+const Genres = ({ genres }) => {
+  const { countdown } = useCountdownTimer();
 
-  if (countdown === 0 && genres === null) genres = "";
-  return genres !== null ? (
+  return genres || countdown === 0 ? (
     <S.Container>{UTIL.formatGenres(genres) || "*"}</S.Container>
   ) : (
     <UI.Skeleton

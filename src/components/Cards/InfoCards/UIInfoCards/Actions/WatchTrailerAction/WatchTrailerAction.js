@@ -4,8 +4,8 @@ import { useCountdownTimer } from "hooks";
 import * as S from "../styles";
 import * as UI from "components/UIComponents";
 
-const WatchTrailerAction = ({ trailerKey = null }) => {
-  const { countdown } = useCountdownTimer(9);
+const WatchTrailerAction = ({ trailerKey }) => {
+  const { countdown } = useCountdownTimer();
   const [key, setKey] = useState("");
 
   const handleClick = (event) => {
@@ -13,14 +13,11 @@ const WatchTrailerAction = ({ trailerKey = null }) => {
     setKey(trailerKey || "");
   };
 
-  if (countdown === 0 && trailerKey === null) trailerKey = "";
-  return trailerKey !== null ? (
+  return trailerKey || countdown === 0 ? (
     <>
-      <S.RectAction onClick={handleClick}>
-        <>
-          <S.Icon className='fab fa-youtube' />
-          {trailerKey ? "Watch Trailer" : "Trailer Unavailable"}
-        </>
+      <S.RectAction isDisabled={!trailerKey} onClick={handleClick}>
+        <S.Icon className='fab fa-youtube' />
+        {trailerKey ? "Watch Trailer" : "Trailer Unavailable"}
       </S.RectAction>
 
       {key && (

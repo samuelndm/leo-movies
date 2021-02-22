@@ -21,7 +21,7 @@ export const Image = styled.img`
   border-radius: 6px;
 `;
 
-export const SkeletonStyle = styled.div`
+export const SkeletonStyle = styled(Container)`
   width: 300px;
   height: 450px;
   border-radius: inherit;

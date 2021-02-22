@@ -4,11 +4,10 @@ import { useCountdownTimer } from "hooks";
 import * as S from "./styles";
 import * as UI from "components/UIComponents";
 
-const Popularity = ({ popularity = null }) => {
-  const { countdown } = useCountdownTimer(9);
+const Popularity = ({ popularity }) => {
+  const { countdown } = useCountdownTimer();
 
-  if (countdown === 0 && popularity === null) popularity = "";
-  return popularity !== null ? (
+  return popularity || countdown === 0 ? (
     <S.Container popularity={popularity}>
       {popularity?.toFixed(1) || "NR"}
     </S.Container>

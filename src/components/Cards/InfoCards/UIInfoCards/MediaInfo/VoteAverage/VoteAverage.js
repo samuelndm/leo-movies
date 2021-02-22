@@ -4,11 +4,10 @@ import { useCountdownTimer } from "hooks";
 import * as S from "./styles";
 import * as UI from "components/UIComponents";
 
-const VoteAverage = ({ voteAverage = null }) => {
-  const { countdown } = useCountdownTimer(9);
+const VoteAverage = ({ voteAverage }) => {
+  const { countdown } = useCountdownTimer();
 
-  if (countdown === 0 && voteAverage === null) voteAverage = "";
-  return voteAverage !== null ? (
+  return voteAverage || countdown === 0 ? (
     <S.Container voteAverage={voteAverage}>{voteAverage || "NR"}</S.Container>
   ) : (
     <UI.Skeleton

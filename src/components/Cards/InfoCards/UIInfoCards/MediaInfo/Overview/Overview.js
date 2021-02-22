@@ -4,11 +4,10 @@ import { useCountdownTimer } from "hooks";
 import * as S from "./styles";
 import * as UI from "components/UIComponents";
 
-const Overview = ({ overview = null }) => {
-  const { countdown } = useCountdownTimer(9);
+const Overview = ({ overview }) => {
+  const { countdown } = useCountdownTimer();
 
-  if (countdown === 0 && overview === null) overview = "";
-  return overview !== null ? (
+  return overview || countdown === 0 ? (
     <S.Container>
       <S.Title>Overview</S.Title>
       <S.Content>{overview || "*"}</S.Content>

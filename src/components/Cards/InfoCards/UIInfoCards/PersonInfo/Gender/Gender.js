@@ -9,11 +9,10 @@ const GENDER_TYPES = {
   2: "Male",
 };
 
-const Gender = ({ gender = null }) => {
-  const { countdown } = useCountdownTimer(9);
+const Gender = ({ gender }) => {
+  const { countdown } = useCountdownTimer();
 
-  if (countdown === 0 && gender === null) gender = "";
-  return gender !== null ? (
+  return gender || countdown === 0 ? (
     <S.Container>
       <S.Title>Gender</S.Title>
       <S.Content>{GENDER_TYPES[gender] || "*"}</S.Content>

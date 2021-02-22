@@ -9,10 +9,11 @@ export const Action = styled.span`
   background: var(--gradient-secondary-color);
   box-shadow: 0 10px 20px 0 rgba(14, 14, 14, 0.15);
   color: #fff;
-  cursor: pointer;
+
+  cursor: ${({ isDisabled }) => (isDisabled ? "default" : "pointer")};
 
   &:hover {
-    color: #ec9929;
+    color: ${({ isDisabled }) => (isDisabled ? "#fff" : "#ec9929")};
   }
 `;
 
