@@ -24,5 +24,4 @@ export const Image = styled.img`
 export const SkeletonStyle = styled(Container)`
   width: 300px;
   height: 450px;
-  border-radius: inherit;
 `;
