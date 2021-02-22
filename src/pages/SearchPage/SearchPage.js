@@ -49,12 +49,12 @@ const SearchPage = () => {
           {searchedList?.length ? "Search" : "No results found"}
         </S.Title>
 
-        <S.FlexContainer style={{ minHeight: "70vh" }}>
+        <S.FlexContainer>
           {searchedList?.map((searchItem, index) => (
             <S.FlexItem
               lg={2}
               xs={12}
-              margin='15px'
+              margin="15px"
               key={`searchPreview-${searchItem?.id || index}`}
             >
               {searchItem?.media_type === MEDIA_TYPES.PERSON ? (

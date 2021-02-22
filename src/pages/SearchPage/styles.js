@@ -9,6 +9,8 @@ export const Content = styled(GS.ResponsiveContainer)``;
 
 export const Title = styled(GS.PageTitle)``;
 
-export const FlexContainer = styled(GS.FlexContainer)``;
+export const FlexContainer = styled(GS.FlexContainer)`
+  min-height: 70vh;
+`;
 
 export const FlexItem = styled(GS.FlexItem)``;
