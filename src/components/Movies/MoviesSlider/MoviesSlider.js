@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import * as S from "./styles";
 import * as GS from "assets/styles/GlobalStyles";
 import * as C from "components";
-import * as Card from "components/Cards";
 
 const MoviesSlider = ({ movies, slidesToShow, title }) => {
   return (
@@ -12,7 +11,7 @@ const MoviesSlider = ({ movies, slidesToShow, title }) => {
 
       <C.PreviewsSlider
         previews={movies}
-        PreviewCard={Card.MoviePreview}
+        PreviewCard={C.Card.MoviePreview}
         slidesToShow={slidesToShow}
         showVoteAverage
       />

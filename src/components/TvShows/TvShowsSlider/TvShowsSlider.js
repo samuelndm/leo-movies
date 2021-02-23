@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import * as S from "./styles";
 import * as GS from "assets/styles/GlobalStyles";
 import * as C from "components";
-import * as Card from "components/Cards";
 
 const TvShowsSlider = ({ tvShows, slidesToShow, title }) => {
   return (
@@ -12,7 +11,7 @@ const TvShowsSlider = ({ tvShows, slidesToShow, title }) => {
 
       <C.PreviewsSlider
         previews={tvShows}
-        PreviewCard={Card.TvShowPreview}
+        PreviewCard={C.Card.TvShowPreview}
         slidesToShow={slidesToShow}
         showVoteAverage
       />

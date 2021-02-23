@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import * as UTIL from "utils";
 import * as S from "./styles";
 import * as C from "components";
-import * as Card from "components/Cards";
 
 const SLIDES_TO_SHOW = 6;
 const MAX_CAST = SLIDES_TO_SHOW * 3;
@@ -30,7 +29,7 @@ const PersonCredits = ({ credits }) => {
 
       <C.PreviewsSlider
         previews={personCredits}
-        PreviewCard={Card.MediaPreview}
+        PreviewCard={C.Card.MediaPreview}
         slidesToShow={SLIDES_TO_SHOW}
       />
     </S.Container>
