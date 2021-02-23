@@ -1,4 +1,4 @@
-## Web application using ReactJS that fetches data from a API with millions of movies, TV shows and people to discover.
+## Web application using ReactJS that fetches data from a API with millions of movies, TV shows and people.
 
 Live Demo: https://samuelndm.github.io/leo-moviegas
 
