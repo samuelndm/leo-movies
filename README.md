@@ -1,8 +1,5 @@
-## Demo: http://samuelndm.github.io/leo-moviegas
-
-### Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Web application that use data from a API with millions of movies, TV shows and people to discover.
+### Demo: http://samuelndm.github.io/leo-moviegas
 
 ## Available Scripts
 
