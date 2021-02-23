@@ -22,7 +22,7 @@ const WatchTrailerAction = ({ trailerKey }) => {
 
       {key && (
         <C.UI.Modal openModal={key} closeModal={setKey}>
-          <C.UI.YoutubeMedia mediaKey={key} />
+          <C.UI.YoutubeMedia mediaKey={key} hasAutoplay />
         </C.UI.Modal>
       )}
     </>
