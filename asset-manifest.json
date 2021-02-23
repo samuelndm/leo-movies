@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/leo-moviegas/static/css/main.657a351d.chunk.css",
-    "main.js": "/leo-moviegas/static/js/main.d150dd91.chunk.js",
-    "main.js.map": "/leo-moviegas/static/js/main.d150dd91.chunk.js.map",
+    "main.css": "/leo-moviegas/static/css/main.ac6c4d90.chunk.css",
+    "main.js": "/leo-moviegas/static/js/main.f246c2e8.chunk.js",
+    "main.js.map": "/leo-moviegas/static/js/main.f246c2e8.chunk.js.map",
     "runtime-main.js": "/leo-moviegas/static/js/runtime-main.182e01b0.js",
     "runtime-main.js.map": "/leo-moviegas/static/js/runtime-main.182e01b0.js.map",
     "static/css/2.faeb12cc.chunk.css": "/leo-moviegas/static/css/2.faeb12cc.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/2.dc09e777.chunk.js.map": "/leo-moviegas/static/js/2.dc09e777.chunk.js.map",
     "index.html": "/leo-moviegas/index.html",
     "static/css/2.faeb12cc.chunk.css.map": "/leo-moviegas/static/css/2.faeb12cc.chunk.css.map",
-    "static/css/main.657a351d.chunk.css.map": "/leo-moviegas/static/css/main.657a351d.chunk.css.map",
+    "static/css/main.ac6c4d90.chunk.css.map": "/leo-moviegas/static/css/main.ac6c4d90.chunk.css.map",
     "static/js/2.dc09e777.chunk.js.LICENSE.txt": "/leo-moviegas/static/js/2.dc09e777.chunk.js.LICENSE.txt",
     "static/media/base.scss": "/leo-moviegas/static/media/Raleway-ThinItalic.9e9f8b9c.ttf",
     "static/media/logo.7bf3e845.png": "/leo-moviegas/static/media/logo.7bf3e845.png",
@@ -20,7 +20,7 @@
     "static/js/runtime-main.182e01b0.js",
     "static/css/2.faeb12cc.chunk.css",
     "static/js/2.dc09e777.chunk.js",
-    "static/css/main.657a351d.chunk.css",
-    "static/js/main.d150dd91.chunk.js"
+    "static/css/main.ac6c4d90.chunk.css",
+    "static/js/main.f246c2e8.chunk.js"
   ]
 }
