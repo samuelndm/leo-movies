@@ -6,7 +6,7 @@ import * as C from "components";
 const TvShowInternalPage = ({ match }) => {
   const [tvShowId] = useState(match?.params?.id);
   const [tvShow, setTvShow] = useState(null);
-  const [credits, setCredits] = useState([]);
+  const [credits, setCredits] = useState(null);
 
   const loadData = async (tvShowId) => {
     const allResponses = await Promise.all([

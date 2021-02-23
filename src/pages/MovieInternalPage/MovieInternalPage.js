@@ -6,7 +6,7 @@ import * as C from "components";
 const MovieInternalPage = ({ match }) => {
   const [movieId] = useState(match?.params?.id);
   const [movie, setMovie] = useState(null);
-  const [credits, setCredits] = useState([]);
+  const [credits, setCredits] = useState(null);
 
   const loadData = async (movieId) => {
     const allResponses = await Promise.all([
