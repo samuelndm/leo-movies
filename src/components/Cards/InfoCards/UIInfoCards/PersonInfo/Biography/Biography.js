@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { useCountdownTimer } from "hooks";
+import * as UTIL from "utils/utils";
 import * as S from "./styles";
 import * as UI from "components/UIComponents";
 
@@ -9,7 +10,7 @@ const Biography = ({ biography }) => {
   const [paragraphs, setParagraphs] = useState([]);
 
   useEffect(() => {
-    const paragraphs = biography?.match(/[^\r\n]+/g) || [];
+    const paragraphs = UTIL.splitParagraphs(biography);
     setParagraphs(paragraphs);
   }, [biography]);
 

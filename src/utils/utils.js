@@ -155,3 +155,7 @@ export const removeElementsAttrByQuery = (query, attr) => {
     element?.removeAttribute(attr);
   });
 };
+
+export const splitParagraphs = (text) => {
+  return text?.match(/[^\r\n]+/g) || [];
+};
