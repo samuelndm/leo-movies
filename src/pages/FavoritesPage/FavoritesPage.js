@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useFavoritesContext } from "contexts";
-import { MEDIA_TYPES } from "utils/constants";
 import * as API from "services/Loaders";
+import * as UTIl from "utils";
 import * as S from "./styles";
-import * as Card from "components/Cards";
+import * as C from "components";
 
 const FavoritesPage = () => {
   const { favoritesStorage } = useFavoritesContext();
@@ -15,10 +15,10 @@ const FavoritesPage = () => {
       let response = {};
 
       switch (favoriteType) {
-        case MEDIA_TYPES.MOVIE:
+        case UTIl.Contants.MEDIA_TYPES.MOVIE:
           response = await API.loadMovieById(favorite?.id);
           break;
-        case MEDIA_TYPES.TV_SHOW:
+        case UTIl.Contants.MEDIA_TYPES.TV_SHOW:
           response = await API.loadTvShowById(favorite?.id);
           break;
 
@@ -51,10 +51,10 @@ const FavoritesPage = () => {
             <S.FlexItem
               lg={2}
               xs={12}
-              margin="15px"
+              margin='15px'
               key={`favoritePreview-${favorite?.id || index}`}
             >
-              <Card.MediaPreview preview={favorite} showVoteAverage />
+              <C.Card.MediaPreview preview={favorite} showVoteAverage />
             </S.FlexItem>
           ))}
         </S.FlexContainer>

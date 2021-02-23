@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useCountdownTimer } from "hooks";
 import * as S from "./styles";
-import * as UI from "components/UIComponents";
+import * as C from "components";
 
 const VoteAverage = ({ voteAverage, style }) => {
   const { countdown } = useCountdownTimer();
@@ -12,7 +12,7 @@ const VoteAverage = ({ voteAverage, style }) => {
       {voteAverage || "NR"}
     </S.Container>
   ) : (
-    <UI.Skeleton
+    <C.UI.Skeleton
       variant='circle'
       animation='wave'
       SkeletonStyle={S.SkeletonStyle}

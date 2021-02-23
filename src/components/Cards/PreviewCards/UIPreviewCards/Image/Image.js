@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useCountdownTimer } from "hooks";
 import placeholder from "assets/images/vertical-placeholder.png";
 import * as S from "./styles";
-import * as UI from "components/UIComponents";
+import * as C from "components";
 
 const Image = ({ imageUrl, redirectUrl }) => {
   const { countdown } = useCountdownTimer();
@@ -11,13 +11,13 @@ const Image = ({ imageUrl, redirectUrl }) => {
   return imageUrl || countdown === 0 ? (
     <S.Container>
       {
-        <UI.LinkHandler url={redirectUrl}>
+        <C.UI.LinkHandler url={redirectUrl}>
           <S.Image src={imageUrl || placeholder} alt='Preview poster' />
-        </UI.LinkHandler>
+        </C.UI.LinkHandler>
       }
     </S.Container>
   ) : (
-    <UI.Skeleton
+    <C.UI.Skeleton
       variant='rect'
       animation='wave'
       SkeletonStyle={S.SkeletonStyle}

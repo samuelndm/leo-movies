@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./styles";
-import * as Card from "components/Cards";
+import * as C from "components";
 
 const PersonInfo = ({ person }) => {
   return (
     <S.Container>
       <S.Content>
-        <Card.PersonInfo content={person} />
+        <C.Card.PersonInfo content={person} />
       </S.Content>
     </S.Container>
   );

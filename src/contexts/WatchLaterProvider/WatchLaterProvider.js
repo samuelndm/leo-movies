@@ -1,7 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import * as UTIL from "utils/mediaUtil";
-import * as STORAGE from "utils/storage";
-import * as NF from "utils/notifications";
+import * as UTIL from "utils";
 
 const WatchLaterContext = createContext();
 
@@ -22,12 +20,14 @@ const WatchLaterProvider = ({ children }) => {
     if (!hasWatchLater) {
       const newWatchLater = {
         id: watchLater?.id,
-        media_type: UTIL.getMediaType(watchLater),
+        media_type: UTIL.Media.getMediaType(watchLater),
       };
       const newWatchLaterList = [...watchLaterStorage, newWatchLater];
       setWatchLaterList(newWatchLaterList);
-      STORAGE.updateWatchLaterStorage(newWatchLaterList);
-      NF.createSuccessNotification({ message: "Added to watch later." });
+      UTIL.Storage.updateWatchLaterStorage(newWatchLaterList);
+      UTIL.Notifications.createSuccessNotification({
+        message: "Added to watch later.",
+      });
     }
   };
 
@@ -39,15 +39,15 @@ const WatchLaterProvider = ({ children }) => {
         (watchLaterStorage) => watchLaterStorage?.id !== watchLater?.id
       );
       setWatchLaterList(newWatchLaterList);
-      STORAGE.updateWatchLaterStorage(newWatchLaterList);
-      NF.createDangerNotification({
+      UTIL.Storage.updateWatchLaterStorage(newWatchLaterList);
+      UTIL.Notifications.createDangerNotification({
         message: "Removed from watch later.",
       });
     }
   };
 
   useEffect(() => {
-    const watchLaterStorage = STORAGE.getWatchLaterListStorage();
+    const watchLaterStorage = UTIL.Storage.getWatchLaterListStorage();
     setWatchLaterList([...watchLaterStorage]);
   }, []);
 

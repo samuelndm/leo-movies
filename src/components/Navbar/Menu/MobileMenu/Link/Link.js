@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./styles";
-import * as UI from "components/UIComponents";
+import * as C from "components";
 
 const Link = ({ link, setHasClicked }) => {
   if (!link) return null;
   return (
     <S.Container>
-      <UI.LinkHandler
+      <C.UI.LinkHandler
         url={link.url}
         target={link.target}
         title={link.title}

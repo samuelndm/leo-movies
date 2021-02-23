@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
-import { createArrayOfGivenNumber, ScrollToTop } from "utils/utils";
-import * as UTIL from "utils/paginationUtil";
+import * as UTIL from "utils";
 import * as S from "./styles";
 import FirstPage from "./FirstPage/FirstPage";
 import PrevPage from "./PrevPage/PrevPage";
@@ -24,7 +23,7 @@ const Pagination = ({
   const [pages, setPages] = useState([]);
 
   const handleParams = useCallback(() => {
-    const newPerpage = UTIL.handleCurrentPerPage(
+    const newPerpage = UTIL.Pagination.handleCurrentPerPage(
       history.location.search,
       itemsPerPage,
       totalItems
@@ -32,9 +31,12 @@ const Pagination = ({
     setPerPage(newPerpage);
     setItemsPerPage && setItemsPerPage(newPerpage);
 
-    const numberOfPages = UTIL.getNumberOfPages(newPerpage, totalItems);
+    const numberOfPages = UTIL.Pagination.getNumberOfPages(
+      newPerpage,
+      totalItems
+    );
 
-    const newPage = UTIL.handleCurrentPage(
+    const newPage = UTIL.Pagination.handleCurrentPage(
       history.location.search,
       initialPage,
       totalItems,
@@ -53,11 +55,14 @@ const Pagination = ({
 
   const hadlePagination = useCallback(() => {
     if (page && perPage && totalItems) {
-      const numberOfPages = UTIL.getNumberOfPages(perPage, totalItems);
-      setPages(createArrayOfGivenNumber(numberOfPages));
+      const numberOfPages = UTIL.Pagination.getNumberOfPages(
+        perPage,
+        totalItems
+      );
+      setPages(UTIL.createArrayOfGivenNumber(numberOfPages));
 
-      UTIL.updatePaginationUrl(history, page, perPage);
-      ScrollToTop();
+      UTIL.Pagination.updatePaginationUrl(history, page, perPage);
+      UTIL.ScrollToTop();
     }
   }, [page, perPage, history, totalItems]);
 

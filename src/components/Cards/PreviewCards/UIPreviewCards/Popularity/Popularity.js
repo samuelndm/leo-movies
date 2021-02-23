@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useCountdownTimer } from "hooks";
 import * as S from "./styles";
-import * as UI from "components/UIComponents";
+import * as C from "components";
 
 const Popularity = ({ popularity }) => {
   const { countdown } = useCountdownTimer();
@@ -12,7 +12,7 @@ const Popularity = ({ popularity }) => {
       {popularity?.toFixed(1) || "NR"}
     </S.Container>
   ) : (
-    <UI.Skeleton
+    <C.UI.Skeleton
       variant='circle'
       animation='wave'
       SkeletonStyle={S.SkeletonStyle}

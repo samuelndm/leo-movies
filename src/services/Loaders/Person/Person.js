@@ -1,6 +1,6 @@
-import { createDangerNotification } from "utils/notifications";
 import * as API_ENDPOINTS from "services/Endpoints";
-import { ERROR } from "../messages";
+import * as UTIl from "utils";
+import * as Messages from "../messages";
 
 export const loadPersonById = async (id, params) => {
   try {
@@ -8,8 +8,8 @@ export const loadPersonById = async (id, params) => {
     return data || {};
   } catch (err) {
     console.error(err);
-    createDangerNotification({
-      message: err?.response?.data?.status_message || ERROR.DEFAULT,
+    UTIl.Notifications.createDangerNotification({
+      message: err?.response?.data?.status_message || Messages.ERROR.DEFAULT,
     });
 
     return {};
@@ -22,8 +22,8 @@ export const loadPopularPeople = async (params) => {
     return data || {};
   } catch (err) {
     console.error(err);
-    createDangerNotification({
-      message: err?.response?.data?.status_message || ERROR.DEFAULT,
+    UTIl.Notifications.createDangerNotification({
+      message: err?.response?.data?.status_message || Messages.ERROR.DEFAULT,
     });
 
     return {};
@@ -36,8 +36,8 @@ export const loadPersonImagesById = async (id, params) => {
     return data || {};
   } catch (err) {
     console.error(err);
-    createDangerNotification({
-      message: err?.response?.data?.status_message || ERROR.DEFAULT,
+    UTIl.Notifications.createDangerNotification({
+      message: err?.response?.data?.status_message || Messages.ERROR.DEFAULT,
     });
 
     return {};
@@ -50,8 +50,8 @@ export const loadSearchedPeople = async (params) => {
     return data || {};
   } catch (err) {
     console.error(err);
-    createDangerNotification({
-      message: err?.response?.data?.status_message || ERROR.DEFAULT,
+    UTIl.Notifications.createDangerNotification({
+      message: err?.response?.data?.status_message || Messages.ERROR.DEFAULT,
     });
 
     return {};
@@ -64,8 +64,8 @@ export const loadPersonCreditsById = async (id, params) => {
     return data || {};
   } catch (err) {
     console.error(err);
-    createDangerNotification({
-      message: err?.response?.data?.status_message || ERROR.DEFAULT,
+    UTIl.Notifications.createDangerNotification({
+      message: err?.response?.data?.status_message || Messages.ERROR.DEFAULT,
     });
 
     return {};

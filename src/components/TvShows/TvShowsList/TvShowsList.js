@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./styles";
 import * as GS from "assets/styles/GlobalStyles";
-import * as Card from "components/Cards";
+import * as C from "components";
 
 const TvShowsList = ({ tvShows }) => {
   return (
@@ -15,7 +15,7 @@ const TvShowsList = ({ tvShows }) => {
             margin='15px'
             key={`tvShowPreview-${tvShow?.id || index}`}
           >
-            <Card.TvShowPreview preview={tvShow} showVoteAverage />
+            <C.Card.TvShowPreview preview={tvShow} showVoteAverage />
           </GS.FlexItem>
         ))}
       </GS.FlexContainer>

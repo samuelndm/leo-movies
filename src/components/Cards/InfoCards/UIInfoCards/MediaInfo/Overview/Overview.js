@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useCountdownTimer } from "hooks";
 import * as S from "./styles";
-import * as UI from "components/UIComponents";
+import * as C from "components";
 
 const Overview = ({ overview }) => {
   const { countdown } = useCountdownTimer();
@@ -14,13 +14,13 @@ const Overview = ({ overview }) => {
     </S.Container>
   ) : (
     <>
-      <UI.Skeleton
+      <C.UI.Skeleton
         variant='text'
         animation='wave'
         SkeletonStyle={S.SkeletonTitleStyle}
       />
 
-      <UI.Skeleton
+      <C.UI.Skeleton
         variant='text'
         animation='wave'
         count={3}

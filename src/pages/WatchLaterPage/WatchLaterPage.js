@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useWatchLaterContext } from "contexts";
-import { MEDIA_TYPES } from "utils/constants";
 import * as API from "services/Loaders";
+import * as UTIl from "utils";
 import * as S from "./styles";
-import * as Card from "components/Cards";
+import * as C from "components";
 
 const WatchLaterPage = () => {
   const { watchLaterStorage } = useWatchLaterContext();
@@ -15,10 +15,10 @@ const WatchLaterPage = () => {
       let response = {};
 
       switch (watchLaterType) {
-        case MEDIA_TYPES.MOVIE:
+        case UTIl.Contants.MEDIA_TYPES.MOVIE:
           response = await API.loadMovieById(watchLater?.id);
           break;
-        case MEDIA_TYPES.TV_SHOW:
+        case UTIl.Contants.MEDIA_TYPES.TV_SHOW:
           response = await API.loadTvShowById(watchLater?.id);
           break;
 
@@ -54,7 +54,7 @@ const WatchLaterPage = () => {
               margin='15px'
               key={`watchLaterPreview-${watchLater?.id || index}`}
             >
-              <Card.MediaPreview preview={watchLater} showVoteAverage />
+              <C.Card.MediaPreview preview={watchLater} showVoteAverage />
             </S.FlexItem>
           ))}
         </S.FlexContainer>

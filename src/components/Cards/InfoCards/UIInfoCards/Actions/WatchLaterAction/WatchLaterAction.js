@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useWatchLaterContext } from "contexts";
 import { useCountdownTimer } from "hooks";
 import * as S from "../styles";
-import * as UI from "components/UIComponents";
+import * as C from "components";
 
 const WatchLaterAction = ({ content }) => {
   const {
@@ -39,7 +39,7 @@ const WatchLaterAction = ({ content }) => {
       />
     </S.CircleAction>
   ) : (
-    <UI.Skeleton
+    <C.UI.Skeleton
       variant='circle'
       animation='wave'
       SkeletonStyle={S.SkeletonCircleStyle}

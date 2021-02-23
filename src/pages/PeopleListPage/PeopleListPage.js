@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { createEmptyArray } from "utils/utils";
 import * as API from "services/Loaders";
+import * as UTIl from "utils";
 import * as S from "./styles";
 import * as C from "components";
-import * as UI from "components/UIComponents";
 
 const PeopleListPage = () => {
   const itemsPerPage = 20;
   const [isLoading, setIsLoading] = useState(false);
-  const [people, setPeople] = useState(createEmptyArray(itemsPerPage));
+  const [people, setPeople] = useState(UTIl.createEmptyArray(itemsPerPage));
   const [totalItems, setTotalItems] = useState(0);
   const [page, setPage] = useState(1);
   const [searched, setSearched] = useState("");
@@ -46,7 +45,7 @@ const PeopleListPage = () => {
       <S.Title>Popular People</S.Title>
 
       <S.Options>
-        <UI.Search
+        <C.UI.Search
           placeholder='Search a Person'
           isLoading={isLoading}
           onChange={setSearched}
@@ -56,7 +55,7 @@ const PeopleListPage = () => {
 
       <C.PeopleList people={people} />
 
-      <UI.Pagination
+      <C.UI.Pagination
         itemsPerPage={20}
         initialPage={page}
         setCurrentPage={setPage}

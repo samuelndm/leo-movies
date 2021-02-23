@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { removeDuplicatesByKey } from "utils/utils";
+import * as UTIl from "utils";
 import * as S from "./styles";
 import * as C from "components";
 import * as Card from "components/Cards";
@@ -16,7 +16,7 @@ const TvShowCredits = ({ credits }) => {
     const cast = credits?.cast?.slice(0, MAX_CAST) || [];
     const crew = credits?.crew?.slice(0, MAX_CREW) || [];
 
-    const tvShowCast = removeDuplicatesByKey([...cast, ...crew], "name");
+    const tvShowCast = UTIl.removeDuplicatesByKey([...cast, ...crew], "name");
 
     setTvShowCredits(tvShowCast);
   }, [credits]);

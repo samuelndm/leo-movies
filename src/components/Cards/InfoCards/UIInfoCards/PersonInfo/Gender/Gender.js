@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useCountdownTimer } from "hooks";
-import * as UI from "components/UIComponents";
 import * as S from "./styles";
+import * as C from "components";
 
 const GENDER_TYPES = {
   1: "Female",
@@ -18,7 +18,7 @@ const Gender = ({ gender }) => {
       <S.Content>{GENDER_TYPES[gender] || "*"}</S.Content>
     </S.Container>
   ) : (
-    <UI.Skeleton
+    <C.UI.Skeleton
       variant='text'
       animation='wave'
       SkeletonStyle={S.SkeletonStyle}

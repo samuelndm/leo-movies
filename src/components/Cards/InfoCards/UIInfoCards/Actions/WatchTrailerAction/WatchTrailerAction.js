@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useCountdownTimer } from "hooks";
 import * as S from "../styles";
-import * as UI from "components/UIComponents";
+import * as C from "components";
 
 const WatchTrailerAction = ({ trailerKey }) => {
   const { countdown } = useCountdownTimer();
@@ -21,13 +21,13 @@ const WatchTrailerAction = ({ trailerKey }) => {
       </S.RectAction>
 
       {key && (
-        <UI.Modal openModal={key} closeModal={setKey}>
-          <UI.YoutubeMedia mediaKey={key} />
-        </UI.Modal>
+        <C.UI.Modal openModal={key} closeModal={setKey}>
+          <C.UI.YoutubeMedia mediaKey={key} />
+        </C.UI.Modal>
       )}
     </>
   ) : (
-    <UI.Skeleton
+    <C.UI.Skeleton
       variant='rect'
       animation='wave'
       SkeletonStyle={S.SkeletonRectleStyle}

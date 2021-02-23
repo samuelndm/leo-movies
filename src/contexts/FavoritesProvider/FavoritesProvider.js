@@ -1,7 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import * as UTIL from "utils/mediaUtil";
-import * as STORAGE from "utils/storage";
-import * as NF from "utils/notifications";
+import * as UTIL from "utils";
 
 const FavoritesContext = createContext();
 
@@ -22,13 +20,15 @@ const FavoritesProvider = ({ children }) => {
     if (!hasFavorite) {
       const newFavorite = {
         id: favorite?.id,
-        media_type: UTIL.getMediaType(favorite),
+        media_type: UTIL.Media.getMediaType(favorite),
       };
 
       const newFavorites = [...favoritesStorage, newFavorite];
       setFavorites(newFavorites);
-      STORAGE.updateFavoritesStorage(newFavorites);
-      NF.createSuccessNotification({ message: "Added to favorites." });
+      UTIL.Storage.updateFavoritesStorage(newFavorites);
+      UTIL.Notifications.createSuccessNotification({
+        message: "Added to favorites.",
+      });
     }
   };
 
@@ -40,13 +40,15 @@ const FavoritesProvider = ({ children }) => {
         (favoriteStorage) => favoriteStorage?.id !== favorite?.id
       );
       setFavorites(newFavorites);
-      STORAGE.updateFavoritesStorage(newFavorites);
-      NF.createDangerNotification({ message: "Removed from favorites." });
+      UTIL.Storage.updateFavoritesStorage(newFavorites);
+      UTIL.Notifications.createDangerNotification({
+        message: "Removed from favorites.",
+      });
     }
   };
 
   useEffect(() => {
-    const favoritesStorage = STORAGE.getFavoritesStorage();
+    const favoritesStorage = UTIL.Storage.getFavoritesStorage();
     setFavorites([...favoritesStorage]);
   }, []);
 

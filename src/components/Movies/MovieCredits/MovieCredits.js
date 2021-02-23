@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { removeDuplicatesByKey } from "utils/utils";
+import * as UTIl from "utils";
 import * as S from "./styles";
 import * as C from "components";
-import * as Card from "components/Cards";
 
 const SLIDES_TO_SHOW = 6;
 const MAX_CAST = SLIDES_TO_SHOW * 3;
@@ -16,7 +15,7 @@ const MovieCredits = ({ credits }) => {
     const cast = credits?.cast?.slice(0, MAX_CAST) || [];
     const crew = credits?.crew?.slice(0, MAX_CREW) || [];
 
-    const movieCast = removeDuplicatesByKey([...cast, ...crew], "name");
+    const movieCast = UTIl.removeDuplicatesByKey([...cast, ...crew], "name");
 
     setMovieCredits(movieCast);
   }, [credits]);
@@ -27,7 +26,7 @@ const MovieCredits = ({ credits }) => {
 
       <C.PreviewsSlider
         previews={movieCredits}
-        PreviewCard={Card.PersonPreview}
+        PreviewCard={C.Card.PersonPreview}
         slidesToShow={SLIDES_TO_SHOW}
       />
     </S.Container>

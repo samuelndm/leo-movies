@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useFavoritesContext } from "contexts";
 import { useCountdownTimer } from "hooks";
 import * as S from "../styles";
-import * as UI from "components/UIComponents";
+import * as C from "components";
 
 const FavoriteAction = ({ content }) => {
   const { getFavorite, addFavorite, removeFavorite } = useFavoritesContext();
@@ -35,7 +35,7 @@ const FavoriteAction = ({ content }) => {
       />
     </S.CircleAction>
   ) : (
-    <UI.Skeleton
+    <C.UI.Skeleton
       variant='circle'
       animation='wave'
       SkeletonStyle={S.SkeletonCircleStyle}

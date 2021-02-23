@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import {
-  SLIDES_TO_SHOW_DEFAULT,
-  sliderSettings,
-} from "./PreviewsSliderSettings";
-import * as UTIL from "utils/utils";
+import * as Settings from "./PreviewsSliderSettings";
+import * as UTIL from "utils";
 import * as S from "./styles";
-import * as UI from "components/UIComponents";
+import * as C from "components";
 
 const PreviewsSlider = ({
   previews,
   PreviewCard,
-  slidesToShow = SLIDES_TO_SHOW_DEFAULT,
+  slidesToShow = Settings.SLIDES_TO_SHOW_DEFAULT,
   showVoteAverage,
   showPopularity,
   style,
@@ -26,9 +23,9 @@ const PreviewsSlider = ({
 
   return (
     <S.Container style={style}>
-      <UI.Slider
+      <C.UI.Slider
         settings={{
-          ...sliderSettings,
+          ...Settings.sliderSettings,
           slidesToShow,
           slidesToScroll: slidesToShow,
         }}
@@ -41,7 +38,7 @@ const PreviewsSlider = ({
             key={`preview-${preview?.id || index}`}
           />
         ))}
-      </UI.Slider>
+      </C.UI.Slider>
     </S.Container>
   );
 };

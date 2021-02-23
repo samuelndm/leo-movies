@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { useCountdownTimer } from "hooks";
-import * as UTIL from "utils/utils";
+import * as UTIL from "utils";
 import * as S from "./styles";
-import * as UI from "components/UIComponents";
+import * as C from "components";
 
 const Biography = ({ biography }) => {
   const { countdown } = useCountdownTimer();
@@ -29,7 +29,7 @@ const Biography = ({ biography }) => {
         </S.Content>
       </S.Container>
 
-      <UI.Modal
+      <C.UI.Modal
         openModal={showAllBiography}
         closeModal={setShowAllBiography}
         size='lg'
@@ -40,17 +40,17 @@ const Biography = ({ biography }) => {
             <S.Content key={`paragraph-${index}`}>{paragraph || "*"}</S.Content>
           ))}
         </S.ModalContainer>
-      </UI.Modal>
+      </C.UI.Modal>
     </>
   ) : (
     <>
-      <UI.Skeleton
+      <C.UI.Skeleton
         variant='text'
         animation='wave'
         SkeletonStyle={S.SkeletonTitleStyle}
       />
 
-      <UI.Skeleton
+      <C.UI.Skeleton
         variant='text'
         animation='wave'
         count={4}

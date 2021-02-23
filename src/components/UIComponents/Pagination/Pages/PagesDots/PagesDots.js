@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { createArrayOfGivenNumber } from "utils/utils";
+import * as UTIl from "utils";
 import BeginningPages from "./BeginningPages/BeginningPages";
 import EndPages from "./EndPages/EndPages";
 
@@ -15,8 +15,8 @@ const PagesDots = ({ page, setPage, pages, limit }) => {
   }, [pages, page]);
 
   useEffect(() => {
-    setPrevPages(createArrayOfGivenNumber(limit - 1, "reverse"));
-    setnextPages(createArrayOfGivenNumber(limit));
+    setPrevPages(UTIl.createArrayOfGivenNumber(limit - 1, "reverse"));
+    setnextPages(UTIl.createArrayOfGivenNumber(limit));
   }, [limit]);
 
   const selectPage = (event) => {

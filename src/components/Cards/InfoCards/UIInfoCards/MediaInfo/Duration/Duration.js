@@ -1,17 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useCountdownTimer } from "hooks";
-import * as UTIL from "utils/cardsUtil";
+import * as UTIL from "utils";
 import * as S from "./styles";
-import * as UI from "components/UIComponents";
+import * as C from "components";
 
 export const Duration = ({ duration }) => {
   const { countdown } = useCountdownTimer();
 
   return duration || countdown === 0 ? (
-    <S.Container>{UTIL.formatDuration(duration) || "*"}</S.Container>
+    <S.Container>{UTIL.Cards.formatDuration(duration) || "*"}</S.Container>
   ) : (
-    <UI.Skeleton
+    <C.UI.Skeleton
       variant='text'
       animation='wave'
       SkeletonStyle={S.SkeletonStyle}

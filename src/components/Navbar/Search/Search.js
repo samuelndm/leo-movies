@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { updateUrlParamByKey } from "utils/utils";
-import { URL_PARAMS } from "utils/constants";
-import { resetPaginationUrl } from "utils/paginationUtil";
+import * as UTIl from "utils";
 import * as S from "./styles";
 
 const Search = () => {
@@ -14,14 +12,14 @@ const Search = () => {
     event.preventDefault();
 
     if (keyword) {
-      resetPaginationUrl(history);
+      UTIl.Pagination.resetPaginationUrl(history);
 
       const url = `/search`;
       let params = "";
 
-      params = updateUrlParamByKey(
+      params = UTIl.updateUrlParamByKey(
         history.location.search,
-        URL_PARAMS.SEARCH,
+        UTIl.Contants.URL_PARAMS.SEARCH,
         keyword
       );
 
@@ -35,13 +33,6 @@ const Search = () => {
       setIsVisible((isVisible) => !isVisible);
     }
   };
-
-  useEffect(() => {
-    document.documentElement.style.setProperty(
-      "--navbar-height",
-      isVisible ? "160px" : "90px"
-    );
-  }, [isVisible]);
 
   return (
     <S.Form isVisible={isVisible} onSubmit={handleSubmit}>

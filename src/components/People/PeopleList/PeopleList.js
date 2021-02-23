@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./styles";
 import * as GS from "assets/styles/GlobalStyles";
-import * as Card from "components/Cards";
+import * as C from "components";
 
 const PeopleList = ({ people }) => {
   return (
@@ -15,7 +15,7 @@ const PeopleList = ({ people }) => {
             margin='15px'
             key={`personPreview-${person?.id || index}`}
           >
-            <Card.PersonPreview preview={person} showPopularity />
+            <C.Card.PersonPreview preview={person} showPopularity />
           </GS.FlexItem>
         ))}
       </GS.FlexContainer>

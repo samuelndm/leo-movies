@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useCountdownTimer } from "hooks";
 import * as S from "./styles";
-import * as UI from "components/UIComponents";
+import * as C from "components";
 
 const Title = ({ title }) => {
   const { countdown } = useCountdownTimer();
@@ -10,7 +10,7 @@ const Title = ({ title }) => {
   return title || countdown === 0 ? (
     <S.Container>{title || "*"}</S.Container>
   ) : (
-    <UI.Skeleton variant='text' animation='wave' width='100%' />
+    <C.UI.Skeleton variant='text' animation='wave' width='100%' />
   );
 };
 

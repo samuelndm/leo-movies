@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useCountdownTimer } from "hooks";
 import * as S from "./styles";
-import * as UI from "components/UIComponents";
+import * as C from "components";
 
 const Departament = ({ departament }) => {
   const { countdown } = useCountdownTimer();
@@ -10,7 +10,7 @@ const Departament = ({ departament }) => {
   return departament || countdown === 0 ? (
     <S.Container>{departament || "*"}</S.Container>
   ) : (
-    <UI.Skeleton variant='text' animation='wave' width='100%' />
+    <C.UI.Skeleton variant='text' animation='wave' width='100%' />
   );
 };
 

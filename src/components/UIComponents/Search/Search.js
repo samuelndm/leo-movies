@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import * as S from "./styles";
-import * as UI from "components/UIComponents";
+import * as C from "components";
 
 const Search = ({ placeholder, isLoading, onChange, style }) => {
   const [keyword, setKeyword] = useState("");
@@ -22,7 +22,7 @@ const Search = ({ placeholder, isLoading, onChange, style }) => {
 
       <S.Button type='submit' aria-label='search button' onClick={handleSubmit}>
         {isLoading ? (
-          <UI.Spinner size={20} />
+          <C.UI.Spinner size={20} />
         ) : (
           <S.Icon className='fas fa-search' />
         )}

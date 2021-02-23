@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useCountdownTimer } from "hooks";
 import * as S from "./styles";
-import * as UI from "components/UIComponents";
+import * as C from "components";
 
 const Tagline = ({ tagline }) => {
   const { countdown } = useCountdownTimer();
@@ -10,7 +10,7 @@ const Tagline = ({ tagline }) => {
   return tagline || countdown === 0 ? (
     <S.Container>{tagline || ""}</S.Container>
   ) : (
-    <UI.Skeleton
+    <C.UI.Skeleton
       variant='text'
       animation='wave'
       SkeletonStyle={S.SkeletonStyle}

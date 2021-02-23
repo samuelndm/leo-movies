@@ -1,6 +1,6 @@
-import { createDangerNotification } from "utils/notifications";
-import { ERROR } from "../messages";
 import * as API_ENDPOINTS from "services/Endpoints";
+import * as UTIl from "utils";
+import * as Messages from "../messages";
 
 export const loadTvShowById = async (id, params) => {
   try {
@@ -8,8 +8,8 @@ export const loadTvShowById = async (id, params) => {
     return data || {};
   } catch (err) {
     console.error(err);
-    createDangerNotification({
-      message: err?.response?.data?.status_message || ERROR.DEFAULT,
+    UTIl.Notifications.createDangerNotification({
+      message: err?.response?.data?.status_message || Messages.ERROR.DEFAULT,
     });
 
     return {};
@@ -22,8 +22,8 @@ export const loadTvShowsList = async (params) => {
     return data || {};
   } catch (err) {
     console.error(err);
-    createDangerNotification({
-      message: err?.response?.data?.status_message || ERROR.DEFAULT,
+    UTIl.Notifications.createDangerNotification({
+      message: err?.response?.data?.status_message || Messages.ERROR.DEFAULT,
     });
 
     return {};
@@ -36,8 +36,8 @@ export const loadPopularTvShows = async (params) => {
     return data || {};
   } catch (err) {
     console.error(err);
-    createDangerNotification({
-      message: err?.response?.data?.status_message || ERROR.DEFAULT,
+    UTIl.Notifications.createDangerNotification({
+      message: err?.response?.data?.status_message || Messages.ERROR.DEFAULT,
     });
 
     return {};
@@ -50,8 +50,8 @@ export const loadTvShowImagesById = async (id, params) => {
     return data || {};
   } catch (err) {
     console.error(err);
-    createDangerNotification({
-      message: err?.response?.data?.status_message || ERROR.DEFAULT,
+    UTIl.Notifications.createDangerNotification({
+      message: err?.response?.data?.status_message || Messages.ERROR.DEFAULT,
     });
 
     return {};
@@ -64,8 +64,8 @@ export const loadSearchedTvShows = async (params) => {
     return data || {};
   } catch (err) {
     console.error(err);
-    createDangerNotification({
-      message: err?.response?.data?.status_message || ERROR.DEFAULT,
+    UTIl.Notifications.createDangerNotification({
+      message: err?.response?.data?.status_message || Messages.ERROR.DEFAULT,
     });
 
     return {};
@@ -78,8 +78,8 @@ export const loadTvShowCreditsById = async (id, params) => {
     return data || {};
   } catch (err) {
     console.error(err);
-    createDangerNotification({
-      message: err?.response?.data?.status_message || ERROR.DEFAULT,
+    UTIl.Notifications.createDangerNotification({
+      message: err?.response?.data?.status_message || Messages.ERROR.DEFAULT,
     });
 
     return {};
@@ -92,8 +92,8 @@ export const loadTvShowVideosById = async (id, params) => {
     return data?.results || [];
   } catch (err) {
     console.error(err);
-    createDangerNotification({
-      message: err?.response?.data?.status_message || ERROR.DEFAULT,
+    UTIl.Notifications.createDangerNotification({
+      message: err?.response?.data?.status_message || Messages.ERROR.DEFAULT,
     });
 
     return [];

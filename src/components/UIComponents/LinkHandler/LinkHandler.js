@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { isExternalUrl } from "utils/utils";
+import * as UTIl from "utils";
 import * as S from "./styles";
 
 const LinkHandler = ({
@@ -28,7 +28,7 @@ const LinkHandler = ({
       width={width}
       height={height}
     >
-      {isExternalUrl(url) ? (
+      {UTIl.isExternalUrl(url) ? (
         <S.LinkAnchor href={url || "#"} target={target || "_self"}>
           {title && <S.Title>{title || ""}</S.Title>}
           {children}

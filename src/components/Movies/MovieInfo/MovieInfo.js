@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./styles";
-import * as Card from "components/Cards";
+import * as C from "components";
 
 const MovieInfo = ({ movie }) => {
   return (
     <S.Container>
       <S.Content>
-        <Card.MovieInfo content={movie} />
+        <C.Card.MovieInfo content={movie} />
       </S.Content>
     </S.Container>
   );

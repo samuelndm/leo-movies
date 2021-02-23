@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import SkeletonUIMaterial from "@material-ui/lab/Skeleton";
-import { createArrayOfGivenNumber } from "utils/utils";
+import * as UTIl from "utils";
 import "./styles.css";
 
 const Skeleton = ({
@@ -17,7 +17,7 @@ const Skeleton = ({
 
   useEffect(() => {
     if (Number.isInteger(count)) {
-      setSkeletons([...createArrayOfGivenNumber(count)]);
+      setSkeletons([...UTIl.createArrayOfGivenNumber(count)]);
     }
   }, [count]);
 
