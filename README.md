@@ -1,7 +1,7 @@
-## Web application that use data from a API with millions of movies, TV shows and people to discover.
+### Web application that use data from a API with millions of movies, TV shows and people to discover.
 ### Demo: http://samuelndm.github.io/leo-moviegas
 
-## Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 
