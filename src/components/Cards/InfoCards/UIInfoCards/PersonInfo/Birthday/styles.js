@@ -22,7 +22,7 @@ export const Content = styled.p`
 
 export const SkeletonStyle = styled.div`
   margin: 10px 0 0;
-  width: 150px;
+  width: 170px;
   height: 30px;
   border-radius: 6px;
 `;
