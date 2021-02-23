@@ -8,6 +8,7 @@ import * as UI from "components/UIComponents";
 const Biography = ({ biography }) => {
   const { countdown } = useCountdownTimer();
   const [paragraphs, setParagraphs] = useState([]);
+  const [showAllBiography, setShowAllBiography] = useState(false);
 
   useEffect(() => {
     const paragraphs = UTIL.splitParagraphs(biography);
@@ -15,10 +16,32 @@ const Biography = ({ biography }) => {
   }, [biography]);
 
   return biography || countdown === 0 ? (
-    <S.Container>
-      <S.Title>Biography</S.Title>
-      <S.Content>{paragraphs[0] || "*"}</S.Content>
-    </S.Container>
+    <>
+      <S.Container>
+        <S.Title>Biography</S.Title>
+        <S.Content>
+          {paragraphs?.[0] || "*"}
+          {paragraphs?.length > 1 && (
+            <S.ReadMore onClick={(e) => setShowAllBiography(true)}>
+              {" Read more..."}
+            </S.ReadMore>
+          )}
+        </S.Content>
+      </S.Container>
+
+      <UI.Modal
+        openModal={showAllBiography}
+        closeModal={setShowAllBiography}
+        size='lg'
+      >
+        <S.ModalContainer>
+          <S.Title>Biography</S.Title>
+          {paragraphs.map((paragraph, index) => (
+            <S.Content key={`paragraph-${index}`}>{paragraph || "*"}</S.Content>
+          ))}
+        </S.ModalContainer>
+      </UI.Modal>
+    </>
   ) : (
     <>
       <UI.Skeleton

@@ -25,6 +25,18 @@ export const Content = styled.p`
   }
 `;
 
+export const ReadMore = styled.span`
+  cursor: pointer;
+  font-weight: 800;
+`;
+
+export const ModalContainer = styled(Container)`
+  padding: 15px 20px;
+  border-radius: 6px;
+  background: var(--gradient-primary-color, #333);
+  color: #fff;
+`;
+
 export const SkeletonTitleStyle = styled.div`
   margin: 20px 0 0;
   width: 200px;
