@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useWatchLaterContext } from "contexts";
 import * as API from "services/Loaders";
-import * as UTIl from "utils";
+import * as UTIL from "utils";
 import * as S from "./styles";
 import * as C from "components";
 
@@ -15,10 +15,10 @@ const WatchLaterPage = () => {
       let response = {};
 
       switch (watchLaterType) {
-        case UTIl.Contants.MEDIA_TYPES.MOVIE:
+        case UTIL.Contants.MEDIA_TYPES.MOVIE:
           response = await API.loadMovieById(watchLater?.id);
           break;
-        case UTIl.Contants.MEDIA_TYPES.TV_SHOW:
+        case UTIL.Contants.MEDIA_TYPES.TV_SHOW:
           response = await API.loadTvShowById(watchLater?.id);
           break;
 

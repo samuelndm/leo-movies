@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import * as API from "services/Loaders";
-import * as UTIl from "utils";
+import * as UTIL from "utils";
 import * as S from "./styles";
 import * as C from "components";
 
 const TvShowsListPage = () => {
   const itemsPerPage = 20;
   const [isLoading, setIsLoading] = useState(false);
-  const [tvShows, setTvShows] = useState(UTIl.createEmptyArray(itemsPerPage));
+  const [tvShows, setTvShows] = useState(UTIL.createEmptyArray(itemsPerPage));
   const [totalItems, setTotalItems] = useState(0);
   const [page, setPage] = useState(1);
-  const [sortBy, setSortBy] = useState(UTIl.Contants.SORT_BY.POPULARITY_DESC);
+  const [sortBy, setSortBy] = useState(UTIL.Contants.SORT_BY.POPULARITY_DESC);
   const [searched, setSearched] = useState("");
   const [params, setParams] = useState(null);
 
@@ -54,7 +54,7 @@ const TvShowsListPage = () => {
         />
 
         <C.UI.Select
-          options={UTIl.Contants.SORT_BY_LIST}
+          options={UTIL.Contants.SORT_BY_LIST}
           defaultValue={sortBy}
           label='Sort Results By'
           onChange={setSortBy}

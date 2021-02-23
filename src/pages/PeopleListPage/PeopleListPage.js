@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import * as API from "services/Loaders";
-import * as UTIl from "utils";
+import * as UTIL from "utils";
 import * as S from "./styles";
 import * as C from "components";
 
 const PeopleListPage = () => {
   const itemsPerPage = 20;
   const [isLoading, setIsLoading] = useState(false);
-  const [people, setPeople] = useState(UTIl.createEmptyArray(itemsPerPage));
+  const [people, setPeople] = useState(UTIL.createEmptyArray(itemsPerPage));
   const [totalItems, setTotalItems] = useState(0);
   const [page, setPage] = useState(1);
   const [searched, setSearched] = useState("");

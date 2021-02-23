@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import * as UTIl from "utils";
+import * as UTIL from "utils";
 import * as S from "../UIInfoCards/styles";
 import * as C from "../UIInfoCards";
 
 const TvShowInfo = ({ content, style }) => {
   const [imageSize] = useState(
-    UTIl.Contants.IMAGE_SIZES.POSTER_SIZES.WIDTH_780
+    UTIL.Contants.IMAGE_SIZES.POSTER_SIZES.WIDTH_780
   );
   const [imageUrl, setImageUrl] = useState(null);
 
   useEffect(() => {
     if (content) {
-      const url = UTIl.Cards.handleImageUrl(content.poster_path, imageSize);
+      const url = UTIL.Cards.handleImageUrl(content.poster_path, imageSize);
       setImageUrl(url);
     }
   }, [content, imageSize]);

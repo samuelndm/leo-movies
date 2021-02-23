@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import * as API from "services/Loaders";
-import * as UTIl from "utils";
+import * as UTIL from "utils";
 import * as S from "./styles";
 import * as C from "components";
 
@@ -22,8 +22,8 @@ const HomePage = () => {
     const movies = allResponses[0]?.results || [];
     const tvShows = allResponses[1]?.results || [];
 
-    const resizedMovies = UTIl.resizeArray(movies, MAX_ITEMS);
-    const tvShowsMovies = UTIl.resizeArray(tvShows, MAX_ITEMS);
+    const resizedMovies = UTIL.resizeArray(movies, MAX_ITEMS);
+    const tvShowsMovies = UTIL.resizeArray(tvShows, MAX_ITEMS);
 
     setPopularMovies(resizedMovies);
     setTopularTvShows(tvShowsMovies);

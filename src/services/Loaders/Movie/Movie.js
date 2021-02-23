@@ -1,5 +1,5 @@
 import * as API_ENDPOINTS from "services/Endpoints";
-import * as UTIl from "utils";
+import * as UTIL from "utils";
 import * as Messages from "../messages";
 
 export const loadMovieById = async (id, params) => {
@@ -8,7 +8,7 @@ export const loadMovieById = async (id, params) => {
     return data || {};
   } catch (err) {
     console.error(err);
-    UTIl.Notifications.createDangerNotification({
+    UTIL.Notifications.createDangerNotification({
       message: err?.response?.data?.status_message || Messages.ERROR.DEFAULT,
     });
 
@@ -22,7 +22,7 @@ export const loadMoviesList = async (params) => {
     return data || {};
   } catch (err) {
     console.error(err);
-    UTIl.Notifications.createDangerNotification({
+    UTIL.Notifications.createDangerNotification({
       message: err?.response?.data?.status_message || Messages.ERROR.DEFAULT,
     });
 
@@ -36,7 +36,7 @@ export const loadPopularMovies = async (params) => {
     return data || {};
   } catch (err) {
     console.error(err);
-    UTIl.Notifications.createDangerNotification({
+    UTIL.Notifications.createDangerNotification({
       message: err?.response?.data?.status_message || Messages.ERROR.DEFAULT,
     });
 
@@ -50,7 +50,7 @@ export const loadMovieImagesById = async (id, params) => {
     return data || {};
   } catch (err) {
     console.error(err);
-    UTIl.Notifications.createDangerNotification({
+    UTIL.Notifications.createDangerNotification({
       message: err?.response?.data?.status_message || Messages.ERROR.DEFAULT,
     });
 
@@ -64,7 +64,7 @@ export const loadSearchedMovies = async (params) => {
     return data || {};
   } catch (err) {
     console.error(err);
-    UTIl.Notifications.createDangerNotification({
+    UTIL.Notifications.createDangerNotification({
       message: err?.response?.data?.status_message || Messages.ERROR.DEFAULT,
     });
 
@@ -78,7 +78,7 @@ export const loadMovieCreditsById = async (id, params) => {
     return data || {};
   } catch (err) {
     console.error(err);
-    UTIl.Notifications.createDangerNotification({
+    UTIL.Notifications.createDangerNotification({
       message: err?.response?.data?.status_message || Messages.ERROR.DEFAULT,
     });
 
@@ -92,7 +92,7 @@ export const loadMovieVideosById = async (id, params) => {
     return data?.results || [];
   } catch (err) {
     console.error(err);
-    UTIl.Notifications.createDangerNotification({
+    UTIL.Notifications.createDangerNotification({
       message: err?.response?.data?.status_message || Messages.ERROR.DEFAULT,
     });
 

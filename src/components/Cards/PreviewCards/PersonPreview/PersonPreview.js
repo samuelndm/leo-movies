@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import * as UTIl from "utils";
+import * as UTIL from "utils";
 import * as S from "../UIPreviewCards/styles";
 import * as C from "../UIPreviewCards";
 
 const PersonPreview = ({ preview, showPopularity }) => {
   const [imageSize] = useState(
-    `/${UTIl.Contants.IMAGE_SIZES.PROFILE_SIZES.WIDTH_780}`
+    `/${UTIL.Contants.IMAGE_SIZES.PROFILE_SIZES.WIDTH_780}`
   );
   const [imageUrl, setImageUrl] = useState(null);
 
   useEffect(() => {
     if (preview) {
-      const url = UTIl.Cards.handleImageUrl(preview.profile_path, imageSize);
+      const url = UTIL.Cards.handleImageUrl(preview.profile_path, imageSize);
       setImageUrl(url);
     }
   }, [preview, imageSize]);

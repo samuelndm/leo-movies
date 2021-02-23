@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useFavoritesContext } from "contexts";
 import * as API from "services/Loaders";
-import * as UTIl from "utils";
+import * as UTIL from "utils";
 import * as S from "./styles";
 import * as C from "components";
 
@@ -15,10 +15,10 @@ const FavoritesPage = () => {
       let response = {};
 
       switch (favoriteType) {
-        case UTIl.Contants.MEDIA_TYPES.MOVIE:
+        case UTIL.Contants.MEDIA_TYPES.MOVIE:
           response = await API.loadMovieById(favorite?.id);
           break;
-        case UTIl.Contants.MEDIA_TYPES.TV_SHOW:
+        case UTIL.Contants.MEDIA_TYPES.TV_SHOW:
           response = await API.loadTvShowById(favorite?.id);
           break;
 

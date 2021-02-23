@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import * as UTIl from "utils";
+import * as UTIL from "utils";
 import * as S from "./styles";
 
 const Search = () => {
@@ -12,14 +12,14 @@ const Search = () => {
     event.preventDefault();
 
     if (keyword) {
-      UTIl.Pagination.resetPaginationUrl(history);
+      UTIL.Pagination.resetPaginationUrl(history);
 
       const url = `/search`;
       let params = "";
 
-      params = UTIl.updateUrlParamByKey(
+      params = UTIL.updateUrlParamByKey(
         history.location.search,
-        UTIl.Contants.URL_PARAMS.SEARCH,
+        UTIL.Contants.URL_PARAMS.SEARCH,
         keyword
       );
 
