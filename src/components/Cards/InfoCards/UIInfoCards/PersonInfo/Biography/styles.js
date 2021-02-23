@@ -32,6 +32,8 @@ export const ReadMore = styled.span`
 
 export const ModalContainer = styled(Container)`
   padding: 15px 20px;
+  max-height: 450px;
+  overflow-y: auto;
   border-radius: 6px;
   background: var(--gradient-primary-color, #333);
   color: #fff;
