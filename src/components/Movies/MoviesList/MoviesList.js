@@ -1,24 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./styles";
-import * as GS from "assets/styles/GlobalStyles";
 import * as C from "components";
 
 const MoviesList = ({ movies }) => {
   return (
     <S.Container>
-      <GS.FlexContainer>
+      <S.FlexContainer>
         {movies?.map((movie, index) => (
-          <GS.FlexItem
+          <S.FlexItem
             lg={2}
             xs={12}
             margin='15px'
             key={`moviePreview-${movie?.id || index}`}
           >
             <C.Card.MoviePreview preview={movie} showVoteAverage />
-          </GS.FlexItem>
+          </S.FlexItem>
         ))}
-      </GS.FlexContainer>
+      </S.FlexContainer>
     </S.Container>
   );
 };

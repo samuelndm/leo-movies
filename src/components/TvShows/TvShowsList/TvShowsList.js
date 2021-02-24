@@ -1,24 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./styles";
-import * as GS from "assets/styles/GlobalStyles";
 import * as C from "components";
 
 const TvShowsList = ({ tvShows }) => {
   return (
     <S.Container>
-      <GS.FlexContainer>
+      <S.FlexContainer>
         {tvShows?.map((tvShow, index) => (
-          <GS.FlexItem
+          <S.FlexItem
             lg={2}
             xs={12}
             margin='15px'
             key={`tvShowPreview-${tvShow?.id || index}`}
           >
             <C.Card.TvShowPreview preview={tvShow} showVoteAverage />
-          </GS.FlexItem>
+          </S.FlexItem>
         ))}
-      </GS.FlexContainer>
+      </S.FlexContainer>
     </S.Container>
   );
 };
