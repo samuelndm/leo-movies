@@ -7,4 +7,5 @@ export { default as Select } from "./Select/Select";
 export { default as Slider } from "./Slider/Slider";
 export { default as Spinner } from "./Spinner/Spinner";
 export { default as Skeleton } from "./Skeleton/Skeleton";
+export { default as Tooltip } from "./Tooltip/Tooltip";
 export { default as ScrollToTop } from "./ScrollToTop/ScrollToTop";
