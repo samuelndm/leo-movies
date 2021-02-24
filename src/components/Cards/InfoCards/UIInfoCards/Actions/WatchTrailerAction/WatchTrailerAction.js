@@ -16,20 +16,20 @@ const WatchTrailerAction = ({ trailerKey }) => {
   return trailerKey || countdown === 0 ? (
     <>
       <S.RectAction isDisabled={!trailerKey} onClick={handleClick}>
-        <S.Icon className='fab fa-youtube' />
+        <S.Icon className="fab fa-youtube" />
         {trailerKey ? "Watch Trailer" : "Trailer Unavailable"}
       </S.RectAction>
 
       {key && (
         <C.UI.Modal openModal={key} closeModal={setKey}>
-          <C.UI.YoutubeMedia mediaKey={key} hasAutoplay />
+          <C.UI.YoutubeMedia mediaKey={key} hasAutoplay={true} />
         </C.UI.Modal>
       )}
     </>
   ) : (
     <C.UI.Skeleton
-      variant='rect'
-      animation='wave'
+      variant="rect"
+      animation="wave"
       SkeletonStyle={S.SkeletonRectleStyle}
     />
   );
