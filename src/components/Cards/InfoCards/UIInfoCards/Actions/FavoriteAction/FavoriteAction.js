@@ -28,16 +28,18 @@ const FavoriteAction = ({ content }) => {
   }, [content, getFavorite]);
 
   return content || countdown === 0 ? (
-    <S.CircleAction isDisabled={!content} onClick={handleClick}>
-      <S.Icon
-        color={isFavorited ? "#EC9929" : ""}
-        className={`${isFavorited ? "fas" : "far"} fa-star`}
-      />
-    </S.CircleAction>
+    <C.UI.Tooltip title="Add to favorites" hasArrow>
+      <S.CircleAction isDisabled={!content} onClick={handleClick}>
+        <S.Icon
+          color={isFavorited ? "#EC9929" : ""}
+          className={`${isFavorited ? "fas" : "far"} fa-star`}
+        />
+      </S.CircleAction>
+    </C.UI.Tooltip>
   ) : (
     <C.UI.Skeleton
-      variant='circle'
-      animation='wave'
+      variant="circle"
+      animation="wave"
       SkeletonStyle={S.SkeletonCircleStyle}
     />
   );

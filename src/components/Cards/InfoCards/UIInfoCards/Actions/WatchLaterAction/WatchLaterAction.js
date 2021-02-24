@@ -32,16 +32,18 @@ const WatchLaterAction = ({ content }) => {
   }, [content, getWatchLater]);
 
   return content || countdown === 0 ? (
-    <S.CircleAction isDisabled={!content} onClick={handleClick}>
-      <S.Icon
-        color={isWatchLater ? "#EC9929" : ""}
-        className={`${isWatchLater ? "fas" : "far"} fa-bookmark`}
-      />
-    </S.CircleAction>
+    <C.UI.Tooltip title="Add to watch later" hasArrow>
+      <S.CircleAction isDisabled={!content} onClick={handleClick}>
+        <S.Icon
+          color={isWatchLater ? "#EC9929" : ""}
+          className={`${isWatchLater ? "fas" : "far"} fa-bookmark`}
+        />
+      </S.CircleAction>
+    </C.UI.Tooltip>
   ) : (
     <C.UI.Skeleton
-      variant='circle'
-      animation='wave'
+      variant="circle"
+      animation="wave"
       SkeletonStyle={S.SkeletonCircleStyle}
     />
   );
