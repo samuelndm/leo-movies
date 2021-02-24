@@ -5,4 +5,4 @@ export * as Media from "./mediaUtil";
 export * as Notifications from "./notificationsUtil";
 export * as Pagination from "./paginationUtil";
 export * as Search from "./searchUtil";
-export * as Storage from "./storage";
+export * as Storage from "./storageUtil";
