@@ -38,7 +38,7 @@ const FavoritesPage = () => {
   }, [favoritesStorage]);
 
   return (
-    <S.Container style={{ margin: "50px 0 0" }}>
+    <S.Container>
       <S.Content>
         <S.Title>
           {favoritesStorage?.length
