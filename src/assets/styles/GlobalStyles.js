@@ -131,7 +131,7 @@ export const FlexItem = styled.div`
   width: ${({ lg }) => (lg ? (100 / 12) * lg : "16.66")}%;
 
   @media screen and (max-width: 1199px) {
-    width: ${({ mg }) => (mg ? (100 / 12) * mg : "20")}%;
+    width: ${({ md }) => (md ? (100 / 12) * md : "20")}%;
   }
 
   @media screen and (max-width: 991px) {
