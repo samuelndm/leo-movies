@@ -6,7 +6,7 @@ export const useCountdownTimer = (initial = DEFAULT_INITIAL) => {
   const [countdown, setCountdown] = useState(initial);
 
   useEffect(() => {
-    if (countdown && countdown >= 0) {
+    if (countdown >= 0) {
       const counter = setInterval(() => {
         setCountdown((count) => count - 1);
       }, 1000);
