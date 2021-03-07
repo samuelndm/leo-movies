@@ -19,13 +19,8 @@ const MovieInternalPage = ({ match }) => {
     const videos = allResponses[1];
     const credits = allResponses[2];
 
-    const timeOut = setTimeout(() => {
-      // Just to make a cool effect with skeleton ^^
-      setMovie({ ...movie, videos });
-      setCredits(credits);
-    }, 1000);
-
-    return () => clearTimeout(timeOut);
+    setMovie({ ...movie, videos });
+    setCredits(credits);
   };
 
   useEffect(() => {

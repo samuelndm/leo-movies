@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiUrl = process.env.REACT_APP_API_URL;
-const apiToken = process.env.REACT_APP_API_TOKEN;
+const apiToken = `Bearer ${process.env.REACT_APP_API_TOKEN}`;
 
 const params = {
   baseURL: apiUrl,
