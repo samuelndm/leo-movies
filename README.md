@@ -1,6 +1,6 @@
 ## Web application using ReactJS that fetches data from an API with millions of movies, TV shows and people.
 
-Live Demo: https://samuelndm.github.io/leo-moviegas
+Live Demo: https://samuelndm.github.io/leo-movies
 
 In the project directory, you can run:
 
