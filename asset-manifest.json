@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/leo-moviegas/static/css/main.96132119.chunk.css",
-    "main.js": "/leo-moviegas/static/js/main.54830a4c.chunk.js",
-    "main.js.map": "/leo-moviegas/static/js/main.54830a4c.chunk.js.map",
-    "runtime-main.js": "/leo-moviegas/static/js/runtime-main.182e01b0.js",
-    "runtime-main.js.map": "/leo-moviegas/static/js/runtime-main.182e01b0.js.map",
-    "static/css/2.faeb12cc.chunk.css": "/leo-moviegas/static/css/2.faeb12cc.chunk.css",
-    "static/js/2.5d13e0d1.chunk.js": "/leo-moviegas/static/js/2.5d13e0d1.chunk.js",
-    "static/js/2.5d13e0d1.chunk.js.map": "/leo-moviegas/static/js/2.5d13e0d1.chunk.js.map",
-    "index.html": "/leo-moviegas/index.html",
-    "static/css/2.faeb12cc.chunk.css.map": "/leo-moviegas/static/css/2.faeb12cc.chunk.css.map",
-    "static/css/main.96132119.chunk.css.map": "/leo-moviegas/static/css/main.96132119.chunk.css.map",
-    "static/js/2.5d13e0d1.chunk.js.LICENSE.txt": "/leo-moviegas/static/js/2.5d13e0d1.chunk.js.LICENSE.txt",
-    "static/media/base.scss": "/leo-moviegas/static/media/Raleway-ThinItalic.9e9f8b9c.ttf",
-    "static/media/logo.7bf3e845.png": "/leo-moviegas/static/media/logo.7bf3e845.png",
-    "static/media/slick-theme.css": "/leo-moviegas/static/media/slick.c94f7671.ttf"
+    "main.css": "/leo-movies/static/css/main.c61b292f.chunk.css",
+    "main.js": "/leo-movies/static/js/main.f709155e.chunk.js",
+    "main.js.map": "/leo-movies/static/js/main.f709155e.chunk.js.map",
+    "runtime-main.js": "/leo-movies/static/js/runtime-main.dddd6cce.js",
+    "runtime-main.js.map": "/leo-movies/static/js/runtime-main.dddd6cce.js.map",
+    "static/css/2.5b9898af.chunk.css": "/leo-movies/static/css/2.5b9898af.chunk.css",
+    "static/js/2.252d8675.chunk.js": "/leo-movies/static/js/2.252d8675.chunk.js",
+    "static/js/2.252d8675.chunk.js.map": "/leo-movies/static/js/2.252d8675.chunk.js.map",
+    "index.html": "/leo-movies/index.html",
+    "static/css/2.5b9898af.chunk.css.map": "/leo-movies/static/css/2.5b9898af.chunk.css.map",
+    "static/css/main.c61b292f.chunk.css.map": "/leo-movies/static/css/main.c61b292f.chunk.css.map",
+    "static/js/2.252d8675.chunk.js.LICENSE.txt": "/leo-movies/static/js/2.252d8675.chunk.js.LICENSE.txt",
+    "static/media/base.scss": "/leo-movies/static/media/Raleway-ThinItalic.9e9f8b9c.ttf",
+    "static/media/logo.7bf3e845.png": "/leo-movies/static/media/logo.7bf3e845.png",
+    "static/media/slick-theme.css": "/leo-movies/static/media/slick.c94f7671.ttf"
   },
   "entrypoints": [
-    "static/js/runtime-main.182e01b0.js",
-    "static/css/2.faeb12cc.chunk.css",
-    "static/js/2.5d13e0d1.chunk.js",
-    "static/css/main.96132119.chunk.css",
-    "static/js/main.54830a4c.chunk.js"
+    "static/js/runtime-main.dddd6cce.js",
+    "static/css/2.5b9898af.chunk.css",
+    "static/js/2.252d8675.chunk.js",
+    "static/css/main.c61b292f.chunk.css",
+    "static/js/main.f709155e.chunk.js"
   ]
 }
