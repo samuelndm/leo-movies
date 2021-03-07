@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/leo-movies/static/css/main.c61b292f.chunk.css",
-    "main.js": "/leo-movies/static/js/main.e3b0baf0.chunk.js",
-    "main.js.map": "/leo-movies/static/js/main.e3b0baf0.chunk.js.map",
+    "main.js": "/leo-movies/static/js/main.fd60f1aa.chunk.js",
+    "main.js.map": "/leo-movies/static/js/main.fd60f1aa.chunk.js.map",
     "runtime-main.js": "/leo-movies/static/js/runtime-main.dddd6cce.js",
     "runtime-main.js.map": "/leo-movies/static/js/runtime-main.dddd6cce.js.map",
     "static/css/2.5b9898af.chunk.css": "/leo-movies/static/css/2.5b9898af.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.5b9898af.chunk.css",
     "static/js/2.294095b0.chunk.js",
     "static/css/main.c61b292f.chunk.css",
-    "static/js/main.e3b0baf0.chunk.js"
+    "static/js/main.fd60f1aa.chunk.js"
   ]
 }
