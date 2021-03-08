@@ -7,7 +7,7 @@ import * as C from "components";
 const MoviesListPage = () => {
   const itemsPerPage = 20;
   const [isLoading, setIsLoading] = useState(false);
-  const [movies, setMovies] = useState(UTIL.createEmptyArray(itemsPerPage));
+  const [movies, setMovies] = useState(UTIL.createArray(itemsPerPage));
   const [totalItems, setTotalItems] = useState(0);
   const [page, setPage] = useState(1);
   const [sortBy, setSortBy] = useState(UTIL.Contants.SORT_BY.POPULARITY_DESC);

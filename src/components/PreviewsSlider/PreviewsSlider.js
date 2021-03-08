@@ -13,7 +13,7 @@ const PreviewsSlider = ({
   showPopularity,
   style,
 }) => {
-  const [content, setContent] = useState(UTIL.createEmptyArray(slidesToShow));
+  const [content, setContent] = useState(UTIL.createArray(slidesToShow));
 
   useEffect(() => {
     if (previews && previews.length) {

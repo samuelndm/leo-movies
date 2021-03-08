@@ -7,7 +7,7 @@ import * as C from "components";
 const TvShowsListPage = () => {
   const itemsPerPage = 20;
   const [isLoading, setIsLoading] = useState(false);
-  const [tvShows, setTvShows] = useState(UTIL.createEmptyArray(itemsPerPage));
+  const [tvShows, setTvShows] = useState(UTIL.createArray(itemsPerPage));
   const [totalItems, setTotalItems] = useState(0);
   const [page, setPage] = useState(1);
   const [sortBy, setSortBy] = useState(UTIL.Contants.SORT_BY.POPULARITY_DESC);

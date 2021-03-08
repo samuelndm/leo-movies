@@ -7,7 +7,7 @@ import * as C from "components";
 const PeopleListPage = () => {
   const itemsPerPage = 20;
   const [isLoading, setIsLoading] = useState(false);
-  const [people, setPeople] = useState(UTIL.createEmptyArray(itemsPerPage));
+  const [people, setPeople] = useState(UTIL.createArray(itemsPerPage));
   const [totalItems, setTotalItems] = useState(0);
   const [page, setPage] = useState(1);
   const [searched, setSearched] = useState("");

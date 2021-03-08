@@ -9,7 +9,7 @@ const SearchPage = () => {
   const itemsPerPage = 20;
   const history = useHistory();
   const [searchedList, setSearchedList] = useState(
-    UTIL.createEmptyArray(itemsPerPage)
+    UTIL.createArray(itemsPerPage)
   );
   const [totalItems, setTotalItems] = useState(0);
   const [page, setPage] = useState(1);
