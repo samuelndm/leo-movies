@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import * as API from "services/Loaders";
+import * as API from "services/middleware";
 import * as S from "./styles";
 import * as C from "components";
 

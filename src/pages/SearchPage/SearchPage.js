@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import * as API from "services/Loaders";
+import * as API from "services/middleware";
 import * as UTIL from "utils";
 import * as S from "./styles";
 import * as C from "components";
